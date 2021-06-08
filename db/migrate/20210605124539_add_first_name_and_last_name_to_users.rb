@@ -4,6 +4,6 @@ class AddFirstNameAndLastNameToUsers < ActiveRecord::Migration[6.0]
     add_column :users, :last_name, :string
     add_column :users, :username, :string
     add_column :users, :date_of_birth, :date
-    add_column :users, :teacher, :boolean
+    add_column :users, :teacher, :boolean, default: true
   end
 end
