@@ -5,3 +5,58 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#require 'faker'
+#require 'open-uri'
+Lesson.destroy_all
+Assignment.destroy_all
+User.destroy_all
+
+puts "destroyed all"
+
+teacher_one = User.new(
+    email: "anders@gmail.com",
+    password: "password",
+    first_name: "Anders",
+    last_name: "H",
+    username: "Anders1",
+    teacher: true,
+    date_of_birth: '1980-11-25'
+    )
+teacher_one.save!
+puts "teacher_one"
+
+student_one = User.new(
+    email: "carry@gmail.com",
+    password: "password",
+    first_name: "Carry",
+    last_name: "H",
+    username: "Carry1",
+    teacher: false,
+    date_of_birth: '1980-11-25'
+    )
+student_one.save!
+puts "student_one"
+
+lesson_one = Lesson.new(
+	student_id: student_one.id ,
+	teacher_id: teacher_one.id,
+	start_time: '2021-07-12 10:00',
+	end_time: '2021-07-12 11:00',
+	rate: 25,
+	teacher_notes: " ",
+	student_notes: " "
+	)
+lesson_one.save!
+puts "lesson_one"
+
+assignment_one = Assignment.new(
+	details: "get it",
+	title: "new melody",
+	due_date: '2021-07-01',
+	completed: false,
+	feedback: " ",
+	lesson_id: Lesson.first.id
+	)
+assignment_one.save!
+puts "assignmen_one"
+
