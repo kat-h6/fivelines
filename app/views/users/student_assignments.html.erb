@@ -1,7 +1,13 @@
 <h2> Assignments <%= @student.full_name %> </h2>
 
+<div class="assignment-list">
 <ul class="list-group">
 <% @assignments.each do |assignment| %>
+ <div class="card-container" style="width: 36rem; margin: 2rem;">
 <li class="list-group-item"><%= assignment.title %></li>
+<li class="list-group-item"><%= assignment.due_date %></li>
+<li class="list-group-item"><%= assignment.details %></li>
+</div>
   <% end %>
  </ul>
+</div>
