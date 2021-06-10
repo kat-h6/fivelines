@@ -1,6 +1,5 @@
 class CalendarsController < ApplicationController
   def show
-
     @lessons = current_user.lessons
 
     # Scope your query to the dates being shown:
