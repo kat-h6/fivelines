@@ -1,2 +1,25 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-sec" style="background-image: url('<%= cl_image_path 'purple-wave_lf0gye.svg', height: 400, crop: :fill %>'); background-repeat: no-repeat;";>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <div class="top-content">
+          <h1>The music sounds better <span>with you.</span></h1>
+          <h3>A virtual classroom for music teachers.</h3>
+        </div>
+
+        <div class="cta-group">
+          <div class="btn btn-success">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </div>
+
+          <%= link_to "Create an account", new_user_registration_path, class: "nav-link" %>
+
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-6">
+        <%= cl_image_tag "music-mosaic_uubnye.jpg", width: 600, crop: :fit %>
+      </div>
+    </div>
+  </div>
+</div>
