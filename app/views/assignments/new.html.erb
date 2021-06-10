@@ -1,0 +1,12 @@
+<div class="container">
+<h1>New assignment for this student</h1>
+
+<%= simple_form_for [ @lesson, @assignment ] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :due_date %>
+  <%= f.input :details %>
+  
+
+  <%= f.submit "Submit assignment", class: "btn btn-primary" %>
+<% end %>
+</div>
