@@ -1,11 +1,12 @@
 <h1>Lessons</h1>
-<%= month_calendar(events: @lessons, end_attribute: :end_time) do |date, lessons| %>
+
+<%= month_calendar(events: @meetings, end_attribute: :end_time) do |date, meetings| %>
   <%= date %>
 
-  <% @lessons.each do |lesson| %>
-    <p><%= lesson.student.full_name %></p>
+  <% meetings.each do |meeting| %>
+    <div class="meeting">  <-- We will add some style to the meeting class later so let's add it now -->
+      <p><%= meeting.student.first_name %></p>
+    </div>
   <% end %>
-
 <% end %>
-
 
