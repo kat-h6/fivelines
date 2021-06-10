@@ -1,6 +1,8 @@
 class AssignmentsController < ApplicationController
   def show
+
     @assignment = Assignment.find(params[:id])
+    @student = @assignment.lesson.student
   end
 
   def new
@@ -16,7 +18,6 @@ class AssignmentsController < ApplicationController
     if @assignment.save
       redirect_to student_assignments_user_path @lesson.student.id
     else
-      puts "Rendering again"
       render :new
     end
   end

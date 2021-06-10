@@ -23,7 +23,7 @@ teacher_one = User.new(
     date_of_birth: '1980-11-25'
     )
 teacher_one.save!
-puts "teacher_one"
+
 
 student_one = User.new(
     email: "carry@gmail.com",
@@ -35,7 +35,7 @@ student_one = User.new(
     date_of_birth: '1980-11-25'
     )
 student_one.save!
-puts "student_one"
+
 
 lesson_one = Lesson.new(
 	student_id: student_one.id ,
@@ -47,7 +47,7 @@ lesson_one = Lesson.new(
 	student_notes: " "
 	)
 lesson_one.save!
-puts "lesson_one"
+
 
 assignment_one = Assignment.new(
 	details: "get it",
@@ -58,5 +58,5 @@ assignment_one = Assignment.new(
 	lesson_id: Lesson.first.id
 	)
 assignment_one.save!
-puts "assignmen_one"
+
 
