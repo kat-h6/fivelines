@@ -1,4 +1,4 @@
-class AssignmentsController
+class AssignmentsController < ApplicationController
   def show
     @assignment = Assignment.find(params[:id])
   end
@@ -10,9 +10,15 @@ class AssignmentsController
 
   def create
     @lesson = Lesson.find(params[:lesson_id])
-    @assignment = Assignment.new
+    @assignment = Assignment.new(assignment_params)
     @assignment.lesson = @lesson
-    @assignment.save
+
+    if @assignment.save
+      redirect_to student_assignments_user_path @lesson.student.id
+    else
+      puts "Rendering again"
+      render :new
+    end
   end
 
   def update
@@ -23,6 +29,6 @@ class AssignmentsController
   private
 
   def assignment_params
-    params.require(:assignment).permit(:title, :due_date, :status, :feedback, :details)
+    params.require(:assignment).permit(:title, :due_date, :feedback, :details)
   end
 end
