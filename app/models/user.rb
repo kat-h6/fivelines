@@ -9,6 +9,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   has_many :lessons, foreign_key: :teacher_id, dependent: :destroy
+  has_many :lessons, foreign_key: :student_id, dependent: :destroy
   has_many :students, through: :lessons
   has_many :assignments, through: :lessons
   has_many :resources
