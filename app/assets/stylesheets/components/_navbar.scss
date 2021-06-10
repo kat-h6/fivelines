@@ -1,12 +1,13 @@
-.navbar-fivelines {
+.navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: none;
+  margin-bottom: 30px;
 }
 
-.navbar-fivelines .navbar-collapse {
+.navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-fivelines .navbar-brand img {
-  width: 40px;
+.navbar-lewagon .navbar-brand img {
+  width: 200px;
 }
