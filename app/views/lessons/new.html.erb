@@ -1,8 +1,8 @@
 <div class="container">
   <h1>Schedule a lesson</h1>
   <%= simple_form_for [ @lesson ] do |f| %>
-    <%= f.input :start_time %>
-    <%= f.input :end_time %>
+    <%= f.input :start_time, as: :string, input_html: { class:"datepicker" } %>
+    <%= f.input :end_time, as: :string, input_html: { class:"datepicker" } %>
     <%= f.input :rate %>
     <%= f.association :student, collection: User.are_students?, label_method: :full_name, value_method: :id %>
     <%= f.submit "Reserve lesson", class: 'btn btn-success' %>
