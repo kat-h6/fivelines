@@ -7,8 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #require 'faker'
 #require 'open-uri'
-Lesson.destroy_all
 Assignment.destroy_all
+Lesson.destroy_all
+
 User.destroy_all
 
 puts "destroyed all"
@@ -204,15 +205,7 @@ lesson_five = Lesson.new(
 lesson_five.save!
 
 
-assignment_one = Assignment.new(
-	details: "get it",
-	title: "new melody",
-	due_date: '2021-07-01',
-	completed: false,
-	feedback: " ",
-	lesson_id: Lesson.first.id
-	)
-assignment_one.save!
+
 
 
 
