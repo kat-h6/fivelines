@@ -7,6 +7,12 @@ class Lesson < ApplicationRecord
   belongs_to :teacher, class_name: 'User', foreign_key: 'teacher_id'
   has_many :assignments
 
+  default_scope -> { order(:start_time) }
+
+  def time
+    "#{start_time.strftime('%I:%M %p')} - #{end_time.strftime('%I:%M %p')}"
+  end
+
   private
 
   def future_start_time

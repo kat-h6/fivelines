@@ -7,6 +7,12 @@ class LessonsController < ApplicationController
   def create
     @lesson = Lesson.new(lesson_params)
     @lesson.teacher = current_user
+
+    if @lesson.save
+      redirect_to calendar_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -16,6 +22,6 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit(:start_time, :end_time, :rate, :teacher_notes, :student_notes)
+    params.require(:lesson).permit(:start_time, :end_time, :rate, :teacher_notes, :student_notes, :student_id)
   end
 end
