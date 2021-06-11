@@ -7,7 +7,12 @@ class LessonsController < ApplicationController
   def create
     @lesson = Lesson.new(lesson_params)
     @lesson.teacher = current_user
-    
+
+    if @lesson.save
+      redirect_to calendar_path
+    else
+      render :new
+    end
   end
 
   def edit
