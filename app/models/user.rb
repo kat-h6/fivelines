@@ -18,6 +18,10 @@ class User < ApplicationRecord
 
   scope :are_students?, -> { where(teacher:false) }
 
+  def role
+    self.teacher ? "teacher" : "student"
+  end
+
   def full_name
     first_name + " " + last_name
   end

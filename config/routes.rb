@@ -3,22 +3,23 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resource :calendar, only: :show
-  
 
-  resources :lessons, only: [:new, :create, :index] do
+
+  resources :lessons, only: [:new, :show, :create, :index] do
     resources :assignments, only: [:new, :create]
   end
 
   resources :assignments, only: [:show, :update]
 
-  resources :students, only: :index
-  
-    resources :users do 
-    member do 
-      get :student_assignments
 
+  resources :students, only: :index
+
+  resources :users do
+    member do
+      get :student_assignments
     end
   end
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

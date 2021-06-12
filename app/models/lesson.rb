@@ -9,6 +9,8 @@ class Lesson < ApplicationRecord
 
   default_scope -> { order(:start_time) }
 
+  before_create :set_vonage_session_id
+
   def time
     "#{start_time.strftime('%I:%M %p')} - #{end_time.strftime('%I:%M %p')}"
   end
@@ -17,5 +19,11 @@ class Lesson < ApplicationRecord
 
   def future_start_time
     errors.add(:start_time, "Can't be in the past!") if start_time < Time.now
+  end
+
+  def set_vonage_session_id
+    opentok = OpenTok::OpenTok.new ENV['VONAGE_API_KEY'], ENV['VONAGE_API_SECRET']
+    session = opentok.create_session
+    self.vonage_session_id = session.session_id
   end
 end
