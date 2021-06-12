@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2021_06_05_130720) do
     t.string "last_name"
     t.string "username"
     t.date "date_of_birth"
-    t.boolean "teacher", default: true
+    t.boolean "teacher"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
