@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #require 'faker'
 #require 'open-uri'
-Lesson.destroy_all
 Assignment.destroy_all
+Lesson.destroy_all
 User.destroy_all
 
 puts "destroyed all"

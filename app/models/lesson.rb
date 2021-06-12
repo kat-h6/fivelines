@@ -7,6 +7,8 @@ class Lesson < ApplicationRecord
   belongs_to :teacher, class_name: 'User', foreign_key: 'teacher_id'
   has_many :assignments
 
+  scope :today, -> { where("start_time > ?", Date.today.beginning_of_day) }
+
   private
 
   def future_start_time
