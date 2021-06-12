@@ -1,6 +1,5 @@
 class AssignmentsController < ApplicationController
   def show
-
     @assignment = Assignment.find(params[:id])
     @student = @assignment.lesson.student
   end
