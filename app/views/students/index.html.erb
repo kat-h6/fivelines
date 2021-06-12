@@ -1,0 +1,15 @@
+<h1>List of students</h1>
+  <div class="card-container" style="margin-left: 2rem;">
+    <% @students.each do |student| %>
+      <div class="card">
+        <p> <%= student.first_name %> <%= student.last_name %> </p>
+        <p> <%= student.date_of_birth %> </p>
+        <p> <%= student.email %> </p>
+        <button class="btn btn-outline-secondary">View student profile</button>
+      </div>
+    <% end %>
+
+
+  </div>
+    <button class="btn btn-outline-secondary">Back</button>
+  

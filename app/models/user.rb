@@ -8,10 +8,12 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  has_many :lessons, foreign_key: :teacher_id, dependent: :destroy
+  # broke out teacher relationship and student relationship
+  has_many :student_lessons, class_name: "Lesson", foreign_key: :teacher_id, dependent: :destroy
   has_many :lessons, foreign_key: :student_id, dependent: :destroy
-  has_many :students, through: :lessons
+  has_many :students, through: :student_lessons
   has_many :assignments, through: :lessons
+  has_many :student_assignments, through: :student_lessons, source: :assignments
   has_many :resources
 
   scope :are_students?, -> { where(teacher:false) }

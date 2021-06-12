@@ -13,10 +13,12 @@ Rails.application.routes.draw do
 
   resources :assignments, only: [:show, :update]
 
+
+  resources :students, only: :index
+
   resources :users do
     member do
       get :student_assignments
-
     end
   end
 
