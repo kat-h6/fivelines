@@ -33,7 +33,8 @@ export default class extends Controller {
     this.publisher = OT.initPublisher(this.element, {
       insertMode: 'append',
       width: '100%',
-      height: '100%'
+      height: '100%',
+      role: this.data.get("role")
     }, this.handleError.bind(this))
     this.session.connect(this.token, this.streamConnected.bind(this))
   }

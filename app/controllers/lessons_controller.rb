@@ -1,7 +1,6 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit]
 
-
   def new
     @lesson = Lesson.new
     @students = current_user.students
