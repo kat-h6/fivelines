@@ -9,34 +9,22 @@
 #require 'open-uri'
 Assignment.destroy_all
 Lesson.destroy_all
-
 User.destroy_all
 
 puts "destroyed all"
 
-teacher_one = User.new(
-    email: "anders@gmail.com",
+
+teacher_one = User.create!(
+    email: "Sapideh@gmail.com",
     password: "password",
-    first_name: "Anders",
+    first_name: "Sapideh",
     last_name: "H",
-    username: "Anders1",
+    username: "Sapideh1",
     teacher: true,
     date_of_birth: '1980-11-25'
     )
-teacher_one.save!
 
-teacher_two = User.new(
-    email: "knut@gmail.com",
-    password: "password",
-    first_name: "Knut",
-    last_name: "H",
-    username: "Knut1",
-    teacher: true,
-    date_of_birth: '1980-11-25'
-    )
-teacher_two.save!
-
-teacher_three = User.new(
+teacher_two = User.create!(
     email: "kathy@gmail.com",
     password: "password",
     first_name: "Kathy",
@@ -45,9 +33,8 @@ teacher_three = User.new(
     teacher: true,
     date_of_birth: '1980-11-25'
     )
-teacher_three.save!
 
-teacher_four = User.new(
+teacher_three = User.create!(
     email: "chris@gmail.com",
     password: "password",
     first_name: "Chris",
@@ -56,9 +43,8 @@ teacher_four = User.new(
     teacher: true,
     date_of_birth: '1980-11-25'
     )
-teacher_four.save!
 
-teacher_five = User.new(
+teacher_four = User.create!(
     email: "tavis@gmail.com",
     password: "password",
     first_name: "Tavis",
@@ -67,9 +53,8 @@ teacher_five = User.new(
     teacher: true,
     date_of_birth: '1980-11-25'
     )
-teacher_five.save!
 
-student_one = User.new(
+student_one = User.create!(
     email: "carry@gmail.com",
     password: "password",
     first_name: "Carry",
@@ -78,9 +63,8 @@ student_one = User.new(
     teacher: false,
     date_of_birth: '1980-11-25'
     )
-student_one.save!
 
-student_two = User.new(
+student_two = User.create!(
     email: "jongah@gmail.com",
     password: "password",
     first_name: "Jongah",
@@ -89,9 +73,8 @@ student_two = User.new(
     teacher: false,
     date_of_birth: '1980-11-25'
     )
-student_two.save!
 
-student_three = User.new(
+student_three = User.create!(
     email: "kyle@gmail.com",
     password: "password",
     first_name: "Kyle",
@@ -100,9 +83,9 @@ student_three = User.new(
     teacher: false,
     date_of_birth: '1980-11-25'
     )
-student_three.save!
 
-student_four = User.new(
+
+student_four = User.create!(
     email: "alin@gmail.com",
     password: "password",
     first_name: "Alin",
@@ -111,9 +94,9 @@ student_four = User.new(
     teacher: false,
     date_of_birth: '1980-11-25'
     )
-student_four.save!
 
-student_five = User.new(
+
+student_five = User.create!(
     email: "matthaious@gmail.com",
     password: "password",
     first_name: "Matthaious",
@@ -122,34 +105,10 @@ student_five = User.new(
     teacher: false,
     date_of_birth: '1980-11-25'
     )
-student_five.save!
-
-student_six = User.new(
-    email: "sheila@gmail.com",
-    password: "password",
-    first_name: "Sheila",
-    last_name: "H",
-    username: "Sheila1",
-    teacher: false,
-    date_of_birth: '1980-11-25'
-    )
-student_six.save!
-
-student_seven = User.new(
-    email: "sy@gmail.com",
-    password: "password",
-    first_name: "Sy",
-    last_name: "H",
-    username: "Sy1",
-    teacher: false,
-    date_of_birth: '1980-11-25'
-    )
-student_seven.save!
 
 
 
-
-lesson_one = Lesson.new(
+lesson_one = Lesson.create!(
 	student_id: student_one.id ,
 	teacher_id: teacher_one.id,
 	start_time: '2021-07-12 10:00',
@@ -158,9 +117,8 @@ lesson_one = Lesson.new(
 	teacher_notes: " ",
 	student_notes: " "
 	)
-lesson_one.save!
 
-lesson_two = Lesson.new(
+lesson_two = Lesson.create!(
 	student_id: student_two.id ,
 	teacher_id: teacher_one.id,
 	start_time: '2021-07-12 12:00',
@@ -169,9 +127,9 @@ lesson_two = Lesson.new(
 	teacher_notes: " ",
 	student_notes: " "
 	)
-lesson_two.save!
 
-lesson_three = Lesson.new(
+
+lesson_three = Lesson.create!(
 	student_id: student_three.id ,
 	teacher_id: teacher_one.id,
 	start_time: '2021-07-12 14:00',
@@ -180,9 +138,9 @@ lesson_three = Lesson.new(
 	teacher_notes: " ",
 	student_notes: " "
 	)
-lesson_three.save!
 
-lesson_four = Lesson.new(
+
+lesson_four = Lesson.create!(
 	student_id: student_four.id ,
 	teacher_id: teacher_one.id,
 	start_time: '2021-07-13 10:00',
@@ -191,9 +149,9 @@ lesson_four = Lesson.new(
 	teacher_notes: " ",
 	student_notes: " "
 	)
-lesson_four.save!
 
-lesson_five = Lesson.new(
+
+lesson_five = Lesson.create!(
 	student_id: student_five.id ,
 	teacher_id: teacher_one.id,
 	start_time: '2021-07-14 12:00',
@@ -202,8 +160,52 @@ lesson_five = Lesson.new(
 	teacher_notes: " ",
 	student_notes: " "
 	)
-lesson_five.save!
 
+
+assignment_one = Assignment.create!(
+    details: "get it",
+    title: "new melody",
+    due_date: '2021-07-01',
+    completed: false,
+    feedback: " ",
+    lesson: lesson_one
+    )
+
+assignment_two = Assignment.create!(
+    details: "get it",
+    title: "new melody",
+    due_date: '2021-08-01',
+    completed: false,
+    feedback: " ",
+    lesson: lesson_two
+    )
+
+assignment_three = Assignment.create!(
+    details: "get it",
+    title: "new melody",
+    due_date: '2021-09-01',
+    completed: false,
+    feedback: " ",
+    lesson: lesson_three
+    )
+
+assignment_four = Assignment.create!(
+    details: "get it",
+    title: "new melody",
+    due_date: '2021-10-01',
+    completed: false,
+    feedback: " ",
+    lesson: lesson_four
+    )
+
+assignment_five = Assignment.create!(
+    details: "get it",
+    title: "new melody",
+    due_date: '2021-07-01',
+    completed: false,
+    feedback: " ",
+    lesson: lesson_five
+    )
 
 
 
