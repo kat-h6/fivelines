@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_12_104305) do
+ActiveRecord::Schema.define(version: 2021_06_12_112053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 2021_06_12_104305) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "chapter_id", null: false
+    t.index ["chapter_id"], name: "index_resources_on_chapter_id"
     t.index ["user_id"], name: "index_resources_on_user_id"
   end
 
@@ -76,5 +78,6 @@ ActiveRecord::Schema.define(version: 2021_06_12_104305) do
   add_foreign_key "assignments", "lessons"
   add_foreign_key "lessons", "users", column: "student_id"
   add_foreign_key "lessons", "users", column: "teacher_id"
+  add_foreign_key "resources", "chapters"
   add_foreign_key "resources", "users"
 end

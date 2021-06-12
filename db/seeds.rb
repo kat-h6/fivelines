@@ -10,6 +10,8 @@
 Assignment.destroy_all
 Lesson.destroy_all
 User.destroy_all
+Chapter.destroy_all
+Resource.destroy_all
 
 puts "destroyed all"
 
@@ -208,7 +210,24 @@ assignment_five = Assignment.create!(
     )
 
 
+chapter_1 = Chapter.create!(
+	name: "Beginners 1"
+	)
 
+chapter_2 = Chapter.create!(
+	name: "Beginners 2"
+	)
+chapter_3 = Chapter.create!(
+	name: "Intermediate 1"
+	)
+
+chapter_4 = Chapter.create!(
+	name: "Intermediate 2"
+	)
+
+chapter_5 = Chapter.create!(
+	name: "Advanced"
+	)
 
 
 

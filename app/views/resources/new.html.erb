@@ -1,0 +1,7 @@
+<h1>New assignment <%= chapter.name %></h1>
+
+<%= simple_form_for @resource do |f| %>
+          <%= f.input :name, placeholder: 'Violin' %>
+          <%= f.input :photo, as: :file %>
+          <%= f.submit class: 'btn btn-primary' %>
+  <% end %> 

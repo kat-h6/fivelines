@@ -1,0 +1,10 @@
+<H1>Hello</H1>
+
+<ul>
+ <% @chapters.each do |chapter| %>
+   <% @resources.each do |resource| %>
+ <li><%= link_to resource.name.capitalize resource_path %></li>
+ <li><%= cl_image_tag @resource.photo.key %> </li>
+          
+    <% end %>  
+    <% end %>
