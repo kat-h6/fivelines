@@ -19,13 +19,19 @@ export default class extends Controller {
     this.initalizeSession()
   }
 
+  disconnect() {
+    if (this.session) {
+      this.session.disconnect()
+    }
+  }
+
   initializeSession() {
     this.session = OT.initSession(this.apiKey, this.sessionId)
 
     this.session.on('streamCreated', this.streamCreated.bind(this))
 
     this.publisher = OT.initPublisher(this.element, {
-      insertMode: 'prepend',
+      insertMode: 'append',
       width: '100%'.
       height: '100%'
       name: this.date.get("name")

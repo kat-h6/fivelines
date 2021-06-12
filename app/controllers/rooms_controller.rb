@@ -8,7 +8,7 @@ class RoomsController < ApplicationController
 
   def show
     opentok = OpenTok::OpenTok.new ENV['VONAGE_API_KEY'], ENV['VONAGE_API_SECRET']
-    @token = opentok.generate_token @room.vonage.session_id, { name: current_user.first_name }
+    @token = opentok.generate_token @room.vonage_session_id, { name: current_user.first_name }
   end
 
   def new
