@@ -16,7 +16,7 @@ export default class extends Controller {
     this.apiKey = this.data.get("apiKey")
     this.sessionId = this.data.get("sessionId")
     this.token = this.data.get("token")
-    this.initalizeSession()
+    this.initializeSession()
   }
 
   disconnect() {
@@ -32,9 +32,8 @@ export default class extends Controller {
 
     this.publisher = OT.initPublisher(this.element, {
       insertMode: 'append',
-      width: '100%'.
+      width: '100%',
       height: '100%'
-      name: this.date.get("name")
     }, this.handleError.bind(this))
     this.session.connect(this.token, this.streamConnected.bind(this))
   }

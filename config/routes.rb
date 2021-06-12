@@ -4,10 +4,8 @@ Rails.application.routes.draw do
 
   resource :calendar, only: :show
 
-  resources :rooms, only: [:index, :show, :new, :create]
 
-
-  resources :lessons, only: [:new, :create, :index] do
+  resources :lessons, only: [:new, :show, :create, :index] do
     resources :assignments, only: [:new, :create]
   end
 
