@@ -9,9 +9,10 @@
 #require 'open-uri'
 Assignment.destroy_all
 Lesson.destroy_all
+Resource.destroy_all
 User.destroy_all
 Chapter.destroy_all
-Resource.destroy_all
+
 
 puts "destroyed all"
 
@@ -230,6 +231,50 @@ chapter_5 = Chapter.create!(
 	)
 
 
+resource_1 = Resource.create!(
+    title: "New melody",
+    chapter: chapter_1,
+    user: teacher_one
+    )
+file_one = URI.open('https://images.unsplash.com/photo-1567184406952-9f6ba54cb614?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
+video_one = URI.open('https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4')
+resource_1.photo.attach(io: file_one, filename: 'temp.png', content_type: 'image/png')
+resource_1.video.attach(io: video_one, filename: 'temp.mp4', content_type: 'video/mp4')
+resource_1.save!
+puts "created!"
+
+
+=begin
+resource_2 = Resource.create!(
+    title: "Melody",
+    chapter: chapter_1,
+    user: teacher_one
+    )
+
+resource_3 = Resource.create!(
+    title: "New",
+    chapter: chapter_1,
+    user: teacher_one
+    )
+
+resource_4 = Resource.create!(
+    title: "Medly",
+    chapter: chapter_2,
+    user: teacher_one
+    )
+
+resource_5 = Resource.create!(
+    title: "Harmony",
+    chapter: chapter_2,
+    user: teacher_one
+    )
+
+resource_6 = Resource.create!(
+    title: "Drumming",
+    chapter: chapter_2,
+    user: teacher_two
+    )
+=end
 
 
 

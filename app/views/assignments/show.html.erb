@@ -6,5 +6,9 @@
 <p> <%= @assignment.details %> </p>
 <p> <%= @assignment.completed %> </p>
 <p> <%= @assignment.feedback %> </p>
+<%= cl_image_tag @assignment.photo.key, height: 300, width: 400, crop: :fill %>
+<%= cl_video_path @assignment.video.key, height: 300, width: 400, crop: :fill %>
+
+
 </div>
 

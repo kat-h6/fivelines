@@ -1,0 +1,13 @@
+<h1 style="margin-left: 2rem;">Resource for my students</h1>
+
+<div class="card-container" style="margin-left: 2rem;">
+
+<p> <%= @resource.title.capitalize %> </p>
+    <%#= cl_image_tag @resource.photo.key, height: 300, width: 400, crop: :fill %>
+    <%#= cl_video_path @resource.video.key, height: 300, width: 400, crop: :fill %>
+
+     <%= link_to "All resources for this chapter", chapter_resources_path(@resource.chapter) %>
+
+
+</div>
+

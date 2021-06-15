@@ -20,8 +20,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :resources, only: [:new, :create, :index, :show]
+  resources :chapters, only: [] do
+    resources :resources, only: [:new, :create, :index]
+  end
 
+  resources :resources, only: [:show]
+  # just for demo
 
     
 

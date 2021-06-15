@@ -5,6 +5,8 @@
   <%= f.input :title %>
   <%= f.input :due_date %>
   <%= f.input :details %>
+  <%= f.input :photo, as: :file %>
+  <%= f.input :video, as: :file %>
   
 
   <%= f.submit "Submit assignment", class: "btn btn-primary" %>

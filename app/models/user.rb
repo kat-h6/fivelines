@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :assignments, through: :lessons
   has_many :student_assignments, through: :student_lessons, source: :assignments
   has_many :resources
+  has_many :chapters, through: :resources
 
   scope :are_students?, -> { where(teacher:false) }
 

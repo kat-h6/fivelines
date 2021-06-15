@@ -1,10 +1,32 @@
-<H1>Hello</H1>
-
-<ul>
+<div class="container" style="margin-left: 2rem;">
  <% @chapters.each do |chapter| %>
-   <% @resources.each do |resource| %>
- <li><%= link_to resource.name.capitalize resource_path %></li>
- <li><%= cl_image_tag @resource.photo.key %> </li>
+ <div class="container-fluid ms-0 ps-0">
+  <div class="row ms-0 ps-0">
+    <div class="col-3 ms-0 ps-0">
+ <h2><%= chapter.name %></h2>
+</div>
+<div class="col-6">
+ <%= link_to "Add a new resource", new_chapter_resource_path(chapter) %>
+</div>
+</div>
+</div>
+
+  <% @resources.each do |resource| %>
+    <% if resource.chapter == chapter %>
+    <div class="container-fluid ms-0 ps-0">
+  <div class="row ms-0 ps-0">
+    <div class="col-3 ms-0 ps-0">
+     <p><%= link_to resource.title.capitalize, resource_path(chapter, resource) %></p>
+     <%= link_to cl_image_path(resource.photo.key) do %>
+     <p><%= cl_image_tag resource.photo.key,  height: 150, width: 200, crop: :fill %> </p>
+     <% end %>
+     <p><%= cl_video_tag resource.video.key, height: 150, width: 200, crop: :fill, controls: true %><p>
+   </div>
+ </div>
+</div>
+      <% end %>  
           
-    <% end %>  
-    <% end %>
+   <% end %>  
+ <% end %>
+
+</div>
