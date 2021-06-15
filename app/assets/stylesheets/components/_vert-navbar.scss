@@ -1,13 +1,22 @@
 .app-nav {
   background-color: #3F137E;
   color: #fff;
+  height: 100vh;
+  width: 22.5%;
+  position: fixed;
+  overflow: auto;
 }
 
 .app-nav img {
   margin: 30px;
 }
 
-.app-nav ul>li {
+.app-nav ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+.app-nav li {
   color: #18C890;
   font-weight: normal;
   list-style: none;

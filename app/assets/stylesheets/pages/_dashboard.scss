@@ -10,3 +10,29 @@
   align-items: center;
   margin-bottom: 30px;
 }
+
+.student-lesson {
+  border-bottom: 1px solid rgb(232,232,232);
+  display: flex;
+}
+
+.student-lesson img {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+
+.student-lesson h5 {
+  font-weight: bold;
+}
+
+.schedule {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: grey;
+}
+
+.schedule li {
+  line-height: 2rem;
+}
