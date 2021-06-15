@@ -1,6 +1,5 @@
-<h3><%= @lesson.student.first_name %></h3>
-
 <div class="container">
+  <h3><%= @lesson.student.first_name %></h3>
   <div id="videos"
        data-controller="vonage"
        data-vonage-api-key="<%= ENV['VONAGE_API_KEY'] %>"
@@ -10,4 +9,6 @@
        data-vonage-role="<%= current_user.role %>"
        >
   </div>
+
+  <%= link_to "End Call", edit_lesson_path(@lesson) %>
 </div>

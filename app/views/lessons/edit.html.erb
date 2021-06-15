@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Notes For This Lesson</h1>
+  <%= simple_form_for [ @lesson ] do |f| %>
+    <%= f.input :student_notes %>
+    <%= f.input :teacher_notes %>
+    <%= f.submit "Add Notes", class: 'btn btn-success' %>
+  <% end %>
+</div>
