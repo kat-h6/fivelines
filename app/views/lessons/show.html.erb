@@ -1,0 +1,13 @@
+<h3><%= @lesson.student.first_name %></h3>
+
+<div class="container">
+  <div id="videos"
+       data-controller="vonage"
+       data-vonage-api-key="<%= ENV['VONAGE_API_KEY'] %>"
+       data-vonage-session-id="<%= @lesson.vonage_session_id %>"
+       data-vonage-token="<%= @token %>"
+       data-vonage-name="<%= current_user.first_name %>"
+       data-vonage-role="<%= current_user.role %>"
+       >
+  </div>
+</div>

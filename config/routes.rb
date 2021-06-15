@@ -5,21 +5,23 @@ Rails.application.routes.draw do
   # get user: 'dashboard_path', as: :user_root
   resource :dashboard, only: :show
   resource :calendar, only: :show
-  
 
-  resources :lessons, only: [:new, :create, :index] do
+
+  resources :lessons, only: [:new, :show, :create, :index] do
     resources :assignments, only: [:new, :create]
   end
 
   resources :assignments, only: [:show, :update]
 
-  resources :users do 
-    member do 
+
+  resources :students, only: :index
+
+  resources :users do
+    member do
       get :student_assignments
-      
     end
   end
-    
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
