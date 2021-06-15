@@ -5,6 +5,6 @@
     <%= f.input :end_time %>
     <%= f.input :rate %>
     <%= f.association :student, collection: User.are_students?, label_method: :full_name, value_method: :id %>
-    <%= f.submit "Reserve lesson", class: 'btn btn-success' %>
+    <%= f.submit "Schedule lesson", class: 'btn btn-success' %>
   <% end %>
 </div>
