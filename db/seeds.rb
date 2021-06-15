@@ -14,37 +14,37 @@ User.destroy_all
 puts "destroyed all"
 
 
-teacher_one = User.create!(
+student_seven = User.create!(
     email: "Sapideh@gmail.com",
     password: "password",
     first_name: "Sapideh",
     last_name: "H",
     username: "Sapideh1",
-    teacher: true,
+    teacher: false,
     date_of_birth: '1980-11-25'
     )
 
-teacher_two = User.create!(
+student_six = User.create!(
     email: "kathy@gmail.com",
     password: "password",
     first_name: "Kathy",
     last_name: "H",
     username: "Kathy1",
-    teacher: true,
+    teacher: false,
     date_of_birth: '1980-11-25'
     )
 
-teacher_three = User.create!(
+student_one = User.create!(
     email: "chris@gmail.com",
     password: "password",
     first_name: "Chris",
     last_name: "H",
     username: "Chris1",
-    teacher: true,
+    teacher: false,
     date_of_birth: '1980-11-25'
     )
 
-teacher_four = User.create!(
+teacher_one = User.create!(
     email: "tavis@gmail.com",
     password: "password",
     first_name: "Tavis",
@@ -54,7 +54,7 @@ teacher_four = User.create!(
     date_of_birth: '1980-11-25'
     )
 
-student_one = User.create!(
+student_six = User.create!(
     email: "carry@gmail.com",
     password: "password",
     first_name: "Carry",
@@ -119,7 +119,7 @@ lesson_one = Lesson.create!(
 	)
 
 lesson_two = Lesson.create!(
-	student_id: student_two.id ,
+	student_id: student_one.id ,
 	teacher_id: teacher_one.id,
 	start_time: '2021-07-12 12:00',
 	end_time: '2021-07-12 13:00',
@@ -130,10 +130,10 @@ lesson_two = Lesson.create!(
 
 
 lesson_three = Lesson.create!(
-	student_id: student_three.id ,
+	student_id: student_one.id ,
 	teacher_id: teacher_one.id,
-	start_time: '2021-07-12 14:00',
-	end_time: '2021-07-12 15:00',
+	start_time: '2021-06-16 14:00',
+	end_time: '2021-06-16 15:00',
 	rate: 25,
 	teacher_notes: " ",
 	student_notes: " "
@@ -143,28 +143,175 @@ lesson_three = Lesson.create!(
 lesson_four = Lesson.create!(
 	student_id: student_four.id ,
 	teacher_id: teacher_one.id,
-	start_time: '2021-07-13 10:00',
-	end_time: '2021-07-13 11:00',
+	start_time: '2021-06-16 10:00',
+	end_time: '2021-06-16 11:00',
 	rate: 25,
 	teacher_notes: " ",
 	student_notes: " "
 	)
-
 
 lesson_five = Lesson.create!(
+  student_id: student_four.id ,
+  teacher_id: teacher_one.id,
+  start_time: '2021-06-23 10:00',
+  end_time: '2021-06-23 11:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+lesson_six = Lesson.create!(
+  student_id: student_four.id ,
+  teacher_id: teacher_one.id,
+  start_time: '2021-06-30 10:00',
+  end_time: '2021-06-30 11:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+
+lesson_seven = Lesson.create!(
+  student_id: student_four.id ,
+  teacher_id: teacher_one.id,
+  start_time: '2021-06-21 10:00',
+  end_time: '2021-06-21 11:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+
+lesson_eight = Lesson.create!(
 	student_id: student_five.id ,
 	teacher_id: teacher_one.id,
-	start_time: '2021-07-14 12:00',
-	end_time: '2021-07-14 13:00',
+	start_time: '2021-06-17 12:00',
+	end_time: '2021-06-17 13:00',
 	rate: 25,
 	teacher_notes: " ",
 	student_notes: " "
 	)
+
+lesson_nine = Lesson.create!(
+  student_id: student_five.id ,
+  teacher_id: teacher_one.id,
+  start_time: '2021-06-29 12:00',
+  end_time: '2021-06-29 13:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+lesson_ten = Lesson.create!(
+  student_id: student_five.id ,
+  teacher_id: teacher_one.id,
+  start_time: '2021-06-28 12:00',
+  end_time: '2021-06-28 13:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+
+
+Lesson.create!(
+  student_id: student_three.id ,
+  teacher_id: teacher_one.id,
+  start_time: '2021-06-18 12:00',
+  end_time: '2021-06-18 13:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+
+
+Lesson.create!(
+  student_id: student_three.id ,
+  teacher_id: teacher_one.id,
+  start_time: '2021-06-25 12:00',
+  end_time: '2021-06-25 13:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+
+Lesson.create!(
+  student_id: student_two.id ,
+  teacher_id: teacher_one.id,
+  start_time: '2021-07-02 12:00',
+  end_time: '2021-07-02 13:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+Lesson.create!(
+  student_id: student_seven.id ,
+  teacher_id: teacher_one.id,
+  start_time: '2021-07-02 12:00',
+  end_time: '2021-07-02 13:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+Lesson.create!(
+  student_id: student_six.id ,
+  teacher_id: teacher_one.id,
+  start_time: '2021-07-04 12:00',
+  end_time: '2021-07-04 13:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+Lesson.create!(
+  student_id: student_six.id ,
+  teacher_id: teacher_one.id,
+  start_time: '2021-07-01 12:00',
+  end_time: '2021-07-01 13:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+Lesson.create!(
+  student_id: student_six.id ,
+  teacher_id: teacher_one.id,
+  start_time: '2021-06-15 23:00',
+  end_time: '2021-06-15 24:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+Lesson.create!(
+  student_id: student_five.id ,
+  teacher_id: teacher_one.id,
+  start_time: '2021-06-17 14:00',
+  end_time: '2021-06-17 15:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+Lesson.create!(
+  student_id: student_two.id ,
+  teacher_id: teacher_one.id,
+  start_time: '2021-06-17 15:00',
+  end_time: '2021-06-17 16:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
 
 
 assignment_one = Assignment.create!(
-    details: "get it",
-    title: "new melody",
+    details: "play G major scale double-tongued, quarter note=120",
+    title: "Major Scales",
     due_date: '2021-07-01',
     completed: false,
     feedback: " ",
@@ -172,18 +319,18 @@ assignment_one = Assignment.create!(
     )
 
 assignment_two = Assignment.create!(
-    details: "get it",
-    title: "new melody",
-    due_date: '2021-08-01',
+    details: "daphnis solo bar 173-175 at a slower tempo",
+    title: "audition prep",
+    due_date: '2021-06-24',
     completed: false,
     feedback: " ",
     lesson: lesson_two
     )
 
 assignment_three = Assignment.create!(
-    details: "get it",
-    title: "new melody",
-    due_date: '2021-09-01',
+    details: "prelude to the afternoon of a faune first line in one breath",
+    title: "audition prep",
+    due_date: '2021-07-01',
     completed: false,
     feedback: " ",
     lesson: lesson_three

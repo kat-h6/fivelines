@@ -1,5 +1,5 @@
 class LessonsController < ApplicationController
-  before_action :set_lesson, only: [:show, :edit]
+  before_action :set_lesson, only: [:show, :edit, :update]
 
   def new
     @lesson = Lesson.new
@@ -23,6 +23,10 @@ class LessonsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    @lesson.update(lesson_params)
   end
 
   private

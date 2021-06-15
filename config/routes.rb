@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resource :calendar, only: :show
 
 
-  resources :lessons, only: [:new, :show, :create, :index] do
+  resources :lessons, only: [:new, :show, :create, :edit, :update, :index] do
     resources :assignments, only: [:new, :create]
   end
 
