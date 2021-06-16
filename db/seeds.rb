@@ -135,8 +135,8 @@ lesson_two = Lesson.create!(
 lesson_three = Lesson.create!(
 	student_id: student_one.id ,
 	teacher_id: teacher_one.id,
-	start_time: '2021-06-16 14:00',
-	end_time: '2021-06-16 15:00',
+	start_time: '2021-07-16 14:00',
+	end_time: '2021-07-16 15:00',
 	rate: 25,
 	teacher_notes: " ",
 	student_notes: " "
@@ -146,8 +146,8 @@ lesson_three = Lesson.create!(
 lesson_four = Lesson.create!(
 	student_id: student_four.id ,
 	teacher_id: teacher_one.id,
-	start_time: '2021-06-16 10:00',
-	end_time: '2021-06-16 11:00',
+	start_time: '2021-07-16 10:00',
+	end_time: '2021-07-16 11:00',
 	rate: 25,
 	teacher_notes: " ",
 	student_notes: " "
@@ -283,8 +283,8 @@ Lesson.create!(
 Lesson.create!(
   student_id: student_six.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-15 23:00',
-  end_time: '2021-06-15 24:00',
+  start_time: '2021-07-15 23:00',
+  end_time: '2021-07-15 24:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -293,8 +293,8 @@ Lesson.create!(
 Lesson.create!(
   student_id: student_five.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-17 14:00',
-  end_time: '2021-06-17 15:00',
+  start_time: '2021-07-17 14:00',
+  end_time: '2021-07-17 15:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -303,8 +303,8 @@ Lesson.create!(
 Lesson.create!(
   student_id: student_two.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-17 15:00',
-  end_time: '2021-06-17 16:00',
+  start_time: '2021-07-17 15:00',
+  end_time: '2021-07-17 16:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -328,7 +328,7 @@ assignment_one.video.attach(io: video_1, filename: 'temp.mp4', content_type: 'vi
 assignment_one.save!
 puts "created!"
 
-=begin
+
 assignment_two = Assignment.create!(
     details: "daphnis solo bar 173-175 at a slower tempo",
     title: "audition prep",
@@ -354,13 +354,13 @@ assignment_three = Assignment.create!(
     )
 file_3 = URI.open('https://images.unsplash.com/photo-1520446266423-6daca23fe8c7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80')
 video_3 = URI.open('https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4')
-assignment_four.photo.attach(io: file_3, filename: 'temp.png', content_type: 'image/png')
-assignment_four.video.attach(io: video_3, filename: 'temp.mp4', content_type: 'video/m')
-assignment_four.save!
+assignment_three.photo.attach(io: file_3, filename: 'temp.png', content_type: 'image/png')
+assignment_three.video.attach(io: video_3, filename: 'temp.mp4', content_type: 'video/m')
+assignment_three.save!
 puts "created!"
 
 
-=end
+
 
 chapter_1 = Chapter.create!(
 	name: "Beginners 1"
