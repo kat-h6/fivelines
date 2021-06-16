@@ -11,6 +11,8 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @student = current_user.students.find(params[:id])
+    @student = User.find(params[:id])
+    @lessons = @student.lessons
+    @lesson = @lessons.today.first
   end
 end

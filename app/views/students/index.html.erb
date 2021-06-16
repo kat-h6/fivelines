@@ -24,8 +24,9 @@
             <div style="display: flex; justify-content: space-between">
               <div style="display: flex">
                 <%= cl_image_tag("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1607630183/iqsisg4v7frikbvxikcv.jpg", style: 'border-radius: 50%; height: 100px; width: 100px') %>
-                <p><%= student.first_name %> <%= student.last_name %></p>
-
+                <%= link_to student_path(student) do %>
+                  <%= student.first_name %> <%= student.last_name %>
+                  <% end %>
               </div>
               <div style="color: #d3d3d3">
                 <p>Date of birth: <%= student.date_of_birth %> </p>

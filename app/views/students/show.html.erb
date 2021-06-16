@@ -1,12 +1,25 @@
-<div class="inner-dashboard-container">
+<body>
+<div class="row">
+  <div class="col-12 col-lg-3">
+  </div>
+
+  <div class="col-12 col-lg-9">
+        <div class="inner-dashboard-container">
           <div>
             <div class="card">
               <div class="student-details">
-                <h2><%= @student.full_name %></h2>
-                <p><%= @student.email %></p>
+                <%= cl_image_tag("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1607630183/iqsisg4v7frikbvxikcv.jpg", style: 'border-radius: 50%; height: 100px; width: 100px') %>
+                <div class="personal-info">
+                  <h2><%= @student.full_name %></h2>
+                  <p><%= @student.email %></p>
+                </div>
+
+                <div class="cta">
+                  <%= link_to "Join lesson", lesson_path(@lesson), class: "btn btn-success" %>
+                </div>
               </div>
               <div>
-                <%= link_to "Join lesson", lesson_path(lesson), class: "btn btn-success" %>
+
                 <%#= link_to "Message @student.first_name", message_path(student), class: "btn btn-success" %>
               </div>
             </div>
@@ -14,49 +27,31 @@
               <div class="card col-12 col-lg-8">
                 <div class="section-header">
                   <h4>Lesson history</h4>
-                  <h4><%= Date.today.strftime("%a, %e %b %Y") %></h4>
                 </div>
 
                 <div>
-                  <% @lessons.today.each do |lesson| %>
+                  <% @lessons.each do |lesson| %>
                   <div class="student-lesson">
-                    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", crop: :fill %>
+                    <%= cl_image_tag("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1607630183/iqsisg4v7frikbvxikcv.jpg", style: 'border-radius: 50%; height: 50px; width: 50px') %>
                     <div class="lesson-info">
-                    <h5><%= lesson.student.full_name %></h5>
-                    <p><%#= lesson.student.address %></p>
-                    <p><%= lesson.start_time.to_s(:time) %> - <%= lesson.end_time.to_s(:time) %></p>
+                      <h5><%= lesson.created_at.strftime("%a, %e %b %Y") %></h5>
+                      <p><%= lesson.start_time.to_s(:time) %> - <%= lesson.end_time.to_s(:time) %></p>
+                        </div>
+                        <div class="lesson-start">
+                          <% if lesson.start_time > Time.now + 5 %>
+                            <p>Starts in <%= lesson.start_time - Time.now %></p>
+                          <% else %>
+                            <%= link_to "Join lesson", lesson_path(@lesson), class: "btn btn-success" %>
+                          <% end %>
+                        </div>
 
-                    <% if lesson.start_time > Time.now %>
-                      <p>Starts in <%= lesson.start_time - Time.now %></p>
-                    <% else %>
-                      <p><%#= link_to "Join lesson", lesson_path(lesson), class: "btn btn-success" %></p>
-                    <% end %>
-                    </div>
                   </div>
                   <% end %>
                 </div>
               </div>
-
-              <div class="card col-12 col-lg-4">
-                <div>
-                  <h4>Daily schedule</h4>
-                  <ul class="schedule">
-                    <% (9..21).each do |h|%>
-
-                      <li><%= h.to_s(:time) %>
-                        <% @lessons.today.each do |lesson| %>
-                          <% if lesson.start_time = h %>
-                            <%= lesson.student.full_name %>
-                          <% end %>
-                        <% end %>
-                      </li>
-
-                    <% end %>
-                  </ul>
-
-                </div>
-              </div>
-
           </div>
         </div>
       </div>
+  </div>
+</div>
+</body>
