@@ -166,50 +166,63 @@ lesson_five = Lesson.create!(
 
 
 assignment_one = Assignment.create!(
-    details: "get it",
-    title: "new melody",
+    details: "Practice at least once a day",
+    title: "Mozart",
     due_date: '2021-07-01',
     completed: false,
     feedback: " ",
     lesson: lesson_one
     )
 
+file_1 = URI.open('https://images.unsplash.com/photo-1520446266423-6daca23fe8c7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80')
+video_1 = URI.open('https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4')
+assignment_one.photo.attach(io: file_1, filename: 'temp.png', content_type: 'image/png')
+assignment_one.video.attach(io: video_1, filename: 'temp.mp4', content_type: 'video/m')
+assignment_one.save!
+puts "created!"
+
+=begin
 assignment_two = Assignment.create!(
-    details: "get it",
-    title: "new melody",
+    details: "Read carefully",
+    title: "Bach",
     due_date: '2021-08-01',
     completed: false,
     feedback: " ",
     lesson: lesson_two
     )
+file_2 = URI.open('https://images.unsplash.com/photo-1520446266423-6daca23fe8c7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80')
+video_2 = URI.open('https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4')
+assignment_two.photo.attach(io: file_2, filename: 'temp.png', content_type: 'image/png')
+assignment_two.video.attach(io: video_2, filename: 'temp.mp4', content_type: 'video/m')
+assignment_two.save!
+puts "created!"
 
 assignment_three = Assignment.create!(
-    details: "get it",
-    title: "new melody",
+    details: "Remember to read carefully",
+    title: "Sound of music",
     due_date: '2021-09-01',
     completed: false,
     feedback: " ",
     lesson: lesson_three
     )
+file_3 = URI.open('https://images.unsplash.com/photo-1520446266423-6daca23fe8c7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80')
+video_3 = URI.open('https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4')
+assignment_four.photo.attach(io: file_3, filename: 'temp.png', content_type: 'image/png')
+assignment_four.video.attach(io: video_3, filename: 'temp.mp4', content_type: 'video/m')
+assignment_four.save!
+puts "created!"
 
-assignment_four = Assignment.create!(
-    details: "get it",
-    title: "new melody",
-    due_date: '2021-10-01',
-    completed: false,
-    feedback: " ",
-    lesson: lesson_four
-    )
 
 assignment_five = Assignment.create!(
-    details: "get it",
-    title: "new melody",
+    details: "Keep the rythm",
+    title: "Pop music",
     due_date: '2021-07-01',
     completed: false,
     feedback: " ",
     lesson: lesson_five
     )
 
+=end
 
 chapter_1 = Chapter.create!(
 	name: "Beginners 1"
@@ -232,49 +245,70 @@ chapter_5 = Chapter.create!(
 
 
 resource_1 = Resource.create!(
-    title: "New melody",
+    title: "Mary Poppins",
     chapter: chapter_1,
     user: teacher_one
     )
-file_one = URI.open('https://images.unsplash.com/photo-1567184406952-9f6ba54cb614?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
+file_one = URI.open('https://images.unsplash.com/photo-1507838153414-b4b713384a76?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80')
 video_one = URI.open('https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4')
 resource_1.photo.attach(io: file_one, filename: 'temp.png', content_type: 'image/png')
-resource_1.video.attach(io: video_one, filename: 'temp.mp4', content_type: 'video/mp4')
+resource_1.video.attach(io: video_one, filename: 'temp.mp4', content_type: 'video/m')
 resource_1.save!
 puts "created!"
 
 
-=begin
 resource_2 = Resource.create!(
-    title: "Melody",
-    chapter: chapter_1,
-    user: teacher_one
-    )
-
-resource_3 = Resource.create!(
-    title: "New",
-    chapter: chapter_1,
-    user: teacher_one
-    )
-
-resource_4 = Resource.create!(
-    title: "Medly",
+    title: "Westside Story",
     chapter: chapter_2,
     user: teacher_one
     )
+file_two = URI.open('https://images.unsplash.com/photo-1576976881052-ee7e730fbfee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=933&q=80')
+video_two = URI.open('https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4')
+resource_2.photo.attach(io: file_two, filename: 'temp.png', content_type: 'image/png')
+resource_2.video.attach(io: video_two, filename: 'temp.mp4', content_type: 'video/m')
+resource_2.save!
+puts "created!"
+
+
+
+resource_3 = Resource.create!(
+    title: "Hamilton",
+    chapter: chapter_3,
+    user: teacher_one
+    )
+file_three = URI.open('https://images.unsplash.com/photo-1520446266423-6daca23fe8c7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80')
+video_three = URI.open('https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4')
+resource_3.photo.attach(io: file_three, filename: 'temp.png', content_type: 'image/png')
+resource_3.video.attach(io: video_three, filename: 'temp.mp4', content_type: 'video/m')
+resource_3.save!
+puts "created!"
+
+=begin
+resource_4 = Resource.create!(
+    title: "Medly",
+    chapter: chapter_4,
+    user: teacher_one
+    )
+file_four = URI.open('https://images.unsplash.com/photo-1576976881052-ee7e730fbfee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=933&q=80')
+video_four = URI.open('https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4')
+resource_4.photo.attach(io: file_one, filename: 'temp.png', content_type: 'image/png')
+resource_4.video.attach(io: video_two, filename: 'temp.mp4', content_type: 'video/m')
+resource_4.save!
+puts "created!"
 
 resource_5 = Resource.create!(
     title: "Harmony",
-    chapter: chapter_2,
+    chapter: chapter_5,
     user: teacher_one
     )
-
-resource_6 = Resource.create!(
-    title: "Drumming",
-    chapter: chapter_2,
-    user: teacher_two
-    )
+file_five = URI.open('https://images.unsplash.com/photo-1576976881052-ee7e730fbfee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=933&q=80')
+video_five = URI.open('https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4')
+resource_5.photo.attach(io: file_one, filename: 'temp.png', content_type: 'image/png')
+resource_5.video.attach(io: video_two, filename: 'temp.mp4', content_type: 'video/m')
+resource_5.save!
+puts "created!"
 =end
+
 
 
 

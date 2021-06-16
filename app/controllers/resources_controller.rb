@@ -4,7 +4,6 @@ class ResourcesController < ApplicationController
    @resources = current_user.resources
   end
 
-
   def show
     @resource = Resource.find(params[:id])
     @chapter = @resource.chapter
@@ -14,7 +13,6 @@ class ResourcesController < ApplicationController
     @chapter = Chapter.find(params[:chapter_id])
     @resource = Resource.new
     @resource.chapter = @chapter
-
   end
 
   def create
@@ -35,5 +33,4 @@ class ResourcesController < ApplicationController
   def resource_params
     params.require(:resource).permit(:title, :chapter_id, :photo, :video)
   end
-
 end
