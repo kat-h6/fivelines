@@ -27,7 +27,7 @@
   list-style: none;
   align-items: center;
   justify-content: space-between;
-  width: 150px;
+  width: 190px;
 }
 
 .user-nav-items {
@@ -40,5 +40,9 @@
 }
 
 .user-nav-items a {
+  color: #42515a;
+}
+
+.user-nav-items a:hover {
   color: #18C890;
 }
