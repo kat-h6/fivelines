@@ -9,4 +9,8 @@ class StudentsController < ApplicationController
       @students = current_user.students
     end
   end
+
+  def show
+    @student = current_user.students.find(params[:id])
+  end
 end
