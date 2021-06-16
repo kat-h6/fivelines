@@ -2,10 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  # get user: 'dashboard_path', as: :user_root
+  resource :dashboard, only: :show
   resource :calendar, only: :show
 
 
-  resources :lessons, only: [:new, :show, :create, :index] do
+  resources :lessons, only: [:new, :show, :create, :edit, :update, :index] do
     resources :assignments, only: [:new, :create]
   end
 
