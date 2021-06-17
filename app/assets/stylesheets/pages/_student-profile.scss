@@ -1,0 +1,27 @@
+.body {
+  background-color: #F0F4FB;
+}
+
+.student-details {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.student-details img {
+  margin-right: 30px;
+}
+
+.student-details .cta {
+  margin: 0 auto;
+}
+
+.student-lesson {
+  justify-content: flex-start;
+  margin: 20px 0;
+}
+
+.student-lesson .lesson-start {
+  padding-left: 200px;
+  justify-content: flex-end;
+}
