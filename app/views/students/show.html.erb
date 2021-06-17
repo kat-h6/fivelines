@@ -48,24 +48,13 @@
           </div>
           <% end %>
         </div>
-        <div class="lesson-notes-container">
-          <h5>Lesson Notes</h5>
-          <% @lessons.each do |lesson| %>
-            <div class="lesson-info">
-            <%= lesson.teacher_notes %>
-            </div>
-          <% end %>
 
-        </div>
       </div>
       <div class="card col-12 col-lg-4">
-        <div class="assignments-container">
-          <h5>Assignments</h5>
-          <%# @assignments.each do |assignment| %>
-            <ul>
-              <li><%#= link_to assignment_path(@assignment) %></li>
-            </ul>
-          <%# end %>
+        <div class="assignments-container mb-5">
+          <%= link_to "See assignments", student_assignments_user_path, class: "btn btn-secondary" %>
+        </div>
+
         <div class="lesson-notes-container">
           <h5>Lesson Notes</h5>
           <% @lessons.each do |lesson| %>
@@ -73,6 +62,7 @@
             <%= lesson.teacher_notes %>
             </div>
           <% end %>
+          <%#= link_to "See all notes", teacher_notes_path(lesson) %>
       </div>
     </div>
   </div>

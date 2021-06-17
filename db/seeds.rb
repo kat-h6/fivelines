@@ -302,8 +302,8 @@ Lesson.create!(
 Lesson.create!(
   student_id: student_one.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-17 22:30',
-  end_time: '2021-06-17 23:00',
+  start_time: '2021-06-17 21:00',
+  end_time: '2021-06-17 22:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
