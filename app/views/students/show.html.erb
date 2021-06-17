@@ -37,7 +37,7 @@
               </p>
             </div>
             <div class="lesson-start">
-              <% if lesson.start_time > Time.now + 5 %>
+              <% if lesson.start_time > Time.now + 11.hours %>
               <p>
                 <%= lesson.starting_in %>
               </p>
