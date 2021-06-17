@@ -27,6 +27,7 @@ class LessonsController < ApplicationController
 
   def update
     @lesson.update(lesson_params)
+    redirect_to student_path(@lesson.student)
   end
 
   private
