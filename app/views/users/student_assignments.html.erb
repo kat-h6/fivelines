@@ -1,15 +1,19 @@
 <h2> Assignments <%= @student.full_name %> </h2>
 
 <div class="assignment-list">
+   <div class="card-container" style="width: 36rem; margin: 2rem;">
 <ul class="list-group">
 <% @assignments.each do |assignment| %>
- <div class="card-container" style="width: 36rem; margin: 2rem;">
+
 <li class="list-group-item"><%= link_to assignment.title.capitalize, assignment_path(assignment) %></li>
 <li class="list-group-item"><%= assignment.due_date %></li>
 <li class="list-group-item"><%= assignment.details %></li>
 <li class="list-group-item">Done: <%= assignment.completed %></li>
+<li><%= cl_image_tag assignment.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align: top" %>
+<%= cl_video_tag assignment.video.key, height: 150, width: 200, crop: :fill, controls: true %></li>
 
-</div>
+
   <% end %>
  </ul>
+ </div>
 </div>
