@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :assignments, only: [:show, :update]
 
 
-  resources :students, only: :index
+  resources :students, only: [:index, :show]
 
   resources :users do
     member do

@@ -9,4 +9,10 @@ class StudentsController < ApplicationController
       @students = current_user.students
     end
   end
+
+  def show
+    @student = User.find(params[:id])
+    @lessons = @student.lessons
+    @lesson = @lessons.today.first
+  end
 end
