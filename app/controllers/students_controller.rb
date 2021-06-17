@@ -14,5 +14,7 @@ class StudentsController < ApplicationController
     @student = User.find(params[:id])
     @lessons = @student.lessons
     @lesson = @lessons.today.first
+    #@assignment = Assignment.find(params[:id])
+    #@assignments = @student.assignments
   end
 end
