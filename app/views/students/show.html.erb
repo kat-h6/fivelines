@@ -1,70 +1,79 @@
-<div class="row">
-  <div class="col-12 col-lg-3">
-  </div>
-  <div class="col-12 col-lg-9">
-    <div class="inner-dashboard-container">
+<div class="inner-dashboard-container">
+  <div>
+    <div class="card">
+      <div class="student-details">
+        <%= cl_image_tag("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1607630183/iqsisg4v7frikbvxikcv.jpg", style: 'border-radius: 50%; height: 100px; width: 100px') %>
+        <div class="personal-info">
+          <h2>
+            <%= @student.full_name %>
+          </h2>
+          <p>
+            <%= @student.email %>
+          </p>
+        </div>
+        <div class="cta">
+          <%= link_to "Join lesson", lesson_path(@lesson), class: "btn btn-success" %>
+        </div>
+      </div>
       <div>
-        <div class="card">
-          <div class="student-details">
-            <%= cl_image_tag("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1607630183/iqsisg4v7frikbvxikcv.jpg", style: 'border-radius: 50%; height: 100px; width: 100px') %>
-            <div class="personal-info">
-              <h2>
-                <%= @student.full_name %>
-              </h2>
+        <%#= link_to "Message @student.first_name", message_path(student), class: "btn btn-success" %>
+      </div>
+    </div>
+    <div class="d-flex">
+      <div class="card col-12 col-lg-8">
+        <div class="section-header">
+          <h4>Lesson history</h4>
+        </div>
+        <div>
+          <% @lessons.each do |lesson| %>
+          <div class="student-lesson">
+            <div class="lesson-info">
+              <h5>
+                <%= lesson.start_time.strftime("%a, %e %b %Y") %>
+              </h5>
               <p>
-                <%= @student.email %>
+                <%= lesson.start_time.to_s(:time) %> -
+                <%= lesson.end_time.to_s(:time) %>
               </p>
             </div>
-            <div class="cta">
+            <div class="lesson-start">
+              <% if lesson.start_time > Time.now + 5 %>
+              <p>
+                <%= lesson.starting_in %>
+              </p>
+              <% else %>
               <%= link_to "Join lesson", lesson_path(@lesson), class: "btn btn-success" %>
+              <% end %>
             </div>
           </div>
-          <div>
-            <%#= link_to "Message @student.first_name", message_path(student), class: "btn btn-success" %>
-          </div>
+          <% end %>
         </div>
-        <div class="d-flex">
-          <div class="card col-12 col-lg-8">
-            <div class="section-header">
-              <h4>Lesson history</h4>
+        <div class="lesson-notes-container">
+          <h5>Lesson Notes</h5>
+          <% @lessons.each do |lesson| %>
+            <div class="lesson-info">
+            <%= lesson.teacher_notes %>
             </div>
-            <div>
-              <% @lessons.each do |lesson| %>
-              <div class="student-lesson">
-                <div class="lesson-info">
-                  <h5>
-                    <%= lesson.start_time.strftime("%a, %e %b %Y") %>
-                  </h5>
-                  <p>
-                    <%= lesson.start_time.to_s(:time) %> -
-                    <%= lesson.end_time.to_s(:time) %>
-                  </p>
-                </div>
-                <div class="lesson-start">
-                  <% if lesson.start_time > Time.now + 5 %>
-                  <p>
-                    <%= lesson.starting_in %>
-                  </p>
-                  <% else %>
-                  <%= link_to "Join lesson", lesson_path(@lesson), class: "btn btn-success" %>
-                  <% end %>
-                </div>
-              </div>
-              <% end %>
-            </div>
-            <div class="lesson-notes-container">
-              <h5>Lesson Notes</h5>
-              <% @lessons.each do |lesson| %>
-                <div class="lesson-info">
-                <%= lesson.teacher_notes %>
-                </div>
-              <% end %>
+          <% end %>
 
-            </div>
-          </div>
         </div>
+      </div>
+      <div class="card col-12 col-lg-4">
+        <div class="assignments-container">
+          <h5>Assignments</h5>
+          <%# @assignments.each do |assignment| %>
+            <ul>
+              <li><%#= link_to assignment_path(@assignment) %></li>
+            </ul>
+          <%# end %>
+        <div class="lesson-notes-container">
+          <h5>Lesson Notes</h5>
+          <% @lessons.each do |lesson| %>
+            <div class="lesson-info">
+            <%= lesson.teacher_notes %>
+            </div>
+          <% end %>
       </div>
     </div>
   </div>
 </div>
-
