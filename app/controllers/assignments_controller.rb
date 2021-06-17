@@ -15,7 +15,7 @@ class AssignmentsController < ApplicationController
     @assignment.lesson = @lesson
 
     if @assignment.save
-      redirect_to student_assignments_user_path @lesson.student.id
+      redirect_to student_assignments_user_path @lesson.student
     else
       render :new
     end
@@ -29,6 +29,6 @@ class AssignmentsController < ApplicationController
   private
 
   def assignment_params
-    params.require(:assignment).permit(:title, :due_date, :feedback, :details)
+    params.require(:assignment).permit(:title, :due_date, :feedback, :details, :photo, :video)
   end
 end
