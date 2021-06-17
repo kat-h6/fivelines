@@ -132,8 +132,8 @@ lesson_two = Lesson.create!(
 lesson_three = Lesson.create!(
 	student_id: student_one.id ,
 	teacher_id: teacher_one.id,
-	start_time: '2021-06-16 14:00',
-	end_time: '2021-06-16 15:00',
+	start_time: '2021-06-17 22:00',
+	end_time: '2021-06-17 23:00',
 	rate: 25,
 	teacher_notes: " ",
 	student_notes: " "
@@ -143,8 +143,8 @@ lesson_three = Lesson.create!(
 lesson_four = Lesson.create!(
 	student_id: student_four.id ,
 	teacher_id: teacher_one.id,
-	start_time: '2021-06-16 10:00',
-	end_time: '2021-06-16 11:00',
+	start_time: '2021-06-18 10:00',
+	end_time: '2021-06-18 11:00',
 	rate: 25,
 	teacher_notes: " ",
 	student_notes: " "
@@ -280,8 +280,8 @@ Lesson.create!(
 Lesson.create!(
   student_id: student_six.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-15 23:00',
-  end_time: '2021-06-15 24:00',
+  start_time: '2021-06-16 23:00',
+  end_time: '2021-06-16 24:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
