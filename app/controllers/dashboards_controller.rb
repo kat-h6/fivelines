@@ -1,6 +1,6 @@
 class DashboardsController < ApplicationController
   def show
-    @lessons = current_user.lessons
+    @lessons = current_user.student_lessons
   end
 
   def my_assignments
