@@ -9,13 +9,26 @@ class Lesson < ApplicationRecord
 
 
   scope :today, -> { where("start_time > ?", Date.today.beginning_of_day) }
-  
+
   default_scope -> { order(:start_time) }
 
   before_create :set_vonage_session_id
 
   def time
     "#{start_time.strftime('%I:%M %p')} - #{end_time.strftime('%I:%M %p')}"
+  end
+
+  def starting_in
+    total_seconds = start_time - Time.now
+    total_days = total_seconds / 86400
+    if total_days > 1
+      days = (total_seconds / 86400).floor
+      "starting in #{days} days"
+    else
+      hours = (total_seconds / 3600).floor
+      minutes = ((total_seconds % hours) / 60).floor
+      "starting in #{hours} hours and #{minutes} minutes"
+    end
   end
 
   private

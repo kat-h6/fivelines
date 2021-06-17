@@ -4,9 +4,9 @@ class StudentsController < ApplicationController
 
     if params[:query].present?
       sql_query = "first_name ILIKE :query OR last_name ILIKE :query"
-      @students = current_user.students.where(sql_query, query: "%#{params[:query]}%")
+      @students = current_user.students.where(sql_query, query: "%#{params[:query]}%").uniq
     else
-      @students = current_user.students
+      @students = current_user.students.uniq
     end
   end
 
