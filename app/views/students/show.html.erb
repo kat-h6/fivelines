@@ -2,7 +2,11 @@
   <div>
     <div class="card">
       <div class="student-details">
-        <%= cl_image_tag("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1607630183/iqsisg4v7frikbvxikcv.jpg", style: 'border-radius: 50%; height: 100px; width: 100px') %>
+          <% if @student.photo.attached? %>
+            <%= cl_image_tag @student.photo.key, style: 'border-radius: 50%; height: 100px; width: 100px' %>
+          <% else %>
+            <%= cl_image_tag 'https://res.cloudinary.com/tdavid/image/upload/v1623955031/ssaunier_p1bauy.jpg', style: 'border-radius: 50%; height: 100px; width: 100px'%>
+          <% end %>
         <div class="personal-info">
           <h2>
             <%= @student.full_name %>

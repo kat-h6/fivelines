@@ -11,17 +11,21 @@
         <div>
           <% @lessons.today.each do |lesson| %>
           <div class="student-lesson">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", crop: :fill %>
-            <div class="lesson-info">
-            <h5><%= lesson.student.full_name %></h5>
-            <p><%#= lesson.student.address %></p>
-            <p><%= lesson.start_time.to_s(:time) %> - <%= lesson.end_time.to_s(:time) %></p>
-
-            <% if lesson.start_time > Time.now %>
-              <p>Starts in <%= lesson.start_time - Time.now %></p>
+            <% if lesson.student.photo.attached? %>
+              <%= cl_image_tag lesson.student.photo.key, style: 'border-radius: 50%; height: 100px; width: 100px' %>
             <% else %>
-              <p><%#= link_to "Join lesson", lesson_path(lesson), class: "btn btn-success" %></p>
+              <%= cl_image_tag 'https://res.cloudinary.com/tdavid/image/upload/v1623955031/ssaunier_p1bauy.jpg', style: 'border-radius: 50%; height: 100px; width: 100px'%>
             <% end %>
+            <div class="lesson-info">
+              <h5><%= lesson.student.full_name %></h5>
+              <p><%#= lesson.student.address %></p>
+              <p><%= lesson.start_time.to_s(:time) %> - <%= lesson.end_time.to_s(:time) %></p>
+
+              <% if lesson.start_time > Time.now %>
+                <p>Starts in <%= lesson.start_time - Time.now %></p>
+              <% else %>
+                <p><%#= link_to "Join lesson", lesson_path(lesson), class: "btn btn-success" %></p>
+              <% end %>
             </div>
           </div>
           <% end %>
