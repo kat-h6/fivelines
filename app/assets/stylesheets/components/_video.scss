@@ -1,14 +1,19 @@
 body, html {
-    background-color: white;
     height: 100%;
 }
 
+#black-background {
+  background-color: $gray !important;
+  color: white !important;
+}
+
+
 #videos {
     position: relative !important;
-    width: 800px;
-    height: 500px;
+    width: 750px;
+    height: 400px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 10px;
 }
 
 .OT_subscriber {
@@ -25,8 +30,20 @@ body, html {
     width: 260px !important;
     height: 160px !important;
     bottom: 10px !important;
-    right: 10px !important;
+    left: 10px !important;
     z-index: 100 !important;
     border: 3px solid white;
     border-radius: 3px;
+}
+
+#phone-btn {
+  color: white;
+  position: absolute;
+  right: 0px;
+  bottom: -35px;
+  font-size: 12px;
+  border-radius: 30px;
+  background-color: $red;
+  padding: 8px 16px;
+  opacity: 0.8;
 }

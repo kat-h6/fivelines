@@ -1,7 +1,7 @@
 class Lesson < ApplicationRecord
   validates :start_time, presence: true
   validates :end_time, presence: true
-  validate :future_start_time
+  # validate :future_start_time
 
   belongs_to :student, class_name: 'User', foreign_key: 'student_id'
   belongs_to :teacher, class_name: 'User', foreign_key: 'teacher_id'
@@ -26,7 +26,7 @@ class Lesson < ApplicationRecord
       "starting in #{days} days"
     else
       hours = (total_seconds / 3600).floor
-      minutes = ((total_seconds % hours) / 60).floor
+      minutes = ((total_seconds / 60) % 60).floor
       "starting in #{hours} hours and #{minutes} minutes"
     end
   end

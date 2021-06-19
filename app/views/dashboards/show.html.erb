@@ -11,11 +11,16 @@
         <div>
           <% @lessons.today.each do |lesson| %>
           <div class="student-lesson">
+
             <div class="user-info">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", crop: :fill %>
+            <% if lesson.student.photo.attached? %>
+              <%= cl_image_tag lesson.student.photo.key, style: 'border-radius: 50%; height: 100px; width: 100px' %>
+            <% else %>
+              <%= cl_image_tag 'https://res.cloudinary.com/tdavid/image/upload/v1623955031/ssaunier_p1bauy.jpg', style: 'border-radius: 50%; height: 100px; width: 100px'%>
+            <% end %>
             <div class="lesson-info">
               <h5><%= lesson.student.full_name %></h5>
-              <p><%#= lesson.student.address %></p>
+          
               <p><%= lesson.start_time.localtime.to_s(:time) %> - <%= lesson.end_time.localtime.to_s(:time) %></p>
             </div>
           </div>
@@ -26,6 +31,7 @@
               <% if lesson.start_time > Time.now %>
                 <span class="material-icons">schedule</span>
                 <p><%= lesson.starting_in %></p>
+
               <% else %>
                 <p><%#= link_to "Join lesson", lesson_path(lesson), class: "btn btn-success" %></p>
               <% end %>

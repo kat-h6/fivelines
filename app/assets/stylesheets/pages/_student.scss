@@ -1,3 +1,44 @@
 body {
   background-color: #F0F4FB;
 }
+
+.student-list-card {
+  width: 100%;
+  background: white;
+  border-radius: 15px;
+  height: 116px;
+}
+
+.studentlist-info {
+  font-size: small;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:hover .student-list-card {
+  background-color: #B8CBEC;
+  transition-timing-function: linear;
+  transition: 0.6s;
+}
+
+a:hover .student-list-card p {
+  color: white;
+  transition: 0.3s;
+
+
+}
+.student-list-card .student-name {
+  color: black;
+}
+
+.student-search-bar .btn {
+  background-color: #3F137E;
+  border: none;
+}
+
+.vl {
+  border-left: 6px solid green;
+  height: 80%;
+}
