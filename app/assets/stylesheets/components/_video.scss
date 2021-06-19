@@ -10,8 +10,8 @@ body, html {
 
 #videos {
     position: relative !important;
-    width: 750px;
-    height: 400px;
+    flex-grow: 1;
+    height: 500px;
     margin-left: auto;
     margin-right: 10px;
 }
@@ -40,10 +40,15 @@ body, html {
   color: white;
   position: absolute;
   right: 0px;
-  bottom: -35px;
-  font-size: 12px;
+  bottom: -40px;
+  font-size: 16px;
   border-radius: 30px;
   background-color: $red;
   padding: 8px 16px;
   opacity: 0.8;
+  transition: font-size 1s;
 }
+
+#phone-btn:hover {
+    font-size: 20px;
+  }
