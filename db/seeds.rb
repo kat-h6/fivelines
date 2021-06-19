@@ -16,8 +16,8 @@ Chapter.destroy_all
 
 puts "destroyed all"
 
-
-student_seven = User.create!(
+photo_s_seven = URI.open('https://res.cloudinary.com/tdavid/image/upload/v1623954490/Sapideh_ohi4tz.jpg')
+student_seven = User.new(
     email: "Sapideh@gmail.com",
     password: "password",
     first_name: "Sapideh",
@@ -27,7 +27,13 @@ student_seven = User.create!(
     date_of_birth: '1980-11-25'
     )
 
-student_six = User.create!(
+student_seven.photo.attach(io: photo_s_seven, filename: 'temp.png', content_type: 'image/png')
+student_seven.save!
+
+
+photo_s_six = URI.open('https://res.cloudinary.com/tdavid/image/upload/v1623954562/Kathy_k3hb9c.jpg')
+
+student_six = User.new(
     email: "kathy@gmail.com",
     password: "password",
     first_name: "Kathy",
@@ -37,7 +43,12 @@ student_six = User.create!(
     date_of_birth: '1980-11-25'
     )
 
-student_one = User.create!(
+student_six.photo.attach(io: photo_s_six, filename: 'temp.png', content_type: 'image/png')
+student_six.save!
+
+photo_two = URI.open('https://res.cloudinary.com/tdavid/image/upload/v1623954136/Chris-profile_jijecm.jpg')
+
+student_one = User.new(
     email: "chris@gmail.com",
     password: "password",
     first_name: "Chris",
@@ -47,7 +58,13 @@ student_one = User.create!(
     date_of_birth: '1980-11-25'
     )
 
-teacher_one = User.create!(
+student_one.photo.attach(io: photo_two, filename: 'temp.png', content_type: 'image/png')
+student_one.save!
+
+photo_one = URI.open('https://res.cloudinary.com/tdavid/image/upload/v1623780480/id_1.jpg')
+
+
+teacher_one = User.new(
     email: "tavis@gmail.com",
     password: "password",
     first_name: "Tavis",
@@ -56,8 +73,13 @@ teacher_one = User.create!(
     teacher: true,
     date_of_birth: '1980-11-25'
     )
+teacher_one.photo.attach(io: photo_one, filename: 'temp.png', content_type: 'image/png')
+teacher_one.save!
 
-student_six = User.create!(
+puts "tavis created!"
+
+photo_three = URI.open('https://res.cloudinary.com/tdavid/image/upload/v1623784159/Carry.jpg')
+student_eight = User.new(
     email: "carry@gmail.com",
     password: "password",
     first_name: "Carry",
@@ -67,7 +89,12 @@ student_six = User.create!(
     date_of_birth: '1980-11-25'
     )
 
-student_two = User.create!(
+student_eight.photo.attach(io: photo_three, filename: 'temp.png', content_type: 'image/png')
+student_eight.save!
+
+photo_five = URI.open('https://res.cloudinary.com/tdavid/image/upload/v1623782352/Jungah.jpg')
+
+student_two = User.new(
     email: "jongah@gmail.com",
     password: "password",
     first_name: "Jongah",
@@ -77,7 +104,12 @@ student_two = User.create!(
     date_of_birth: '1980-11-25'
     )
 
-student_three = User.create!(
+student_two.photo.attach(io: photo_five, filename: 'temp.png', content_type: 'image/png')
+student_two.save!
+
+photo_ten = URI.open('https://res.cloudinary.com/tdavid/image/upload/v1623782350/Kyle.jpg')
+
+student_three = User.new(
     email: "kyle@gmail.com",
     password: "password",
     first_name: "Kyle",
@@ -87,8 +119,12 @@ student_three = User.create!(
     date_of_birth: '1980-11-25'
     )
 
+student_three.photo.attach(io:photo_ten, filename: 'temp.png', content_type: 'image/png')
+student_three.save!
 
-student_four = User.create!(
+photo_six = URI.open('https://res.cloudinary.com/tdavid/image/upload/v1623782351/Alin.jpg')
+
+student_four = User.new(
     email: "alin@gmail.com",
     password: "password",
     first_name: "Alin",
@@ -98,8 +134,13 @@ student_four = User.create!(
     date_of_birth: '1980-11-25'
     )
 
+student_four.photo.attach(io: photo_six, filename: 'temp.png', content_type: 'image/png')
+student_four.save!
 
-student_five = User.create!(
+puts "student four created"
+
+photo_four = URI.open('https://res.cloudinary.com/tdavid/image/upload/v1623782352/Matthaious.jpg')
+student_five = User.new(
     email: "matthaious@gmail.com",
     password: "password",
     first_name: "Matthaious",
@@ -108,7 +149,7 @@ student_five = User.create!(
     teacher: false,
     date_of_birth: '1980-11-25'
     )
-
+student_five.photo.attach(io: photo_four, filename: 'temp.png', content_type: 'image/png')
 
 
 lesson_one = Lesson.create!(
@@ -164,8 +205,8 @@ lesson_five = Lesson.create!(
   )
 
 lesson_six = Lesson.create!(
-  student_id: student_four.id ,
-  teacher_id: teacher_one.id,
+  student: student_four,
+  teacher: teacher_one,
   start_time: '2021-06-30 10:00',
   end_time: '2021-06-30 11:00',
   rate: 25,
@@ -186,8 +227,8 @@ lesson_seven = Lesson.create!(
 
 
 lesson_eight = Lesson.create!(
-	student_id: student_five.id ,
-	teacher_id: teacher_one.id,
+	student: student_six,
+	teacher: teacher_one,
 	start_time: '2021-07-17 12:00',
 	end_time: '2021-07-17 13:00',
 	rate: 25,
@@ -196,8 +237,8 @@ lesson_eight = Lesson.create!(
 	)
 
 lesson_nine = Lesson.create!(
-  student_id: student_five.id ,
-  teacher_id: teacher_one.id,
+  student: student_five,
+  teacher: teacher_one,
   start_time: '2021-06-29 12:00',
   end_time: '2021-06-29 13:00',
   rate: 25,
@@ -220,8 +261,8 @@ lesson_ten = Lesson.create!(
 Lesson.create!(
   student_id: student_three.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-18 12:00',
-  end_time: '2021-06-18 13:00',
+  start_time: '2021-06-20 12:00',
+  end_time: '2021-06-20 13:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
