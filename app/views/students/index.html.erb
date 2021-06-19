@@ -18,7 +18,11 @@
     <div onclick="location.href='#';" class="card" style="margin-top: 10px; padding: 10px; cursor: pointer;">
       <div style="display: flex; justify-content: space-between">
         <div style="display: flex">
-          <%= cl_image_tag("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1607630183/iqsisg4v7frikbvxikcv.jpg", style: 'border-radius: 50%; height: 100px; width: 100px') %>
+          <% if student.photo.attached? %>
+            <%= cl_image_tag student.photo.key, style: 'border-radius: 50%; height: 100px; width: 100px' %>
+          <% else %>
+            <%= cl_image_tag 'https://res.cloudinary.com/tdavid/image/upload/v1623955031/ssaunier_p1bauy.jpg', style: 'border-radius: 50%; height: 100px; width: 100px'%>
+          <% end %>
           <%= link_to student_path(student) do %>
             <%= student.first_name %> <%= student.last_name %>
             <% end %>

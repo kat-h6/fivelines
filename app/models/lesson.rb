@@ -1,7 +1,7 @@
 class Lesson < ApplicationRecord
   validates :start_time, presence: true
   validates :end_time, presence: true
-  validate :future_start_time
+  # validate :future_start_time
 
   belongs_to :student, class_name: 'User', foreign_key: 'student_id'
   belongs_to :teacher, class_name: 'User', foreign_key: 'teacher_id'
