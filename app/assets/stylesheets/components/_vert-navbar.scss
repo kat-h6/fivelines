@@ -7,6 +7,26 @@
   overflow: auto;
 }
 
+.app-nav li:hover {
+  background-color: #17105A;
+  border-radius: 25px;
+  color: #fff;
+
+  a {
+    color: #fff;
+  }
+}
+
+.menu-active {
+  background-color: #17105A;
+  border-radius: 25px;
+  color: #fff;
+
+  a {
+    color: #fff;
+  }
+}
+
 .app-nav img {
   margin: 30px;
 }
@@ -14,13 +34,24 @@
 .app-nav ul {
   list-style-type: none;
   margin: 0;
+  padding: 0;
 }
 
 .app-nav li {
   color: #18C890;
+  font-size: 22px;
   font-weight: normal;
   list-style: none;
-  line-height: 2;
+  line-height: 2.3;
+  display: flex;
+  align-items: center;
+  min-width: 375px;
+  margin: 10px 0;
+}
+
+.app-nav span {
+  padding-right: 10px;
+  margin-left: 40px;
 }
 
 .app-nav a {
@@ -31,5 +62,5 @@
 
 .app-nav .menu-wrapper {
   border-top: 1px solid rgba(255,255,255,0.5);
-  padding: 30px 30px 30px 0;
+  padding: 30px;
 }
