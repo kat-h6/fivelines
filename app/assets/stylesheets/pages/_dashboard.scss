@@ -16,7 +16,12 @@ body {
 }
 
 .student-lesson {
+  display: flex!important;
+  justify-content: space-between;
   border-bottom: 1px solid rgb(232,232,232);
+}
+
+.user-info {
   display: flex;
 }
 
@@ -39,4 +44,23 @@ body {
 
 .schedule li {
   line-height: 2rem;
+}
+
+.start-time {
+  display: flex;
+  color: grey;
+  justify-content: center;
+}
+
+.start-time span {
+  padding-right: 5px;
+}
+
+.lesson-time {
+  text-align: right;
+}
+
+.meeting {
+  justify-content: space-between;
+  margin: 10px auto;
 }

@@ -1,0 +1,26 @@
+.button-green {
+  color: #fff;
+  background-color: #18C890;
+  border-radius: 25px;
+  padding: 11px 30px;
+  width: auto;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button-green:hover {
+  background-color: #11996d;
+  color: #fff;
+  text-decoration: none;
+}
+
+.button-outline {
+  color: #18C890;
+  background-color: none;
+  border: 1px solid #18C890;
+  border-radius: 25px;
+  padding: 11px 30px;
+  width: auto;
+  text-align: center;
+  text-decoration: none;
+}

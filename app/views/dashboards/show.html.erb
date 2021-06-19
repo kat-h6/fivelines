@@ -1,16 +1,18 @@
 <div class="inner-dashboard-container">
   <div>
-    <div class="d-flex">
-      <div class="card col-12 col-lg-8">
+    <div class="row w-100">
+      <div class="card lesson">
         <div class="section-header">
           <h4>Today's lessons</h4>
           <p><%= Date.today.strftime("%a, %e %b %Y") %></p>
-          <%= link_to "Schedule a lesson", new_lesson_path, class: "btn btn-success" %>
+          <%= link_to "Schedule a lesson", new_lesson_path, class: "button-green" %>
         </div>
 
         <div>
           <% @lessons.today.each do |lesson| %>
           <div class="student-lesson">
+
+            <div class="user-info">
             <% if lesson.student.photo.attached? %>
               <%= cl_image_tag lesson.student.photo.key, style: 'border-radius: 50%; height: 100px; width: 100px' %>
             <% else %>
@@ -18,38 +20,47 @@
             <% end %>
             <div class="lesson-info">
               <h5><%= lesson.student.full_name %></h5>
-              <p><%#= lesson.student.address %></p>
-              <p><%= lesson.start_time.to_s(:time) %> - <%= lesson.end_time.to_s(:time) %></p>
+          
+              <p><%= lesson.start_time.localtime.to_s(:time) %> - <%= lesson.end_time.localtime.to_s(:time) %></p>
+            </div>
+          </div>
+          <div class="lesson-time">
+            <p><%= lesson.start_time.localtime.strftime("%I:%M%p") %> - <%= lesson.end_time.localtime.strftime("%I:%M%p") %></p>
 
+            <div class="start-time">
               <% if lesson.start_time > Time.now %>
-                <p>Starts in <%= lesson.start_time - Time.now %></p>
+                <span class="material-icons">schedule</span>
+                <p><%= lesson.starting_in %></p>
+
               <% else %>
                 <p><%#= link_to "Join lesson", lesson_path(lesson), class: "btn btn-success" %></p>
               <% end %>
             </div>
           </div>
-          <% end %>
         </div>
+
+        <% end %>
       </div>
+    </div>
 
-      <div class="card col-12 col-lg-4">
-        <div>
-          <h4>Daily schedule</h4>
-          <ul class="schedule">
-            <%= calendar number_of_days: 1 do |date| %>
-              <%= Date.today.strftime("%e %b %Y") %>
+    <div class="card">
+      <div>
+        <h4>Daily schedule</h4>
+        <ul class="schedule">
+          <%= calendar number_of_days: 1 do |date| %>
+            <%= Date.today.strftime("%e %b %Y") %>
 
-              <%# @meetings.each do |meeting| %>
-                <div class="meeting">
-                  <p><%#= meeting.time %></p>
-                  <small><%#= meeting.student.first_name %></small>
-                </div>
-              <%# end %>
+            <% @lessons.today.each do |meeting| %>
+              <div class="meeting d-flex">
+                <p><%= meeting.start_time.localtime.strftime("%I:%M%p") %></p>
+                <p><%= meeting.student.first_name %></p>
+              </div>
             <% end %>
-          </ul>
+          <% end %>
+        </ul>
 
-        </div>
       </div>
     </div>
   </div>
+</div>
 </div>
