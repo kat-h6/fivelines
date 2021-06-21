@@ -19,7 +19,7 @@
               <span class="material-icons">calendar_today</span> <%= link_to "Calendar", calendar_path, class: "vert-nav-link" %>
             </li>
             <li class="<%= "menu-active" if current_page?(chapter_resources_path(1)) %>">
-              <span class="material-icons">folder</span> <%= link_to "Resources", chapter_resources_path(1), class: "vert-nav-link" %>
+              <span class="material-icons">folder</span> <%= link_to "Resources", resources_path(1), class: "vert-nav-link" %>
             </li>
           </div>
         </ul>
