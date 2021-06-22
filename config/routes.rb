@@ -23,10 +23,10 @@ Rails.application.routes.draw do
   end
 
   resources :chapters, only: [] do
-    resources :resources, only: [:new, :create, :index]
+    resources :resources, only: [:new, :create]
   end
 
-  resources :resources, only: [:show]
+  resources :resources, only: [:show, :index]
   # just for demo
 
     
