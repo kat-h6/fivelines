@@ -17,12 +17,20 @@ export default class extends Controller {
     this.sessionId = this.data.get("sessionId")
     this.token = this.data.get("token")
     this.initializeSession()
+    this.videoVisible = true
   }
 
   disconnect() {
     if (this.session) {
       this.session.disconnect()
     }
+  }
+
+  toggleButton() {
+    console.log("i was clicked")
+    this.videoVisible = !this.videoVisible
+    console.log(this.videoVisible)
+    this.publisher.publishVideo(this.videoVisible);
   }
 
   initializeSession() {
@@ -51,8 +59,11 @@ export default class extends Controller {
     this.session.subscribe(event.stream, this.element, {
       insertMode:'append',
       width: '100%',
-      height: '100%'
+      height: '100%',
+      subscribeToAudio:true,
+      subscribeToVideo:true,
     }, this.handleError.bind(this))
+    console.log(this.subscriber)
   }
 
   handleError(error) {

@@ -2,10 +2,6 @@ body, html {
     height: 100%;
 }
 
-#black-background {
-  background-color: $gray !important;
-  color: white !important;
-}
 
 
 #videos {
@@ -14,6 +10,8 @@ body, html {
     height: 500px;
     margin-left: auto;
     margin-right: 10px;
+    background-color: $gray;
+    border-radius: 10px;
 }
 
 .OT_subscriber {
@@ -30,25 +28,32 @@ body, html {
     width: 260px !important;
     height: 160px !important;
     bottom: 10px !important;
-    left: 10px !important;
+    right: 10px !important;
     z-index: 100 !important;
     border: 3px solid white;
     border-radius: 3px;
+    border-radius: 10px;
 }
 
-#phone-btn {
-  color: white;
+.video-controls {
   position: absolute;
-  right: 0px;
-  bottom: -40px;
+  right: 50%;
+  bottom: 30px;
+}
+
+#videocall-red-btn {
+  color: white;
   font-size: 16px;
   border-radius: 30px;
   background-color: $red;
   padding: 8px 16px;
   opacity: 0.8;
-  transition: font-size 1s;
+  transition: 0.5s;
+  margin-right: 2px;
+  margin-left: 2px;
 }
 
-#phone-btn:hover {
-    font-size: 20px;
+#videocall-red-btn:hover {
+    color: $red;
+    background-color: white;
   }
