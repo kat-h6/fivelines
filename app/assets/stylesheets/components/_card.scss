@@ -1,16 +1,26 @@
 .card {
   background-color: #fff;
   padding: 30px;
-  margin-right: 10px;
   border: none;
   border-radius: 10px;
 }
 
 .lesson {
   flex-grow: 1;
+  margin-right: 30px;
+}
+
+.schedule-list {
+  flex: auto;
 }
 
 .card h4 {
   color: grey;
   margin-bottom: 1.5rem;
+}
+
+.circle img {
+  width: 150px;
+  height: auto;
+  border-radius: 50%!important;
 }

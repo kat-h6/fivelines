@@ -18,11 +18,14 @@ body {
 .student-lesson {
   display: flex!important;
   justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid rgb(232,232,232);
 }
 
 .user-info {
   display: flex;
+  align-items: center;
+  margin: 0 0 20px;
 }
 
 .student-lesson img {
@@ -58,9 +61,20 @@ body {
 
 .lesson-time {
   text-align: right;
+  align-items: center;
 }
 
 .meeting {
   justify-content: space-between;
   margin: 10px auto;
+  align-items: center;
+}
+
+.schedule-list .meeting p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.schedule-list .calendar-heading {
+  justify-content: space-between;
 }
