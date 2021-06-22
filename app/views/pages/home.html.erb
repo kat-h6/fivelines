@@ -13,11 +13,11 @@
 
           <div class="cta-group">
             <div class="button-green">
-              <%= link_to "Login", new_user_session_path %>
+              <%= link_to "Sign in", new_user_session_path %>
             </div>
-
-            <%= link_to "Create an account", new_user_registration_path, class: "nav-link" %>
-
+            <div class="button-text">
+              <%= link_to "Create an account", new_user_registration_path %>
+            </div>
           </div>
         </div>
 
@@ -49,35 +49,48 @@
 
 <div class="how-to">
   <div class="container">
-    <h2>How it works</h2>
+    <h2>Why FiveLines</h2>
     <div class="d-flex">
       <div class="col-12 col-lg-3">
         <div class="purple-card">
-
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <%= cl_image_tag 'dashboard-screen_llj30d.png', width: 225, crop: :fit %>
         </div>
         <h3>Never miss a beat.</h3>
         <p>Organize your day and stay on schedule with a personalised dashboard for you and your students.</p>
       </div>
       <div class="col-12 col-lg-3">
         <div class="purple-card">
-
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <%= cl_image_tag 'video-call-screen_b5wsxu.png', width: 225, crop: :fit %>
         </div>
-        <h3>Virtual classroom.</h3>
-        <p>Teach on the go from any device. Invited guests can join a video lesson from their computer using any modern web browser — no software to install.</p>
+        <h3>Teach on the go.</h3>
+        <p>Invited students can join a video lesson from their computer using any modern web browser — no software to install.</p>
       </div>
       <div class="col-12 col-lg-3">
         <div class="purple-card">
-
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
         </div>
         <h3>Assignments.</h3>
         <p>Keep your students accountable and support their music progression with regular assignment tasks.</p>
       </div>
       <div class="col-12 col-lg-3">
         <div class="purple-card">
-
+          <div class="dot-group">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <%= cl_image_tag 'Resources-screen_yqm1qj.png', width: 225, crop: :fit %>
         </div>
         <h3>Resource library.</h3>
-        <p>Inspire student learning with easy access to a collection of videos, texts, images and audio files.</p>
+        <p>Inspire students and keep them motivated with easy access to a collection of videos, texts, images and audio files.</p>
       </div>
     </div>
   </div>
@@ -113,6 +126,21 @@
       <div class="quote-wrapper">
         <p class="customer-quote">"AMAZING! Such an excellent resource that I can really see helping a huge number of people with progressing their music and developing their skills."</p>
         <p class="customer-name">Joanna</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-sec" style="background-image: url('<%= cl_image_path 'green-wave_t5g1cu.svg', height: 400, crop: :fill %>'); background-repeat: no-repeat;"; >
+  <div class="container">
+    <h2>Ready to start teaching music?</h2>
+    <h3>Create your account and get started. It's free!</h3>
+    <div class="cta-group">
+      <div class="button-green">
+        <%= link_to "Sign in", new_user_session_path %>
+      </div>
+      <div class="button-outline">
+        <%= link_to "Get started", new_user_registration_path %>
       </div>
     </div>
   </div>

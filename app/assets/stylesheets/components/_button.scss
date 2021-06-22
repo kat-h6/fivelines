@@ -1,11 +1,13 @@
 .button-green {
   color: #fff;
   background-color: #18C890;
+  font-size: 18px;
   border-radius: 25px;
   padding: 11px 30px;
   width: auto;
   text-align: center;
   text-decoration: none;
+  margin: 5px;
 }
 
 .button-green:hover {
@@ -14,17 +16,46 @@
   text-decoration: none;
 }
 
+.button-text a {
+  color: #18C890;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.button-text a:hover {
+  color: #11996d;
+}
+
 .button-outline {
   color: #18C890;
   background-color: none;
-  border: 1px solid #18C890;
+  border: 2px solid #18C890;
   border-radius: 25px;
   padding: 11px 30px;
   width: auto;
+  font-size: 18px;
   text-align: center;
   text-decoration: none;
+  margin: 5px;
+}
+
+.button-outline:hover {
+  border: 2px solid #11996d;
+  a {
+    color: #11996d;
+  }
+}
+
+.button-outline a {
+  color: #18C890;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px;
 }
 
 .button-green a {
   color: #fff;
+  font-size: 18px;
 }
