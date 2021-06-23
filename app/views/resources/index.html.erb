@@ -46,11 +46,14 @@ Beginners 1</h4></div></a>
                   <div class="col-12 ms-0 ps-0">
                    <p style="font-size: 20px"><%= link_to resource.title.capitalize, resource_path( resource) %></p>
                    <p>
+                    <% if resource.photo.attached? %>
                    <%= link_to cl_image_path(resource.photo.key) do %>
-                   <%= cl_image_tag resource.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %> 
+                   <%= cl_image_tag resource.photo.key, height: 180, width: 240, crop: :fill, style: "vertical-align:top; padding: 5px;" %> 
                    <% end %>
-                   <%= cl_video_tag resource.video.key, height: 150, width: 200, crop: :fill, controls: true %>
-                     
+                   <% end %>
+                   <% if resource.video.attached? %>
+                   <%= cl_video_tag resource.video.key, height: 180, width: 20, crop: :fill, controls: true, style: "padding: 5px;" %>
+                    <% end %> 
                    </p>
                     <p><%= link_to "Add a new resource", new_chapter_resource_path(resource.chapter) %></p>
 
@@ -66,12 +69,15 @@ Beginners 1</h4></div></a>
                 <div class="row ms-0 ps-0">
                   <div class="col-12 ms-0 ps-0">
                    <p style="font-size: 20px"><%= link_to resource.title.capitalize, resource_path( resource) %></p>
+                     <% if resource.photo.attached? %>
                    <%= link_to cl_image_path(resource.photo.key) do %>
                    <p>
                     <%= cl_image_tag resource.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %>
                    <% end %>
+                   <% end %>
+                     <% if resource.video.attached? %>
                    <%= cl_video_tag resource.video.key, height: 150, width: 200, crop: :fill, controls: true %>
-                     
+                    <% end %>
                    </p>
                     <p><%= link_to "Add a new resource", new_chapter_resource_path(resource.chapter) %></p>
                  </div>
@@ -85,11 +91,16 @@ Beginners 1</h4></div></a>
                 <div class="row ms-0 ps-0">
                   <div class="col-12 ms-0 ps-0">
                    <p style="font-size: 20px"><%= link_to resource.title.capitalize, resource_path( resource) %></p>
+                   <% if resource.photo.attached? %>
                    <%= link_to cl_image_path(resource.photo.key) do %>
                    <p>
-                    <%= cl_image_tag resource.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %> 
+                    <%= cl_image_tag resource.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %>
                    <% end %>
-                   <%= cl_video_tag resource.video.key, height: 150, width: 200, crop: :fill, controls: true %></p>
+                   <% end %>
+                     <% if resource.video.attached? %>
+                   <%= cl_video_tag resource.video.key, height: 150, width: 200, crop: :fill, controls: true %>
+                    <% end %>
+                      </p>
                     <p><%= link_to "Add a new resource", new_chapter_resource_path(resource.chapter) %>
                       </p>
                  </div>
@@ -103,13 +114,18 @@ Beginners 1</h4></div></a>
                 <div class="row ms-0 ps-0">
                   <div class="col-12 ms-0 ps-0">
                    <p style="font-size: 20px"><%= link_to resource.title.capitalize, resource_path( resource) %></p>
-                   <%= link_to cl_image_path(resource.photo.key) do %>
-                   <p>
+                    <p>
+                      <% if resource.photo.attached? %>
+                    <%= link_to cl_image_path(resource.photo.key) do %>
+                  
                     <%= cl_image_tag resource.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %>
                    <% end %>
+                   <% end %>
+                     <% if resource.video.attached? %>
                    <%= cl_video_tag resource.video.key, height: 150, width: 200, crop: :fill, controls: true %>
-                     </p>
-                    <p><%= link_to "Add a new resource", new_chapter_resource_path(resource.chapter) %></p>
+                    <% end %>
+                      </p>
+                       <p><%= link_to "Add a new resource", new_chapter_resource_path(resource.chapter) %></p>
                  </div>
                </div>
             </div>
@@ -121,10 +137,17 @@ Beginners 1</h4></div></a>
                 <div class="row ms-0 ps-0">
                   <div class="col-12 ms-0 ps-0">
                    <p style="font-size: 20px"><%= link_to resource.title.capitalize, resource_path( resource) %></p>
+                    <p>
+                    <% if resource.photo.attached? %>
                    <%= link_to cl_image_path(resource.photo.key) do %>
-                   <p><%= cl_image_tag resource.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %>
+                   
+                    <%= cl_image_tag resource.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %>
                    <% end %>
-                   <%= cl_video_tag resource.video.key, height: 150, width: 200, crop: :fill, controls: true %></p>
+                   <% end %>
+                     <% if resource.video.attached? %>
+                   <%= cl_video_tag resource.video.key, height: 150, width: 200, crop: :fill, controls: true %>
+                    <% end %>                      
+                    </p>
                     <p><%= link_to "Add a new resource", new_chapter_resource_path(resource.chapter) %></p>
                  </div>
                </div>

@@ -2,14 +2,21 @@
 
 <div class="card-container" style="margin-left: 2rem;">
 <p> <%= @assignment.title.capitalize %> </p>
-<p> <%= @assignment.due_date %> </p>
+<p> <%= @assignment.due_date.strftime("%a, %e %b %Y") %> </p>
 <p> <%= @assignment.details %> </p>
-<p> <%= @assignment.completed %> </p>
 <p> <%= @assignment.feedback %> </p>
 <li class="list-group-item">Assignment completed: <input type="checkbox" checked readonly="readonly" /></li>
 <div>
-<%= cl_image_tag @assignment.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align: top" %>
-<%= cl_video_tag @assignment.video.key, height: 150, width: 200, crop: :fill, controls: true %>
+ <p>
+    <% if @assignment.photo.attached? %>
+      <%= link_to cl_image_path(@assignment.photo.key) do %>
+      <%= cl_image_tag @assignment.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %>
+    <% end %>
+      <% end %>
+    <% if @assignment.video.attached? %>
+      <%= cl_video_tag @assignment.video.key, height: 150, width: 200, crop: :fill, controls: true %>
+    <% end %>
+    </p>
 </div>
 
 </div>
