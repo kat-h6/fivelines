@@ -370,7 +370,7 @@ puts "created!"
 
 assignment_two = Assignment.create!(
     details: "daphnis solo bar 173-175 at a slower tempo",
-    title: "audition prep",
+    title: "Audition prep",
     due_date: '2021-06-24',
     completed: false,
     feedback: " ",
@@ -383,18 +383,48 @@ assignment_two.save!
 puts "created!"
 
 assignment_three = Assignment.create!(
-    details: "prelude to the afternoon of a faune first line in one breath",
-    title: "audition prep",
+    details: "Prelude to the afternoon of a faune first line in one breath",
+    title: "Audition prep",
     due_date: '2021-05-01',
     completed: false,
     feedback: " ",
     lesson: lesson_three
     )
-file_3 = URI.open('https://www.musicforballetclass.com/wp-content/uploads/2018/09/my-favorite-things-sheet-music-arrangement-for-ballet-class-pdf.png')
+file_3 = URI.open('https://sheetmusic-free.com/wp-content/uploads/2016/06/Air-Sheet-Music-pdf-Bach-Air-Piano-Sheet-Music.png')
 assignment_three.photo.attach(io: file_3, filename: 'temp.png', content_type: 'image/png')
 assignment_three.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_3.mov')), filename: 'video_3.mov', content_type: 'video/mov')
 assignment_three.save!
 puts "created!"
+
+assignment_four = Assignment.create!(
+    details: "Gavotte in D Major ",
+    title: "Audition prep",
+    due_date: '2021-05-01',
+    completed: false,
+    feedback: " ",
+    lesson: lesson_four
+    )
+file_4 = URI.open('https://html.scribdassets.com/3dkn8g6u2o1nhejw/images/1-6270435575.jpg')
+assignment_four.photo.attach(io: file_4, filename: 'temp.png', content_type: 'image/png')
+assignment_four.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_4.mp4')), filename: 'video_4.mp4', content_type: 'video/mp4')
+assignment_four.save!
+puts "created!"
+
+assignment_five = Assignment.create!(
+    details: "Prelude to Bourree",
+    title: "Audition prep",
+    due_date: '2021-05-01',
+    completed: false,
+    feedback: " ",
+    lesson: lesson_five
+    )
+file_5 = URI.open('https://www.musicforballetclass.com/wp-content/uploads/2018/09/my-favorite-things-sheet-music-arrangement-for-ballet-class-pdf.png')
+assignment_five.photo.attach(io: file_5, filename: 'temp.png', content_type: 'image/png')
+assignment_five.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_5.mov')), filename: 'video_5.mov', content_type: 'video/mov')
+assignment_five.save!
+puts "created!"
+
+
 
 
 
@@ -468,7 +498,7 @@ resource_4.save!
 puts "created!"
 
 resource_5 = Resource.create!(
-    title: "Harmony",
+    title: "The book of Mormon",
     chapter: chapter_5,
     user: teacher_one
     )
@@ -478,19 +508,65 @@ resource_5.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_1.mp
 resource_5.save!
 puts "created!"
 
-=begin
 resource_6 = Resource.create!(
-    title: "In the heights",
+    title: "Harmony",
     chapter: chapter_1,
     user: teacher_one
     )
-file_six = URI.open('https://images.unsplash.com/photo-1507838153414-b4b713384a76?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80')
-file_seven = URI.open('https://images.unsplash.com/photo-1576976881052-ee7e730fbfee?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fG11c2ljJTIwc2hlZXR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60')
+file_six = URI.open('https://www.musicforballetclass.com/wp-content/uploads/2018/09/my-favorite-things-sheet-music-arrangement-for-ballet-class-pdf.png')
 resource_6.photo.attach(io: file_six, filename: 'temp.png', content_type: 'image/png')
-resource_6.photo.attach(io: file_seven, filename: 'temp.png', content_type: 'image/png')
+resource_6.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_2.mov')), filename: 'video_2.mov', content_type: 'video/mov')
 resource_6.save!
 puts "created!"
-=end
+
+resource_7 = Resource.create!(
+    title: "The Phantom of the opera",
+    chapter: chapter_2,
+    user: teacher_one
+    )
+file_seven = URI.open('https://s3.amazonaws.com/halleonard-pagepreviews/HL_DDS_1007043l8Oba7tioK.png')
+resource_7.photo.attach(io: file_seven, filename: 'temp.png', content_type: 'image/png')
+resource_7.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_6.mov')), filename: 'video_6.mov', content_type: 'video/mov')
+resource_7.save!
+puts "created!"
+
+
+resource_8 = Resource.create!(
+    title: "Les miserables",
+    chapter: chapter_3,
+    user: teacher_one
+    )
+file_eight = URI.open('https://www.musicforballetclass.com/wp-content/uploads/2018/09/my-favorite-things-sheet-music-arrangement-for-ballet-class-pdf.png')
+resource_8.photo.attach(io: file_eight, filename: 'temp.png', content_type: 'image/png')
+resource_8.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_2.mov')), filename: 'video_2.mov', content_type: 'video/mov')
+resource_8.save!
+puts "created!"
+
+
+resource_9 = Resource.create!(
+    title: "The Rocky Horror Show",
+    chapter: chapter_4,
+    user: teacher_one
+    )
+file_nine = URI.open('https://www.musicforballetclass.com/wp-content/uploads/2018/09/my-favorite-things-sheet-music-arrangement-for-ballet-class-pdf.png')
+resource_9.photo.attach(io: file_nine, filename: 'temp.png', content_type: 'image/png')
+resource_9.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_2.mov')), filename: 'video_2.mov', content_type: 'video/mov')
+resource_9.save!
+puts "created!"
+
+resource_10 = Resource.create!(
+    title: "The Lion King",
+    chapter: chapter_5,
+    user: teacher_one
+    )
+file_ten = URI.open('https://www.musicforballetclass.com/wp-content/uploads/2018/09/my-favorite-things-sheet-music-arrangement-for-ballet-class-pdf.png')
+resource_10.photo.attach(io: file_ten, filename: 'temp.png', content_type: 'image/png')
+resource_10.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_2.mov')), filename: 'video_2.mov', content_type: 'video/mov')
+resource_10.save!
+puts "created!"
+
+
+
 
 
 

@@ -1,27 +1,24 @@
-<h2 style="margin-left: 9rem; padding: 20px;"> Assignments:  <%= @student.full_name %> </h2>
+<h2 class="assignments-header"> Assignments:  <%= @student.full_name %> </h2>
 
 
 <div class="assignment-list">
-   <div class="card-container" style="width: 36rem; margin-left: 10rem;">
-
-<% @assignments.each do |assignment| %>
-<ul class="list-group card card-small mt-4">
-<li class="list-group-item"><%= link_to assignment.title.capitalize, assignment_path(assignment) %></li>
-<li class="list-group-item"><%= assignment.due_date.strftime("%a, %e %b %Y") %></li>
-<li class="list-group-item"><%= assignment.details %></li>
-<li class="list-group-item">Assignment completed: <input type="checkbox" checked readonly="readonly" /></li>
-<li class="list-group-item">
-    <% if assignment.photo.attached? %>
-      <%= link_to cl_image_path(assignment.photo.key) do %>
-      <%= cl_image_tag assignment.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %>
-      <% end %>
+  <div class="assignments-card">
+    <% @assignments.each do |assignment| %>
+      <ul class="list-group card card-small mt-4">
+        <li class="list-group-item"><h4><%= link_to assignment.title.capitalize, assignment_path(assignment) %></h4></li>
+        <li class="list-group-item"><%= assignment.due_date.strftime("%a, %e %b %Y") %></li>
+        <li class="list-group-item"><%= assignment.details %></li>
+        <li class="list-group-item">Assignment completed: <input type="checkbox" checked readonly="readonly" /></li>
+        <li class="list-group-item">
+          <% if assignment.photo.attached? %>
+            <%= link_to cl_image_path(assignment.photo.key) do %>
+              <%= cl_image_tag assignment.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %>
+            <% end %>
+          <% end %>
+          <% if assignment.video.attached? %>
+            <%= cl_video_tag assignment.video.key, height: 150, width: 200, crop: :fill, controls: true %>
+          <% end %></li>
+      </ul>
     <% end %>
-    <% if assignment.video.attached? %>
-      <%= cl_video_tag assignment.video.key, height: 150, width: 200, crop: :fill, controls: true %>
-   <% end %></li>
-
- </ul>
-  <% end %>
-
- </div>
+  </div>
 </div>
