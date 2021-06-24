@@ -1,5 +1,5 @@
-<div class="container">
-<h1>New assignment for this student</h1>
+<h1 style="text-align: center;">New assignment</h1>
+<div class="card-container" style="margin-left: 5rem; margin-right: 5rem; padding: 20px;">
 
 <%= simple_form_for [ @lesson, @assignment ] do |f| %>
   <%= f.input :title %>
@@ -8,7 +8,8 @@
   <%= f.input :photo, as: :file %>
   <%= f.input :video, as: :file %>
   
-
-  <%= f.submit "Submit assignment", class: "btn btn-primary" %>
+ <div class="button-style" style="padding-top: 30px; padding-bottom: 30px;">
+  <%= f.submit class: "button-green" %>
 <% end %>
 </div>
+
