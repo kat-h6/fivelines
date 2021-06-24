@@ -78,3 +78,25 @@
   color: #fff;
   background-color: #11996d;
 }
+
+.form-button-green {
+  color: #fff;
+  background-color: #18C890;
+  border-radius: 25px;
+  padding: 6px 20px;
+  width: auto;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+}
+
+.form-button-green:hover {
+    background-color: #11996d;
+    color: #fff;
+    text-decoration: none;
+  }
+
+#green-items {
+  background-color: #11996d;
+  color: #fff;
+}

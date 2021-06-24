@@ -1,6 +1,5 @@
 
-<body id="black-background">
-<div class="col-12 col-lg-9">
+<div id="black-background">
   <p><%= @lesson.student.first_name %></p>
   <div id="videos"
        data-controller="vonage"
@@ -10,9 +9,12 @@
        data-vonage-name="<%= current_user.first_name %>"
        data-vonage-role="<%= current_user.role %>"
        >
-    <%= link_to edit_lesson_path(@lesson) do %>
-    <i class="fas fa-phone-slash" id="phone-btn"></i>
-  <% end %>
+    <div class="video-controls">
+      <i class="fas fa-video-slash" id="videocall-red-btn" data-action="click->vonage#toggleButton"></i>
+      <%= link_to edit_lesson_path(@lesson) do %>
+        <i class="fas fa-phone-slash" id="videocall-red-btn"></i>
+      <% end %>
+    </div>
   </div>
 </div>
-</body>
+
