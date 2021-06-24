@@ -397,7 +397,7 @@ assignment_three.save!
 puts "created!"
 
 assignment_four = Assignment.create!(
-    details: "Gavotte in D Major ",
+    details: "Gavotte in D Major, remember to practice the harmonies ",
     title: "Audition prep",
     due_date: '2021-05-01',
     completed: false,
@@ -411,7 +411,7 @@ assignment_four.save!
 puts "created!"
 
 assignment_five = Assignment.create!(
-    details: "Prelude to Bourree",
+    details: "Prelude to Bourree, listen to the Suzuki version before you practice",
     title: "Audition prep",
     due_date: '2021-05-01',
     completed: false,
