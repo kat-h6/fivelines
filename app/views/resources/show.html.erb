@@ -2,7 +2,7 @@
 
 <div class="show-card-container">
 
-<h3> <%= @resource.title.capitalize %> </h3>
+<h4 class="resource-show-header"> <%= @resource.title.capitalize %> </h4>
      <p>
         <% if @resource.photo.attached? %>
           <%= link_to cl_image_path(@resource.photo.key) do %>

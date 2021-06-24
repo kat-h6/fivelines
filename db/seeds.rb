@@ -16,6 +16,7 @@ Chapter.destroy_all
 
 puts "destroyed all"
 
+
 photo_s_seven = URI.open('https://res.cloudinary.com/tdavid/image/upload/v1623954490/Sapideh_ohi4tz.jpg')
 student_seven = User.new(
     email: "Sapideh@gmail.com",
@@ -29,6 +30,7 @@ student_seven = User.new(
 
 student_seven.photo.attach(io: photo_s_seven, filename: 'temp.png', content_type: 'image/png')
 student_seven.save!
+
 
 
 photo_s_six = URI.open('https://res.cloudinary.com/tdavid/image/upload/v1623954562/Kathy_k3hb9c.jpg')
