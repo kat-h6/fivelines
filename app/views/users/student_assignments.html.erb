@@ -1,18 +1,19 @@
-<h2> Assignments <%= @student.full_name %> </h2>
+<h2> Assignments:  <%= @student.full_name %> </h2>
 
 <div class="assignment-list">
    <div class="card-container" style="width: 36rem; margin: 2rem;">
-<ul class="list-group">
-<% @assignments.each do |assignment| %>
 
+<% @assignments.each do |assignment| %>
+<ul class="list-group card card-small mt-2">
 <li class="list-group-item"><%= link_to assignment.title.capitalize, assignment_path(assignment) %></li>
 <li class="list-group-item"><%= assignment.due_date %></li>
 <li class="list-group-item"><%= assignment.details %></li>
-<li><%= cl_image_tag assignment.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align: top" %>
+<li class="list-group-item">Assignment completed: <input type="checkbox" checked readonly="readonly" /></li>
+<li class="list-group-item"><%= cl_image_tag assignment.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align: top" %>
 <%= cl_video_tag assignment.video.key, height: 150, width: 200, crop: :fill, controls: true %></li>
 
-
-  <% end %>
  </ul>
+  <% end %>
+
  </div>
 </div>

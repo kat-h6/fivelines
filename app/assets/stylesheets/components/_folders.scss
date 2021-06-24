@@ -1,0 +1,39 @@
+.nav-link.active .bi.bi-folder2 {
+	display:none;
+}
+
+.nav-link:not(.active) .bi.bi-folder2-open {
+	display:none;
+}
+
+.nav-link {
+	height: 70px;
+	color: $black;
+}
+
+.nav-link.active {
+	background-color: transparent !important;
+}
+
+.nav-link.active .card-small {
+	background-color: $green;
+}
+
+.nav-link:hover {
+	color: $black !important;
+}
+
+
+
+.list-group-item {
+	border: 0;
+}
+
+.card-small {
+	padding: 15px;
+}
+
+.card-small h4 {
+	margin-top: auto;
+	margin-bottom: auto;
+}

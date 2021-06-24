@@ -461,16 +461,16 @@ resource_3.video.attach(io: video_three, filename: 'temp.mp4', content_type: 'vi
 resource_3.save!
 puts "created!"
 
-=begin
+
 resource_4 = Resource.create!(
-    title: "Medly",
+    title: "Fun Medley",
     chapter: chapter_4,
     user: teacher_one
     )
 file_four = URI.open('https://images.unsplash.com/photo-1576976881052-ee7e730fbfee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=933&q=80')
 video_four = URI.open('https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4')
-resource_4.photo.attach(io: file_one, filename: 'temp.png', content_type: 'image/png')
-resource_4.video.attach(io: video_two, filename: 'temp.mp4', content_type: 'video/m')
+resource_4.photo.attach(io: file_four, filename: 'temp.png', content_type: 'image/png')
+resource_4.video.attach(io: video_four, filename: 'temp.mp4', content_type: 'video/m')
 resource_4.save!
 puts "created!"
 
@@ -481,11 +481,12 @@ resource_5 = Resource.create!(
     )
 file_five = URI.open('https://images.unsplash.com/photo-1576976881052-ee7e730fbfee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=933&q=80')
 video_five = URI.open('https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4')
-resource_5.photo.attach(io: file_one, filename: 'temp.png', content_type: 'image/png')
-resource_5.video.attach(io: video_two, filename: 'temp.mp4', content_type: 'video/m')
+resource_5.photo.attach(io: file_five, filename: 'temp.png', content_type: 'image/png')
+resource_5.video.attach(io: video_five, filename: 'temp.mp4', content_type: 'video/m')
 resource_5.save!
 puts "created!"
-=end
+
+
 
 
 
