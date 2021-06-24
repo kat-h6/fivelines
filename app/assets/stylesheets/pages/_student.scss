@@ -18,7 +18,7 @@ a:hover {
 }
 
 a:hover .student-list-card {
-  background-color: #B8CBEC;
+  background-color: #40137e9e;
   transition-timing-function: linear;
   transition: 0.6s;
 }
@@ -26,17 +26,31 @@ a:hover .student-list-card {
 a:hover .student-list-card p {
   color: white;
   transition: 0.3s;
-
-
 }
 
 .student-list-card .student-name {
   color: black;
 }
 
+.student-search-bar {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-width: 1px;
+  border-color: #8c71b2;
+}
+
+.student-search-bar .form-control:focus {
+  border-color: #3F137E;
+  box-shadow: 0 0 0 0.2rem #ece7f2;
+
+}
+
 .student-search-bar .btn {
   background-color: #3F137E;
-  border: none;
+  border-width: 1px;
+  border-color: #3F137E;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .vl {
