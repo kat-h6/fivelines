@@ -10,10 +10,10 @@
        data-vonage-role="<%= current_user.role %>"
        >
     <div class="video-controls">
+      <i class="fas fa-video-slash" id="videocall-red-btn" data-action="click->vonage#toggleButton"></i>
       <%= link_to edit_lesson_path(@lesson) do %>
         <i class="fas fa-phone-slash" id="videocall-red-btn"></i>
       <% end %>
-      <i class="fas fa-video-slash" id="videocall-red-btn" data-action="click->vonage#toggleButton"></i>
     </div>
   </div>
 </div>
