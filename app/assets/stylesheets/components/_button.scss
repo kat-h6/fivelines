@@ -1,30 +1,80 @@
 .button-green {
   color: #fff;
   background-color: #18C890;
+  font-size: 18px;
   border-radius: 25px;
   padding: 11px 30px;
   width: auto;
   text-align: center;
   text-decoration: none;
+  margin: 5px;
+  border: 2px solid #18C890;
 }
 
 .button-green:hover {
   background-color: #11996d;
   color: #fff;
   text-decoration: none;
+  border: 2px solid #11996d;
+}
+
+.button-text a {
+  color: #18C890;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.button-text a:hover {
+  color: #11996d;
 }
 
 .button-outline {
   color: #18C890;
   background-color: none;
-  border: 1px solid #18C890;
+  border: 2px solid #18C890;
   border-radius: 25px;
   padding: 11px 30px;
   width: auto;
+  font-size: 18px;
   text-align: center;
   text-decoration: none;
+  margin: 5px;
+}
+
+.button-outline:hover {
+  border: 2px solid #11996d;
+  a {
+    color: #11996d;
+  }
+}
+
+.button-outline a {
+  color: #18C890;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px;
 }
 
 .button-green a {
   color: #fff;
+  font-size: 18px;
+}
+
+.button-circle {
+  color: #fff;
+  background-color: #18C890;
+  width: 35px;
+  font-size: 18px;
+  border-radius: 50%;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.button-circle:hover {
+  color: #fff;
+  background-color: #11996d;
 }
