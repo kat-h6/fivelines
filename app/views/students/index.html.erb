@@ -4,52 +4,62 @@
 <div class="student-search-bar">
 <%= form_tag students_path, method: :get do %>
   <div style="display: flex">
+
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
       placeholder: "Find a student"
     %>
     <%= submit_tag "Search", class: "btn btn-primary" %>
+    
   </div>
 <% end %>
 </div>
 
 <%#= STUDENT LIST %>
-  <% @students.each do |student| %>
-            <%= link_to student_path(student) do %>
-    <div class="student-list-card" style="margin-top: 10px; padding: 10px; cursor: pointer;">
-      <div style="display: flex; justify-content: space-between", link_to student_path(student)>
-        <div style="display: flex">
-          <% if student.photo.attached? %>
-            <%= cl_image_tag student.photo.key, style: 'border-radius: 50%; height: 100px; width: 100px' %>
-          <% else %>
-            <%= cl_image_tag 'https://res.cloudinary.com/tdavid/image/upload/v1623955031/ssaunier_p1bauy.jpg', style: 'border-radius: 50%; height: 100px; width: 100px'%>
-          <% end %>
-
-            <p class="student-name"><%= student.first_name %> <%= student.last_name %></p>
-        </div>
-        <div style="color: #d3d3d3">
-          <p class="studentlist-info">Age: <%= ( Date.today - student.date_of_birth ).to_i / 365 %> </p>
-          
-          <% @lesson_count = 0 %>
-          <% student.lessons.order(:start_time).each do |lesson| %>
-            <% if lesson.start_time < Date.today %>
-              <% @lesson_count += 1 %>
+  <% if @students.count > 0 %>
+    <% @students.each do |student| %>
+      <%= link_to student_path(student) do %>
+      <div class="student-list-card" style="margin-top: 10px; padding: 10px; cursor: pointer;">
+        <div style="display: flex; justify-content: space-between", link_to student_path(student)>
+          <div style="display: flex">
+            <% if student.photo.attached? %>
+              <%= cl_image_tag student.photo.key, style: 'border-radius: 50%; height: 100px; width: 100px' %>
+            <% else %>
+              <%= cl_image_tag 'https://res.cloudinary.com/tdavid/image/upload/v1623955031/ssaunier_p1bauy.jpg', style: 'border-radius: 50%; height: 100px; width: 100px'%>
             <% end %>
-          <% end %>
-          <p class="studentlist-info">Total lessons completed: <%= @lesson_count %> </p>
 
-          <% student.lessons.order(:start_time).each do |lesson| %>
-            <% if lesson.start_time > Date.today %>
-              <p class="studentlist-info">Next lesson: <%= lesson.start_time %> </p>
-              <% break %>
+              <p class="student-name"><%= student.first_name %> <%= student.last_name %></p>
+          </div>
+          <div style="color: rgb(144,144,144)">
+            <% @lesson_count = 0 %>
+            <% student.lessons.order(:start_time).each do |lesson| %>
+              <% if lesson.start_time < Date.today %>
+                <% @lesson_count += 1 %>
+              <% end %>
             <% end %>
-          <% end %>
+            <% if @lesson_count == 0 %>
+              <p class="studentlist-info"><%= student.first_name %> has not yet completed any lessons <%  %> </p>
+            <% elsif @lesson_count == 1 %>
+              <p class="studentlist-info"><%= student.first_name %> has completed 1 lesson </p>
+            <% else %>
+              <p class="studentlist-info"><%= student.first_name %> has completed <%= @lesson_count %> lessons </p>
+            <% end %>
+            <% student.lessons.order(:start_time).each do |lesson| %>
+              <% if lesson.start_time > Date.today %>
+                <p class="studentlist-info">Next lesson on <%= lesson.start_time.strftime("%d %b %Y at %H:%M") %> </p>
+                <% break %>
+              <% end %>
+            <% end %>
+          <p class="studentlist-info"> Contact: <%= student.email %> </p>
+          </div>
         </div>
       </div>
-    </div>
+      <% end %>
     <% end %>
+  <% else %>
+    <p style="margin-top: 20px"><i>Sorry, no students found!</i></p>
   <% end %>
-  
+  <div style="height: 12px"></div>
   <%= link_to "Back", dashboard_path, class: 'btn btn-outline-secondary' %>
 </div>
