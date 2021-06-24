@@ -39,21 +39,24 @@ Beginners 1</h4></div></a>
   <div class="col-7">
     <div class="tab-content" id="v-pills-tabContent">
       <div class="tab-pane fade show active" id="v-pills-beginners_1" role="tabpanel" aria-labelledby="v-pills-home-tab">
-        <% @resources.each do |resource| %>
+        <p class="button-link"><%= link_to "+", new_chapter_resource_path(@resources[0].chapter), class: "button-circle" %></p>
+         <% @resources.each do |resource| %>
           <% if resource.chapter.name == 'Beginners 1' %>
             <div class="container-fluid ms-0 ps-0">
                 <div class="row ms-0 ps-0">
                   <div class="col-12 ms-0 ps-0">
-                   <div class="resource-header">
+         <div class="resource-header">
                      <p style="font-size: 20px"><%= link_to resource.title.capitalize, resource_path( resource) %></p>
-                     <%= link_to "+", new_chapter_resource_path(resource.chapter), class: "button-circle" %>
                    </div>
                    <p>
-                   <%= link_to cl_image_path(resource.photo.key) do %>
-                   <%= cl_image_tag resource.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %> 
-                   <% end %>
-                   <%= cl_video_tag resource.video.key, height: 150, width: 200, crop: :fill, controls: true %>
-                     
+                    <% if resource.photo.attached? %>
+                        <%= link_to cl_image_path(resource.photo.key) do %>
+                          <%= cl_image_tag resource.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %>
+                        <% end %>
+                        <% end %>
+                        <% if resource.video.attached? %>
+                        <%= cl_video_tag resource.video.key, height: 150, width: 200, crop: :fill, controls: true %>
+                      <% end %>
                    </p>
 
                  </div>
@@ -62,72 +65,93 @@ Beginners 1</h4></div></a>
           <% end %>  
         <% end %>
       </div>
-      <div class="tab-pane fade" id="v-pills-beginners_2" role="tabpanel" aria-labelledby="v-pills-profile-tab"><% @resources.each do |resource| %>
+      <div class="tab-pane fade" id="v-pills-beginners_2" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+        <p class="button-link"><%= link_to "+", new_chapter_resource_path(@resources[1].chapter), class: "button-circle" %></p>
+        <% @resources.each do |resource| %>
           <% if resource.chapter.name == 'Beginners 2' %>
             <div class="container-fluid ms-0 ps-0">
                 <div class="row ms-0 ps-0">
                   <div class="col-12 ms-0 ps-0">
-                   <p style="font-size: 20px"><%= link_to resource.title.capitalize, resource_path( resource) %></p>
-                   <%= link_to cl_image_path(resource.photo.key) do %>
-                   <p>
-                    <%= cl_image_tag resource.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %>
-                   <% end %>
-                   <%= cl_video_tag resource.video.key, height: 150, width: 200, crop: :fill, controls: true %>
-                     
-                   </p>
-                    <p><%= link_to "Add a new resource", new_chapter_resource_path(resource.chapter) %></p>
+                    <p style="font-size: 20px"><%= link_to resource.title.capitalize, resource_path( resource) %></p>
+                    <p>
+                      <% if resource.photo.attached? %>
+                        <%= link_to cl_image_path(resource.photo.key) do %>
+                          <%= cl_image_tag resource.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %>
+                        <% end %>
+                      <% end %>
+                      <% if resource.video.attached? %>
+                        <%= cl_video_tag resource.video.key, height: 150, width: 200, crop: :fill, controls: true %>
+                      <% end %>
+                    </p>
                  </div>
                </div>
             </div>
           <% end %>  
         <% end %></div>
-      <div class="tab-pane fade" id="v-pills-intermediate_1" role="tabpanel" aria-labelledby="v-pills-messages-tab"><% @resources.each do |resource| %>
+      <div class="tab-pane fade" id="v-pills-intermediate_1" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+         <p class="button-link"><%= link_to "+", new_chapter_resource_path(@resources[2].chapter), class: "button-circle" %></p>
+        <% @resources.each do |resource| %>
           <% if resource.chapter.name == 'Intermediate 1' %>
             <div class="container-fluid ms-0 ps-0">
                 <div class="row ms-0 ps-0">
                   <div class="col-12 ms-0 ps-0">
                    <p style="font-size: 20px"><%= link_to resource.title.capitalize, resource_path( resource) %></p>
-                   <%= link_to cl_image_path(resource.photo.key) do %>
                    <p>
-                    <%= cl_image_tag resource.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %> 
-                   <% end %>
-                   <%= cl_video_tag resource.video.key, height: 150, width: 200, crop: :fill, controls: true %></p>
-                    <p><%= link_to "Add a new resource", new_chapter_resource_path(resource.chapter) %>
-                      </p>
+                      <% if resource.photo.attached? %>
+                        <%= link_to cl_image_path(resource.photo.key) do %>
+                          <%= cl_image_tag resource.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %>
+                        <% end %>
+                      <% end %>
+                      <% if resource.video.attached? %>
+                        <%= cl_video_tag resource.video.key, height: 150, width: 200, crop: :fill, controls: true %>
+                      <% end %>
+                    </p>
                  </div>
                </div>
             </div>
           <% end %>  
         <% end %></div>
-      <div class="tab-pane fade" id="v-pills-intermediate_2" role="tabpanel" aria-labelledby="v-pills-settings-tab"><% @resources.each do |resource| %>
+      <div class="tab-pane fade" id="v-pills-intermediate_2" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+         <p class="button-link"><%= link_to "+", new_chapter_resource_path(@resources[3].chapter), class: "button-circle" %></p>
+        <% @resources.each do |resource| %>
           <% if resource.chapter.name == 'Intermediate 2' %>
             <div class="container-fluid ms-0 ps-0">
                 <div class="row ms-0 ps-0">
                   <div class="col-12 ms-0 ps-0">
                    <p style="font-size: 20px"><%= link_to resource.title.capitalize, resource_path( resource) %></p>
-                   <%= link_to cl_image_path(resource.photo.key) do %>
-                   <p>
-                    <%= cl_image_tag resource.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %>
-                   <% end %>
-                   <%= cl_video_tag resource.video.key, height: 150, width: 200, crop: :fill, controls: true %>
-                     </p>
-                    <p><%= link_to "Add a new resource", new_chapter_resource_path(resource.chapter) %></p>
+                    <p>
+                      <% if resource.photo.attached? %>
+                        <%= link_to cl_image_path(resource.photo.key) do %>
+                          <%= cl_image_tag resource.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %>
+                        <% end %>
+                      <% end %>
+                      <% if resource.video.attached? %>
+                        <%= cl_video_tag resource.video.key, height: 150, width: 200, crop: :fill, controls: true %>
+                      <% end %>
+                    </p>
                  </div>
                </div>
             </div>
           <% end %>  
         <% end %></div>
-      <div class="tab-pane fade" id="v-pills-advanced" role="tabpanel" aria-labelledby="v-pills-settings-tab"><% @resources.each do |resource| %>
+      <div class="tab-pane fade" id="v-pills-advanced" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+         <p class="button-link"><%= link_to "+", new_chapter_resource_path(@resources[4].chapter), class: "button-circle" %></p>
+        <% @resources.each do |resource| %>
           <% if resource.chapter.name == 'Advanced' %>
             <div class="container-fluid ms-0 ps-0">
                 <div class="row ms-0 ps-0">
                   <div class="col-12 ms-0 ps-0">
                    <p style="font-size: 20px"><%= link_to resource.title.capitalize, resource_path( resource) %></p>
-                   <%= link_to cl_image_path(resource.photo.key) do %>
-                   <p><%= cl_image_tag resource.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %>
-                   <% end %>
-                   <%= cl_video_tag resource.video.key, height: 150, width: 200, crop: :fill, controls: true %></p>
-                    <p><%= link_to "Add a new resource", new_chapter_resource_path(resource.chapter) %></p>
+                    <p>
+                      <% if resource.photo.attached? %>
+                        <%= link_to cl_image_path(resource.photo.key) do %>
+                          <%= cl_image_tag resource.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align:top;" %>
+                        <% end %>
+                      <% end %>
+                      <% if resource.video.attached? %>
+                        <%= cl_video_tag resource.video.key, height: 150, width: 200, crop: :fill, controls: true %>
+                      <% end %>
+                    </p>
                  </div>
                </div>
             </div>

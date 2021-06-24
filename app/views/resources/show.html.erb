@@ -1,20 +1,16 @@
-<h1 style="margin-left: 2rem;">Resource for my students</h1>
+<h3 class="header-show-resources" style="margin-left: 5rem; padding: 30px;">Resources for my students</h3>
 
-<div class="card-container" style="margin-left: 2rem;">
+<div class="show-card-container">
 
-<p> <%= @resource.title.capitalize %> </p>
-    <%= link_to cl_image_path(@resource.photo.key) do %>
-     <p><%= cl_image_tag @resource.photo.key, height: 150, width: 200, crop: :fill %> </p>
-     <% end %>
-     <p><%= cl_video_tag @resource.video.key, height: 150, width: 200, crop: :fill, controls: true %><p>
-   
-      
-
-     <%= link_to "All resources for this chapter", chapter_resources_path(@resource.chapter) %>
-
-
+<h4 class="resource-show-header"> <%= @resource.title.capitalize %> </h4>
+     <p>
+        <% if @resource.photo.attached? %>
+          <%= link_to cl_image_path(@resource.photo.key) do %>
+          <%= cl_image_tag @resource.photo.key, height: 250, width: 300, crop: :fill, style: "vertical-align:top;" %>
+          <% end %>
+        <% end %>
+        <% if @resource.video.attached? %>
+            <%= cl_video_tag @resource.video.key, height: 250, width: 300,crop: :fill, controls: true %>
+        <% end %>
+    </p>
 </div>
-
-
-
-

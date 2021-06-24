@@ -1,19 +1,39 @@
-<h2> Assignments:  <%= @student.full_name %> </h2>
+<div class="student-details">
+  <h2 class="assignments-header"> Assignments </h2>
+          <div class="assignment-profile">
+          <% if @student.photo.attached? %>
+            <%= cl_image_tag @student.photo.key, style: 'border-radius: 50%; height: 100px; width: 100px' %>
+          <% else %>
+            <%= cl_image_tag 'https://res.cloudinary.com/tdavid/image/upload/v1623955031/ssaunier_p1bauy.jpg', style: 'border-radius: 50%; height: 100px; width: 100px'%>
+          <% end %>
+        <div class="personal-info">
+          <h4>
+            <%= @student.full_name %>
+          </h4>
+        </div>
+        </div>
+</div>
+
+
 
 <div class="assignment-list">
-   <div class="card-container" style="width: 36rem; margin: 2rem;">
-
-<% @assignments.each do |assignment| %>
-<ul class="list-group card card-small mt-2">
-<li class="list-group-item"><%= link_to assignment.title.capitalize, assignment_path(assignment) %></li>
-<li class="list-group-item"><%= assignment.due_date %></li>
-<li class="list-group-item"><%= assignment.details %></li>
-<li class="list-group-item">Assignment completed: <input type="checkbox" checked readonly="readonly" /></li>
-<li class="list-group-item"><%= cl_image_tag assignment.photo.key, height: 150, width: 200, crop: :fill, style: "vertical-align: top" %>
-<%= cl_video_tag assignment.video.key, height: 150, width: 200, crop: :fill, controls: true %></li>
-
- </ul>
-  <% end %>
-
- </div>
+  <div class="assignments-card">
+    <% @assignments.each do |assignment| %>
+      <ul class="list-group card card-small mt-4">
+        <li class="list-group-item"><h4><%= link_to assignment.title.capitalize, assignment_path(assignment) %></h4></li>
+        <li class="list-group-item"><strong><%= assignment.due_date.strftime("%a, %e %b %Y") %></strong></li>
+        <li class="list-group-item"><%= assignment.details %></li>
+        <li class="list-group-item">Assignment completed: <input type="checkbox" checked readonly="readonly" /></li>
+        <li class="list-group-item">
+          <% if assignment.photo.attached? %>
+            <%= link_to cl_image_path(assignment.photo.key) do %>
+              <%= cl_image_tag assignment.photo.key, height: 180, width: 240, crop: :fill, style: "vertical-align:top;" %>
+            <% end %>
+          <% end %>
+          <% if assignment.video.attached? %>
+            <%= cl_video_tag assignment.video.key, height: 180, width: 240, crop: :fill, controls: true %>
+          <% end %></li>
+      </ul>
+    <% end %>
+  </div>
 </div>
