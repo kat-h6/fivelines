@@ -2,7 +2,7 @@
   <h2 class="assignments-header"> Assignments </h2>
           <div class="assignment-profile">
           <% if @student.photo.attached? %>
-            <%= cl_image_tag @student.photo.key, style: 'border-radius: 50%; height: 100px; width: 100px' %>
+            <%= cl_image_tag @student.photo.key, style: 'border-radius: 50%; height: 80px; width: 80px' %>
           <% else %>
             <%= cl_image_tag 'https://res.cloudinary.com/tdavid/image/upload/v1623955031/ssaunier_p1bauy.jpg', style: 'border-radius: 50%; height: 100px; width: 100px'%>
           <% end %>
