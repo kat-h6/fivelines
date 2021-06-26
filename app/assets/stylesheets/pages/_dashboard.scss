@@ -78,3 +78,30 @@ body {
 .schedule-list .calendar-heading {
   justify-content: space-between;
 }
+
+.no-lessons {
+  font-size: 18px;
+  text-align: center;
+  justify-content: center;
+  margin: 200px auto;
+}
+
+.no-lessons a {
+  color: #18C890;
+}
+
+.no-lessons a:hover {
+  color: #11996d;
+}
+
+.inner-header {
+  display: block;
+}
+
+.inner-header h4 {
+  margin-bottom: 0.5rem;
+}
+
+.inner-header p {
+  color: #000;
+}
