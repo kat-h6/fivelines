@@ -1,6 +1,7 @@
 
-<div class="notes-container">
-  <h1 class="bold-headers">Lesson Summary</h1>
+<div class="notes-container mb-4 mt-4">
+  <%= link_to "skip", student_path(@student), class: "form-link" %>
+  <h2 class="bold-headers">Lesson Summary</h2>
   <%= simple_form_for [ @lesson ] do |l| %>
     <%= l.input :student_notes,
                 label: "Notes for #{@lesson.student.first_name}",
