@@ -8,7 +8,7 @@ class Lesson < ApplicationRecord
   has_many :assignments
 
 
-  scope :today, -> { where("start_time > ?", Date.today.beginning_of_day) }
+  scope :today, -> { where("start_time > ? AND start_time < ?", Date.today.beginning_of_day, Date.today.end_of_day) }
 
   default_scope -> { order(:start_time) }
 
