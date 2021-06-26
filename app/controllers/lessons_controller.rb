@@ -38,6 +38,13 @@ class LessonsController < ApplicationController
   end
 
   def lesson_params
-    params.require(:lesson).permit(:start_time, :end_time, :rate, :teacher_notes, :student_notes, :student_id)
+    params.require(:lesson)
+          .permit(:start_time,
+                  :end_time,
+                  :rate,
+                  :teacher_notes,
+                  :student_notes,
+                  :student_id,
+                  assignments_attributes: [:title, :details, :due_date])
   end
 end

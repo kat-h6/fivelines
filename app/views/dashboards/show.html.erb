@@ -3,12 +3,15 @@
     <div class="row w-100">
       <div class="card lesson">
         <div class="section-header">
-          <h4>Today's lessons</h4>
-          <p><%= Date.today.strftime("%a, %e %b %Y") %></p>
+          <div class="inner-header">
+            <h4>Today's lessons</h4>
+            <p><%= Date.today.strftime("%a, %e %b %Y") %></p>
+          </div>
           <%= link_to "Schedule a lesson", new_lesson_path, class: "button-green" %>
         </div>
 
         <div>
+          <% unless @lessons.today.empty? %>
           <% @lessons.today.each do |lesson| %>
           <div class="student-lesson">
 
@@ -39,6 +42,12 @@
           </div>
         </div>
 
+        <% end %>
+        <% else %>
+        <div class="no-lessons">
+          <p>You have no lessons today.</p>
+          <%= link_to "Schedule a lesson", new_lesson_path, class: "button-text" %>
+        </div>
         <% end %>
       </div>
     </div>
