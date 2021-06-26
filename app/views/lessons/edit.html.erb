@@ -1,14 +1,23 @@
 
 <div class="notes-container">
-  <h1>Notes For This Lesson</h1>
-  <%= simple_form_for [ @lesson ] do |f| %>
-    <%= f.input :student_notes,
+  <h1 class="bold-headers">Lesson Summary</h1>
+  <%= simple_form_for [ @lesson ] do |l| %>
+    <%= l.input :student_notes,
                 label: "Notes for #{@lesson.student.first_name}",
-                input_html: { class: "form-input-field"} %>
-    <%= f.input :teacher_notes,
+                input_html: { class: "form-input-field "} %>
+    <%= l.input :teacher_notes,
                 label: "Notes for me",
                 input_html: { class: "form-input-field" } %>
-      <%= f.submit "Add Notes", class: "form-button-green" %>
+    <%= l.simple_fields_for :assignments do |a| %>
+      <%= a.input :title,
+                  label: "New Assignment Title",
+                  input_html: { class: "form-input-field"} %>
+      <%= a.input :details,
+                  label: "Assignment Details",
+                  input_html: { class: "form-input-field"} %>
+      <%= a.input :due_date %>
+    <% end %>
+    <%= l.submit "Add Notes", class: "form-button-green" %>
   <% end %>
 </div>
 

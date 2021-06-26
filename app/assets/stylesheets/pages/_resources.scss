@@ -1,3 +1,10 @@
+.tab-content .resource-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
 .card-container-new-resources {
 	width: 45rem; 
 	margin: 5rem;
@@ -10,7 +17,7 @@
 }
 
 .resource-header {
-	margin: 20px;
+	text-align: center;
 }
 
 .form-container {
@@ -36,8 +43,29 @@
 
 .button-link {
 	margin-left: 25rem;
+	color: #18C890;
+	font-size: 20px;
 }
 
 .resource-show-header {
 	margin-bottom: 30px;
+}
+
+.resource-show-button {
+	text-align: center;
+}
+
+.resource-index-header {
+	font-size: 25px;
+	color: #5B16BD;
+	padding-bottom: 10px;
+
+}
+
+.beginner1-folder {
+	padding-top: 32px;
+}
+
+.index-top-header {
+	margin-left: 2rem;
 }

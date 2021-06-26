@@ -384,6 +384,7 @@ assignment_two.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_
 assignment_two.save!
 puts "created!"
 
+=begin
 assignment_three = Assignment.create!(
     details: "Prelude to the afternoon of a faune first line in one breath",
     title: "Audition prep",
@@ -425,7 +426,7 @@ assignment_five.photo.attach(io: file_5, filename: 'temp.png', content_type: 'im
 assignment_five.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_5.mov')), filename: 'video_5.mov', content_type: 'video/mov')
 assignment_five.save!
 puts "created!"
-
+=end
 
 
 
@@ -521,6 +522,8 @@ resource_6.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_2.mo
 resource_6.save!
 puts "created!"
 
+
+=begin
 resource_7 = Resource.create!(
     title: "The Phantom of the opera",
     chapter: chapter_2,
@@ -566,8 +569,7 @@ resource_10.photo.attach(io: file_ten, filename: 'temp.png', content_type: 'imag
 resource_10.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_2.mov')), filename: 'video_2.mov', content_type: 'video/mov')
 resource_10.save!
 puts "created!"
-
-
+=end
 
 
 
