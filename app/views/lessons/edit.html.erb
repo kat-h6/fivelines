@@ -16,7 +16,9 @@
       <%= a.input :details,
                   label: "Assignment Details",
                   input_html: { class: "form-input-field"} %>
-      <%= a.input :due_date %>
+      <%= a.input :due_date,
+                  as: :string,
+                  input_html: { class: "datepicker" } %>
     <% end %>
     <%= l.submit "Add Notes", class: "form-button-green" %>
   <% end %>
