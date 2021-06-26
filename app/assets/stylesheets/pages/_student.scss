@@ -6,11 +6,23 @@ body {
   width: 100%;
   background: white;
   border-radius: 15px;
-  height: 116px;
+  margin-top: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.student-list {
+  margin: 50px;
+}
+
+.content-wrapper {
+  margin: 0 30px;
 }
 
 .studentlist-info {
   font-size: small;
+  color: rgb(144,144,144);
+  text-align: right;
 }
 
 a:hover {
@@ -28,8 +40,23 @@ a:hover .student-list-card p {
   transition: 0.3s;
 }
 
+.student-list-card h5 {
+  color: black;
+}
+
+a:hover .student-list-card h5 {
+  color: white;
+  transition: 0.3s;
+}
+
 .student-list-card .student-name {
   color: black;
+  display: flex;
+  align-items: center;
+}
+
+.student-list-card .student-name img {
+  margin-right: 20px
 }
 
 .student-search-bar {
@@ -56,4 +83,8 @@ a:hover .student-list-card p {
 .vl {
   border-left: 6px solid green;
   height: 80%;
+}
+
+.studentlist-info .next-lesson {
+  font-weight: bold;
 }
