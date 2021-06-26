@@ -19,6 +19,26 @@
   border: 2px solid #11996d;
 }
 
+.button-grey {
+  color: #fff;
+  background-color: grey;
+  font-size: 18px;
+  border-radius: 25px;
+  padding: 11px 30px;
+  width: auto;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px;
+  border: 2px solid grey;
+}
+
+.button-grey:hover {
+  background-color: #42515a;
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid #42515a;
+}
+
 .button-text a {
   font-family: 'Roboto', sans-serif;
   color: #18C890;

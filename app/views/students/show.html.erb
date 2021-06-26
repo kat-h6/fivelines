@@ -2,22 +2,25 @@
   <div>
     <div class="card">
       <div class="student-details">
+        <div class="inner-details">
           <% if @student.photo.attached? %>
-            <%= cl_image_tag @student.photo.key, style: 'border-radius: 50%; height: 100px; width: 100px' %>
+            <%= cl_image_tag @student.photo.key, style: 'border-radius: 50%; height: 150px; width: 150px' %>
           <% else %>
             <%= cl_image_tag 'https://res.cloudinary.com/tdavid/image/upload/v1623955031/ssaunier_p1bauy.jpg', style: 'border-radius: 50%; height: 100px; width: 100px'%>
           <% end %>
-        <div class="personal-info">
-          <h2>
-            <%= @student.full_name %>
-          </h2>
-          <p>
-            <%= @student.email %>
-          </p>
+          <div class="personal-info">
+            <h2>
+              <%= @student.full_name %>
+            </h2>
+            <p>
+              <%= @student.email %>
+            </p>
+          </div>
         </div>
+
         <div class="cta">
           <% if @lesson %>
-            <%= link_to "Join lesson", lesson_path(@lesson), class: "btn btn-success" %>
+            <%= link_to "Join lesson", lesson_path(@lesson), class: "button-green" %>
           <% end %>
         </div>
       </div>
@@ -25,8 +28,9 @@
         <%#= link_to "Message @student.first_name", message_path(student), class: "btn btn-success" %>
       </div>
     </div>
+
     <div class="d-flex">
-      <div class="card col-12 col-lg-8">
+      <div class="card lesson">
         <div class="section-header">
           <h4>Lesson history</h4>
         </div>
@@ -48,17 +52,17 @@
                   <%= lesson.starting_in %>
                 </p>
                 <% else %>
-                <%= link_to "Join lesson", lesson_path(lesson), class: "btn btn-success" %>
+                <%= link_to "Join lesson", lesson_path(lesson), class: "button-green" %>
               <% end %>
             </div>
           </div>
           <% end %>
         </div>
-
       </div>
-      <div class="card col-12 col-lg-4">
+
+      <div class="card schedule-list">
         <div class="assignments-container mb-5">
-          <%= link_to "See assignments", student_assignments_user_path, class: "btn btn-secondary" %>
+          <%= link_to "See assignments", student_assignments_user_path, class: "button-grey" %>
         </div>
         <div>
           <%#= link_to "Add assignment", new_lesson_assignment_path(@lesson), class: "btn btn-success" %>
@@ -75,4 +79,8 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="back-cta">
+  <%= link_to "Back", students_path, class: 'button-grey' %>
 </div>

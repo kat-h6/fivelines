@@ -4,7 +4,13 @@ body {
 
 .student-details {
   align-items: center;
-  justify-content: flex-start;
+  display: flex;
+  justify-content: space-between;
+}
+
+.student-details .inner-details {
+  align-items: center;
+  display: flex;
 }
 
 .student-details img {
@@ -12,15 +18,40 @@ body {
 }
 
 .student-details .cta {
-  margin: 0 auto;
+  margin: 0 50px;
+}
+
+.lesson .section-header h4 {
+  margin-bottom: 0;
 }
 
 .student-lesson {
   justify-content: space-between;
-  margin: 20px 0;
+  padding: 20px 0;
+  min-width: 500px;
+}
+
+.student-lesson .lesson-info p {
+  margin: 0;
+}
+
+.student-lesson .lesson-info {
+  align-items: center;
 }
 
 .student-lesson .lesson-start {
-  padding-left: 200px;
   justify-content: flex-end;
+}
+
+.student-lesson .lesson-start p {
+  margin: 0 15px;
+}
+
+.assignments-container {
+  margin: 10px auto;
+  justify-content: center;
+}
+
+.back-cta {
+  margin-top: 30px;
 }
