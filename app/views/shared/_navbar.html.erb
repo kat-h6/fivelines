@@ -12,7 +12,7 @@
             <li class="<%= "menu-active" if current_page?(dashboard_path) %>">
                 <span class="material-icons">home</span> <%= link_to "Home", dashboard_path%>
               </li>
-            <li class="<%= "menu-active" if current_page?(students_path) %>">
+            <li class="<%= "menu-active" if current_page?(students_path) || params[:controller] == 'students' && params[:action] == 'show' || params[:controller] == 'users' && params[:action] == 'student_assignments' %>">
               <span class="material-icons">people_alt</span> <%= link_to "Students", students_path, class: "vert-nav-link" %>
             </li>
             <li class="<%= "menu-active" if current_page?(calendar_path) %>">
