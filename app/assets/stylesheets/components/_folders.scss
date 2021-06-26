@@ -39,6 +39,15 @@
 	margin-bottom: auto;
 }
 
+
+
+.nav-link span {
+	margin-left: 5px;
+}
+
+.nav-link.active span {
+	margin-left: 12px;
+}
 // Put the class title-card-small on the h4
 // .title-card-small {
 // 	margin-top: auto;
