@@ -1,9 +1,9 @@
-<h3 class="header-show-resources" style="margin-left: 5rem; padding: 30px;">Resources for my students</h3>
+<h2 class="resource-header" style="margin-left: 5rem; padding: 30px;">Resources for my students</h2>
 
 <div class="show-card-container">
 
-<h4 class="resource-show-header"> <%= @resource.title.capitalize %> </h4>
-     <p>
+<h3 class="resource-show-header"> <%= @resource.title.capitalize %> </h3>
+     <div class="show-attachments">
         <% if @resource.photo.attached? %>
           <%= link_to cl_image_path(@resource.photo.key) do %>
           <%= cl_image_tag @resource.photo.key, height: 250, width: 300, crop: :fill, style: "vertical-align:top;" %>
@@ -12,5 +12,8 @@
         <% if @resource.video.attached? %>
             <%= cl_video_tag @resource.video.key, height: 250, width: 300,crop: :fill, controls: true %>
         <% end %>
-    </p>
+    </div>
+</div>
+<div class="show-back-button">
+<%= link_to "Back to Resources", resources_path, class: "btn btn-outline-secondary" %>
 </div>

@@ -27,10 +27,15 @@ export default class extends Controller {
   }
 
   toggleButton() {
+    const videocallElement = document.getElementById("videocall-btn")
     console.log("i was clicked")
     this.videoVisible = !this.videoVisible
     console.log(this.videoVisible)
     this.publisher.publishVideo(this.videoVisible);
+    videocallElement.classList.toggle('inactive-videocall')
+    videocallElement.classList.toggle('fa-video')
+    videocallElement.classList.toggle('fa-video-slash')
+
   }
 
   initializeSession() {

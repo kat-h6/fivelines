@@ -1,6 +1,7 @@
 
-<div class="notes-container">
-  <h1 class="bold-headers">Lesson Summary</h1>
+<div class="notes-container mb-4 mt-4">
+  <%= link_to "skip", student_path(@student), class: "form-link" %>
+  <h2 class="bold-headers">Lesson Summary</h2>
   <%= simple_form_for [ @lesson ] do |l| %>
     <%= l.input :student_notes,
                 label: "Notes for #{@lesson.student.first_name}",
@@ -15,7 +16,9 @@
       <%= a.input :details,
                   label: "Assignment Details",
                   input_html: { class: "form-input-field"} %>
-      <%= a.input :due_date %>
+      <%= a.input :due_date,
+                  as: :string,
+                  input_html: { class: "datepicker" } %>
     <% end %>
     <%= l.submit "Add Notes", class: "form-button-green" %>
   <% end %>

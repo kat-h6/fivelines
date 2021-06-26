@@ -5,6 +5,7 @@
   padding: 16px 30px;
   border-radius: 10px;
   box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  position: relative;
 }
 
 .form-input-field {
@@ -15,5 +16,6 @@
 .bold-headers {
   font-weight: bold;
   color: black;
+  text-align: center;
 }
 

@@ -1,8 +1,9 @@
-
 <div class="my-container">
+  <%= link_to "Back", student_path(@student), class: "btn btn-outline-secondary link-right" %>
   <div class="student-details">
     <h2 class="bold-headers">Assignments</h2>
         <h5><%= @student.full_name %></h5>
+
   </div>
     <div class="assignments-card">
       <% @assignments.each do |assignment| %>

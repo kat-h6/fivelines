@@ -1,6 +1,6 @@
 <div class="card-container-new-resources">
   <div class="container-resources">
-    <h2 class="resource-header">New resource to add to <%= @chapter.name %></h2>
+    <h2 class="bold-headers" style="padding-bottom: 15px;">New resource to add to <%= @chapter.name %></h2>
     <div>
     <%= simple_form_for [@chapter, @resource] do |f| %>
           <%= f.input :title, placeholder: 'Resource title' %>
@@ -12,8 +12,7 @@
           
     <% end %> 
   </div>
-
 </div>
-<%= link_to "Back to Resources", resources_path, style: "color: green" %>
+<div class="new-back-button">
+<%= link_to "Back to Resources", resources_path, class: "btn btn-outline-secondary" %>
 </div>
-

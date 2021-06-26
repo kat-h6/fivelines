@@ -17,7 +17,8 @@
 }
 
 .resource-header {
-	text-align: center;
+	text-align: left;
+	font-weight: bold;
 }
 
 .form-container {
@@ -30,10 +31,14 @@
 }
 
 .show-card-container {
-	margin-left: 5rem; 
-    padding: 50px;
+	margin-left: 7rem;
+  padding-top: 25px;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-bottom: 50px;
 	background-color: white;
-	margin-right: 10rem;
+	margin-right: 7rem;
+	border-radius: 10px;
 }
 
 .button-style-resource {
@@ -48,7 +53,9 @@
 }
 
 .resource-show-header {
-	margin-bottom: 30px;
+	padding-top: 0px;
+	margin-bottom: 40px;
+	text-align: center;
 }
 
 .resource-show-button {
@@ -68,4 +75,17 @@
 
 .index-top-header {
 	margin-left: 2rem;
+}
+
+.show-attachments {
+	padding-left: 10px;
+}
+
+.show-back-button {
+	padding: 20px;
+	margin-left: 5.5rem;
+}
+
+.new-back-button {
+	padding-top: 20px;
 }

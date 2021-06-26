@@ -19,3 +19,21 @@
   background: #1BCB7F;
   color: white;
 }
+
+.calendar-heading {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.calendar-heading a {
+  color: #18C890;
+}
+
+.calendar-heading a:hover {
+  color: #11996d;
+}
+
+.simple-calendar .today {
+  background-color: rgba(24, 200, 144, 0.2);
+}
