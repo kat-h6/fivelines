@@ -1,24 +1,45 @@
 <h3 style="margin-left: 2rem;"><%= @assignment.title.capitalize %>  </h3>
 
-<div class="show-card-container" style="margin-left: 2rem;">
+<div class="show-card-container" style="margin-left: 2rem; border-radius: 25px">
   <div class="inner-card">
+  <div style="border-bottom: 1px solid #e8e8e8; margin-bottom:15px">
     <p> <strong><%= @assignment.due_date.strftime("%a, %e %b %Y") %></strong> </p>
-    <p> <%= @assignment.details %> </p>
-    <p> <%= @assignment.feedback %> </p>
-    <li class="list-group-item">Assignment completed: <input type="checkbox" checked readonly="readonly" /></li>
   </div>
- 
+    <div class="inner-card-assignment">
+    <div class="inner-card-details">
+      <p style="border-bottom: 1px solid white; color: #808080"> Assignment Details:</p>
+      <p> <%= @assignment.details %> </p>
+    </div>
+    <div class="inner-card-feedback">
+    <p style="border-bottom: 1px solid white; color: #808080">Assignment Feedback:</p>
+    <% if @assignment.feedback == " " %>
+    <p><i>No feedback</i></p>
+    <% else %>
+    <p> <%= @assignment.feedback %> </p>
+    <% end %>
+    </div>
+    </div>
+  </div>
+    <div  class="inner-card-completed">
+    <li class="list-group-item" style="padding-bottom: 25px">Assignment completed: <input type="checkbox" checked readonly="readonly" /></li>
+
+    <div style="display: flex">
     <p>
     <% if @assignment.photo.attached? %>
       <%= link_to cl_image_path(@assignment.photo.key) do %>
       <%= cl_image_tag @assignment.photo.key, height: 250, width: 300, crop: :fill, style: "vertical-align:top; margin-right: 20px;" %>
     <% end %>
+    </p>
+    <p>
       <% end %>
     <% if @assignment.video.attached? %>
       <%= cl_video_tag @assignment.video.key, height: 250, width: 300, crop: :fill, controls: true %>
     <% end %>
     </p>
-</div>
+    </div>  
+    </div>
+      <%= link_to "Back", students_path, class: 'btn btn-outline-secondary' %>
 
+  </div>
 
 
