@@ -25,7 +25,8 @@ student_seven = User.new(
     last_name: "H",
     username: "Sapideh1",
     teacher: false,
-    date_of_birth: '1980-11-25'
+    date_of_birth: '1980-11-25',
+    instrument: 'flute'
     )
 
 student_seven.photo.attach(io: photo_s_seven, filename: 'temp.png', content_type: 'image/png')
@@ -42,7 +43,8 @@ student_six = User.new(
     last_name: "H",
     username: "Kathy1",
     teacher: false,
-    date_of_birth: '1980-11-25'
+    date_of_birth: '1980-11-25',
+    instrument: 'flute'
     )
 
 student_six.photo.attach(io: photo_s_six, filename: 'temp.png', content_type: 'image/png')
@@ -57,7 +59,8 @@ student_one = User.new(
     last_name: "H",
     username: "Chris1",
     teacher: false,
-    date_of_birth: '1980-11-25'
+    date_of_birth: '1980-11-25',
+    instrument: 'violin'
     )
 
 student_one.photo.attach(io: photo_two, filename: 'temp.png', content_type: 'image/png')
@@ -73,7 +76,8 @@ teacher_one = User.new(
     last_name: "H",
     username: "Tavis1",
     teacher: true,
-    date_of_birth: '1980-11-25'
+    date_of_birth: '1980-11-25',
+    instrument: 'violin'
     )
 teacher_one.photo.attach(io: photo_one, filename: 'temp.png', content_type: 'image/png')
 teacher_one.save!
@@ -88,7 +92,8 @@ student_eight = User.new(
     last_name: "H",
     username: "Carry1",
     teacher: false,
-    date_of_birth: '1980-11-25'
+    date_of_birth: '1980-11-25',
+    instrument: 'flute'
     )
 
 student_eight.photo.attach(io: photo_three, filename: 'temp.png', content_type: 'image/png')
@@ -103,7 +108,8 @@ student_two = User.new(
     last_name: "H",
     username: "Jongah1",
     teacher: false,
-    date_of_birth: '1980-11-25'
+    date_of_birth: '1980-11-25',
+    instrument: 'flute'
     )
 
 student_two.photo.attach(io: photo_five, filename: 'temp.png', content_type: 'image/png')
@@ -118,7 +124,8 @@ student_three = User.new(
     last_name: "H",
     username: "Kyle1",
     teacher: false,
-    date_of_birth: '1980-11-25'
+    date_of_birth: '1980-11-25',
+    instrument: 'clarinet'
     )
 
 student_three.photo.attach(io:photo_ten, filename: 'temp.png', content_type: 'image/png')
@@ -133,7 +140,8 @@ student_four = User.new(
     last_name: "H",
     username: "Alin",
     teacher: false,
-    date_of_birth: '1980-11-25'
+    date_of_birth: '1980-11-25',
+    instrument: 'clarinet'
     )
 
 student_four.photo.attach(io: photo_six, filename: 'temp.png', content_type: 'image/png')
@@ -149,7 +157,8 @@ student_five = User.new(
     last_name: "H",
     username: "Matthaious",
     teacher: false,
-    date_of_birth: '1980-11-25'
+    date_of_birth: '1980-11-25',
+    instrument: 'violin'
     )
 student_five.photo.attach(io: photo_four, filename: 'temp.png', content_type: 'image/png')
 
