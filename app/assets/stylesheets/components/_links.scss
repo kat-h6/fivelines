@@ -1,0 +1,25 @@
+.underlined-link {
+  text-decoration: underline;
+}
+
+
+.underlined-link:hover {
+  color: #3F137E;
+}
+
+.link-right {
+  position: absolute;
+  right: 29px;
+  top: 0;
+}
+
+.form-link {
+  position: absolute;
+  right: 29px;
+  top: 10px;
+  color: #18C890;
+}
+
+.form-link:hover {
+  color: #11996d;
+}

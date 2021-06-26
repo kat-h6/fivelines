@@ -24,6 +24,7 @@ class LessonsController < ApplicationController
 
   def edit
     @lesson.assignments.build if @lesson.assignments.empty?
+    @student = @lesson.student
   end
 
   def update

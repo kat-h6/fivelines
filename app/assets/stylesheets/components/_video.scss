@@ -57,4 +57,40 @@ body, html {
 #videocall-red-btn:hover {
     color: $red;
     background-color: white;
-  }
+}
+
+.green-btn {
+  color: white;
+  font-size: 15px;
+  border-radius: 30px;
+  background-color: $green;
+  padding: 8px 16px;
+  opacity: 0.8;
+  transition: 0.5s;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+.green-btn:hover {
+  color: $green;
+  background-color: white;
+  cursor: pointer;
+}
+
+.inactive-videocall {
+  background-color: $red;
+  color: white;
+  font-size: 14px;
+  border-radius: 30px;
+  padding: 8px 16px;
+  opacity: 0.8;
+  transition: 0.5s;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+.inactive-videocall:hover {
+  color: $red;
+  background-color: white;
+  cursor: pointer;
+}
