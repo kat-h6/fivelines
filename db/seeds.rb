@@ -165,7 +165,7 @@ lesson_one = Lesson.create!(
 	)
 
 lesson_two = Lesson.create!(
-	student_id: student_one.id ,
+	student_id: student_two.id ,
 	teacher_id: teacher_one.id,
 	start_time: '2021-07-17 23:00',
 	end_time: '2021-07-17 24:00',

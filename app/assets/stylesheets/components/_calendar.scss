@@ -9,14 +9,18 @@
 
 .meeting {
   color: white;
-  padding: 8px 24px;
+  padding: 4px 20px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: #18C890;
   transition: background 0.3s ease;
 }
 
+.meeting p {
+  margin-bottom: none;
+}
+
 .meeting:hover {
-  background: #1BCB7F;
+  background: #11996d;
   color: white;
 }
 
@@ -28,6 +32,10 @@
 
 .calendar-heading a {
   color: #18C890;
+  align-self: flex-end;
+  font-size: 30px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .calendar-heading a:hover {
@@ -35,5 +43,58 @@
 }
 
 .simple-calendar .today {
-  background-color: rgba(24, 200, 144, 0.2);
+  background-color: rgba(24, 200, 144, 0.2) !important;
+}
+
+.calendar-title {
+  background-color: transparent;
+  border: none;
+  color: $gray;
+  font-size: 2rem;
+  padding-bottom: none;
+  font-weight: 600;
+}
+
+.calendar-heading {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.simple-calendar td {
+  border-top-color: rgba(63, 19, 126, 0.2);
+  border-bottom-color: rgba(63, 19, 126, 0.2);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  color: #42515a;
+}
+
+.simple-calendar th {
+  border-top: 1px solid rgba(63, 19, 126, 0.3);
+  border-bottom: 2px solid rgba(63, 19, 126, 0.3);
+  border-left: transparent !important;
+  border-right: transparent !important;
+}
+
+.table thead th {
+  border-bottom: 1px solid rgba(63, 19, 126, 0.3);
+  color: #42515a;
+}
+
+.simple-calendar .prev-month {
+  background: transparent;
+}
+
+.simple-calendar .next-month {
+  background: transparent;
+}
+
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color: rgba(63, 19, 126, 0.2);
+}
+
+.simple-calendar td:hover {
+  background-color: rgba(63, 19, 126, 0.5) !important;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
