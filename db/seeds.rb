@@ -163,6 +163,66 @@ student_five = User.new(
 student_five.photo.attach(io: photo_four, filename: 'temp.png', content_type: 'image/png')
 
 
+demo_lesson_one = Lesson.create!(
+  student: student_six,
+  teacher: teacher_one,
+  start_time: '2021-07-03 18:00',
+  end_time: '2021-07-03 19:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+demo_lesson_two = Lesson.create!(
+  student: student_one,
+  teacher: teacher_one,
+  start_time: '2021-07-03 14:00',
+  end_time: '2021-07-03 15:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+demo_lesson_three = Lesson.create!(
+  student: student_seven,
+  teacher: teacher_one,
+  start_time: '2021-07-03 15:00',
+  end_time: '2021-07-03 16:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+demo_lesson_notes = Lesson.create!(
+  student: student_six,
+  teacher: teacher_one,
+  start_time: '2021-06-24 15:00',
+  end_time: '2021-06-24 16:00',
+  rate: 25,
+  teacher_notes: "Kathy played the first half of the Jolivet Concerto for me in preparation for her concert"
+)
+
+
+demo_lesson_notes_two = Lesson.create!(
+  student: student_six,
+  teacher: teacher_one,
+  start_time: '2021-06-16 15:00',
+  end_time: '2021-06-16 16:00',
+  rate: 25,
+  teacher_notes: "We worked on articulation for most of the lesson. Kathy's double-tonguing has improved since last month."
+)
+
+demo_lesson_notes_three = Lesson.create!(
+  student: student_six,
+  teacher: teacher_one,
+  start_time: '2021-06-08 15:00',
+  end_time: '2021-06-08 16:00',
+  rate: 25,
+  teacher_notes: "Kathy ran through the first movement of Jolivet Concerto and JS Bach B minor Sonata."
+)
+
+
+
 lesson_one = Lesson.create!(
 	student_id: student_one.id ,
 	teacher_id: teacher_one.id,
@@ -198,8 +258,8 @@ lesson_three = Lesson.create!(
 lesson_four = Lesson.create!(
 	student_id: student_one.id ,
 	teacher_id: teacher_one.id,
-	start_time: '2021-06-22 10:00',
-	end_time: '2021-06-22 11:00',
+	start_time: '2021-08-22 10:00',
+	end_time: '2021-08-22 11:00',
 	rate: 25,
 	teacher_notes: " ",
 	student_notes: " "
@@ -208,8 +268,8 @@ lesson_four = Lesson.create!(
 lesson_five = Lesson.create!(
   student_id: student_four.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-23 10:00',
-  end_time: '2021-06-23 11:00',
+  start_time: '2021-07-23 10:00',
+  end_time: '2021-07-23 11:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -218,8 +278,8 @@ lesson_five = Lesson.create!(
 lesson_six = Lesson.create!(
   student: student_four,
   teacher: teacher_one,
-  start_time: '2021-06-30 10:00',
-  end_time: '2021-06-30 11:00',
+  start_time: '2021-07-30 10:00',
+  end_time: '2021-07-30 11:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -229,8 +289,8 @@ lesson_six = Lesson.create!(
 lesson_seven = Lesson.create!(
   student_id: student_four.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-21 10:00',
-  end_time: '2021-06-21 11:00',
+  start_time: '2021-07-21 10:00',
+  end_time: '2021-07-21 11:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -240,8 +300,8 @@ lesson_seven = Lesson.create!(
 lesson_eight = Lesson.create!(
 	student: student_six,
 	teacher: teacher_one,
-	start_time: '2021-07-17 12:00',
-	end_time: '2021-07-17 13:00',
+	start_time: '2021-08-17 12:00',
+	end_time: '2021-08-17 13:00',
 	rate: 25,
 	teacher_notes: " ",
 	student_notes: " "
@@ -250,8 +310,8 @@ lesson_eight = Lesson.create!(
 lesson_nine = Lesson.create!(
   student: student_five,
   teacher: teacher_one,
-  start_time: '2021-06-29 12:00',
-  end_time: '2021-06-29 13:00',
+  start_time: '2021-07-10 12:00',
+  end_time: '2021-07-10 13:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -260,8 +320,8 @@ lesson_nine = Lesson.create!(
 lesson_ten = Lesson.create!(
   student_id: student_five.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-28 12:00',
-  end_time: '2021-06-28 13:00',
+  start_time: '2021-07-09 12:00',
+  end_time: '2021-07-09 13:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -272,8 +332,8 @@ lesson_ten = Lesson.create!(
 Lesson.create!(
   student_id: student_three.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-20 12:00',
-  end_time: '2021-06-20 13:00',
+  start_time: '2021-07-08 12:00',
+  end_time: '2021-07-08 13:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -284,8 +344,8 @@ Lesson.create!(
 Lesson.create!(
   student_id: student_three.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-25 12:00',
-  end_time: '2021-06-25 13:00',
+  start_time: '2021-07-12 12:00',
+  end_time: '2021-07-12 13:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -335,8 +395,8 @@ Lesson.create!(
 Lesson.create!(
   student_id: student_six.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-18 10:00',
-  end_time: '2021-06-18 11:00',
+  start_time: '2021-07-09 10:00',
+  end_time: '2021-07-09 11:00',
   teacher_notes: " ",
   student_notes: " "
   )
@@ -344,8 +404,8 @@ Lesson.create!(
 Lesson.create!(
   student_id: student_five.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-18 14:00',
-  end_time: '2021-06-18 15:00',
+  start_time: '2021-07-18 14:00',
+  end_time: '2021-07-18 15:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -354,8 +414,8 @@ Lesson.create!(
 Lesson.create!(
   student_id: student_one.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-17 21:00',
-  end_time: '2021-06-17 22:00',
+  start_time: '2021-07-17 10:00',
+  end_time: '2021-07-17 11:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
