@@ -2,7 +2,7 @@
   font-family: 'Roboto', sans-serif;
   color: #fff;
   background-color: #18C890;
-  font-size: 20px;
+  font-size: 18px;
   border-radius: 25px;
   padding: 7px 30px;
   width: auto;
@@ -17,9 +17,12 @@
   color: #fff;
   text-decoration: none;
   border: 2px solid #11996d;
+  transition-timing-function: linear;
+  transition: 0.3s;
 }
 
 .button-grey {
+  font-family: 'Roboto', sans-serif;
   color: #fff;
   background-color: grey;
   font-size: 18px;
@@ -37,12 +40,31 @@
   color: #fff;
   text-decoration: none;
   border: 2px solid #42515a;
+  transition-timing-function: linear;
+  transition: 0.3s;
+}
+
+.button-back {
+  font-family: 'Roboto', sans-serif;
+  color: grey;
+  font-size: 18px;
+  width: auto;
+  text-decoration: none;
+  align-items: center;
+  margin: 5px;
+}
+
+.button-back:hover {
+  color: #42515a;
+  text-decoration: none;
+  transition-timing-function: linear;
+  transition: 0.3s;
 }
 
 .button-text a {
   font-family: 'Roboto', sans-serif;
   color: #18C890;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   padding: 0.5rem 1rem;
   text-decoration: none;
@@ -51,6 +73,8 @@
 .button-text a:hover {
   color: #11996d;
   text-decoration: underline;
+  transition-timing-function: linear;
+  transition: 0.3s;
 }
 
 .button-outline {
@@ -61,7 +85,7 @@
   border-radius: 25px;
   padding: 7px 30px;
   width: auto;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   text-decoration: none;
   margin: 5px;
@@ -70,6 +94,9 @@
 .button-outline:hover {
   border: 2px solid #11996d;
   color: #11996d;
+  transition-timing-function: linear;
+  transition: 0.3s;
+
   a {
     color: #11996d;
   }
@@ -78,7 +105,7 @@
 .button-outline a {
   font-family: 'Roboto', sans-serif;
   color: #18C890;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   margin: 5px;
 }
@@ -86,7 +113,7 @@
 .button-green a {
   font-family: 'Roboto', sans-serif;
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .button-circle {
@@ -94,7 +121,7 @@
   color: #fff;
   background-color: #18C890;
   width: 35px;
-  font-size: 20px;
+  font-size: 18px;
   border-radius: 50%;
   padding: 5px;
   text-align: center;
@@ -105,6 +132,8 @@
 .button-circle:hover {
   color: #fff;
   background-color: #11996d;
+  transition-timing-function: linear;
+  transition: 0.3s;
 }
 
 .form-button-green {
@@ -120,9 +149,11 @@
 }
 
 .form-button-green:hover {
-    background-color: #11996d;
-    color: #fff;
-    text-decoration: none;
+  background-color: #11996d;
+  color: #fff;
+  text-decoration: none;
+  transition-timing-function: linear;
+  transition: 0.3s;
   }
 
 #green-items {
