@@ -25,7 +25,8 @@ student_seven = User.new(
     last_name: "H",
     username: "Sapideh1",
     teacher: false,
-    date_of_birth: '1980-11-25'
+    date_of_birth: '1980-11-25',
+    instrument: 'flute'
     )
 
 student_seven.photo.attach(io: photo_s_seven, filename: 'temp.png', content_type: 'image/png')
@@ -42,7 +43,8 @@ student_six = User.new(
     last_name: "H",
     username: "Kathy1",
     teacher: false,
-    date_of_birth: '1980-11-25'
+    date_of_birth: '1980-11-25',
+    instrument: 'flute'
     )
 
 student_six.photo.attach(io: photo_s_six, filename: 'temp.png', content_type: 'image/png')
@@ -57,7 +59,8 @@ student_one = User.new(
     last_name: "H",
     username: "Chris1",
     teacher: false,
-    date_of_birth: '1980-11-25'
+    date_of_birth: '1980-11-25',
+    instrument: 'violin'
     )
 
 student_one.photo.attach(io: photo_two, filename: 'temp.png', content_type: 'image/png')
@@ -73,7 +76,8 @@ teacher_one = User.new(
     last_name: "H",
     username: "Tavis1",
     teacher: true,
-    date_of_birth: '1980-11-25'
+    date_of_birth: '1980-11-25',
+    instrument: 'violin'
     )
 teacher_one.photo.attach(io: photo_one, filename: 'temp.png', content_type: 'image/png')
 teacher_one.save!
@@ -88,7 +92,8 @@ student_eight = User.new(
     last_name: "H",
     username: "Carry1",
     teacher: false,
-    date_of_birth: '1980-11-25'
+    date_of_birth: '1980-11-25',
+    instrument: 'flute'
     )
 
 student_eight.photo.attach(io: photo_three, filename: 'temp.png', content_type: 'image/png')
@@ -103,7 +108,8 @@ student_two = User.new(
     last_name: "H",
     username: "Jongah1",
     teacher: false,
-    date_of_birth: '1980-11-25'
+    date_of_birth: '1980-11-25',
+    instrument: 'flute'
     )
 
 student_two.photo.attach(io: photo_five, filename: 'temp.png', content_type: 'image/png')
@@ -118,7 +124,8 @@ student_three = User.new(
     last_name: "H",
     username: "Kyle1",
     teacher: false,
-    date_of_birth: '1980-11-25'
+    date_of_birth: '1980-11-25',
+    instrument: 'clarinet'
     )
 
 student_three.photo.attach(io:photo_ten, filename: 'temp.png', content_type: 'image/png')
@@ -133,7 +140,8 @@ student_four = User.new(
     last_name: "H",
     username: "Alin",
     teacher: false,
-    date_of_birth: '1980-11-25'
+    date_of_birth: '1980-11-25',
+    instrument: 'clarinet'
     )
 
 student_four.photo.attach(io: photo_six, filename: 'temp.png', content_type: 'image/png')
@@ -149,9 +157,70 @@ student_five = User.new(
     last_name: "H",
     username: "Matthaious",
     teacher: false,
-    date_of_birth: '1980-11-25'
+    date_of_birth: '1980-11-25',
+    instrument: 'violin'
     )
 student_five.photo.attach(io: photo_four, filename: 'temp.png', content_type: 'image/png')
+
+
+demo_lesson_one = Lesson.create!(
+  student: student_six,
+  teacher: teacher_one,
+  start_time: '2021-07-03 18:00',
+  end_time: '2021-07-03 19:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+demo_lesson_two = Lesson.create!(
+  student: student_one,
+  teacher: teacher_one,
+  start_time: '2021-07-03 19:00',
+  end_time: '2021-07-03 20:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+demo_lesson_three = Lesson.create!(
+  student: student_seven,
+  teacher: teacher_one,
+  start_time: '2021-07-03 20:00',
+  end_time: '2021-07-03 21:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+demo_lesson_notes = Lesson.create!(
+  student: student_six,
+  teacher: teacher_one,
+  start_time: '2021-06-24 15:00',
+  end_time: '2021-06-24 16:00',
+  rate: 25,
+  teacher_notes: "Kathy played the first half of the Jolivet Concerto for me in preparation for her concert"
+)
+
+
+demo_lesson_notes_two = Lesson.create!(
+  student: student_six,
+  teacher: teacher_one,
+  start_time: '2021-06-16 15:00',
+  end_time: '2021-06-16 16:00',
+  rate: 25,
+  teacher_notes: "We worked on articulation for most of the lesson. Kathy's double-tonguing has improved since last month."
+)
+
+demo_lesson_notes_three = Lesson.create!(
+  student: student_six,
+  teacher: teacher_one,
+  start_time: '2021-06-08 15:00',
+  end_time: '2021-06-08 16:00',
+  rate: 25,
+  teacher_notes: "Kathy ran through the first movement of Jolivet Concerto and JS Bach B minor Sonata."
+)
+
 
 
 lesson_one = Lesson.create!(
@@ -165,7 +234,8 @@ lesson_one = Lesson.create!(
 	)
 
 lesson_two = Lesson.create!(
-	student_id: student_one.id ,
+	student: student_eight,
+
 	teacher_id: teacher_one.id,
 	start_time: '2021-07-17 23:00',
 	end_time: '2021-07-17 24:00',
@@ -189,8 +259,8 @@ lesson_three = Lesson.create!(
 lesson_four = Lesson.create!(
 	student_id: student_one.id ,
 	teacher_id: teacher_one.id,
-	start_time: '2021-06-22 10:00',
-	end_time: '2021-06-22 11:00',
+	start_time: '2021-08-22 10:00',
+	end_time: '2021-08-22 11:00',
 	rate: 25,
 	teacher_notes: " ",
 	student_notes: " "
@@ -199,8 +269,8 @@ lesson_four = Lesson.create!(
 lesson_five = Lesson.create!(
   student_id: student_four.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-23 10:00',
-  end_time: '2021-06-23 11:00',
+  start_time: '2021-07-23 10:00',
+  end_time: '2021-07-23 11:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -209,8 +279,8 @@ lesson_five = Lesson.create!(
 lesson_six = Lesson.create!(
   student: student_four,
   teacher: teacher_one,
-  start_time: '2021-06-30 10:00',
-  end_time: '2021-06-30 11:00',
+  start_time: '2021-07-30 10:00',
+  end_time: '2021-07-30 11:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -220,8 +290,8 @@ lesson_six = Lesson.create!(
 lesson_seven = Lesson.create!(
   student_id: student_four.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-21 10:00',
-  end_time: '2021-06-21 11:00',
+  start_time: '2021-07-21 10:00',
+  end_time: '2021-07-21 11:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -231,8 +301,8 @@ lesson_seven = Lesson.create!(
 lesson_eight = Lesson.create!(
 	student: student_six,
 	teacher: teacher_one,
-	start_time: '2021-07-17 12:00',
-	end_time: '2021-07-17 13:00',
+	start_time: '2021-08-17 12:00',
+	end_time: '2021-08-17 13:00',
 	rate: 25,
 	teacher_notes: " ",
 	student_notes: " "
@@ -241,8 +311,8 @@ lesson_eight = Lesson.create!(
 lesson_nine = Lesson.create!(
   student: student_five,
   teacher: teacher_one,
-  start_time: '2021-06-29 12:00',
-  end_time: '2021-06-29 13:00',
+  start_time: '2021-07-10 12:00',
+  end_time: '2021-07-10 13:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -251,8 +321,8 @@ lesson_nine = Lesson.create!(
 lesson_ten = Lesson.create!(
   student_id: student_five.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-28 12:00',
-  end_time: '2021-06-28 13:00',
+  start_time: '2021-07-09 12:00',
+  end_time: '2021-07-09 13:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -263,8 +333,8 @@ lesson_ten = Lesson.create!(
 Lesson.create!(
   student_id: student_three.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-20 12:00',
-  end_time: '2021-06-20 13:00',
+  start_time: '2021-07-08 12:00',
+  end_time: '2021-07-08 13:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -275,8 +345,8 @@ Lesson.create!(
 Lesson.create!(
   student_id: student_three.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-25 12:00',
-  end_time: '2021-06-25 13:00',
+  start_time: '2021-07-12 12:00',
+  end_time: '2021-07-12 13:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -326,8 +396,8 @@ Lesson.create!(
 Lesson.create!(
   student_id: student_six.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-18 10:00',
-  end_time: '2021-06-18 11:00',
+  start_time: '2021-07-09 10:00',
+  end_time: '2021-07-09 11:00',
   teacher_notes: " ",
   student_notes: " "
   )
@@ -335,8 +405,8 @@ Lesson.create!(
 Lesson.create!(
   student_id: student_five.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-18 14:00',
-  end_time: '2021-06-18 15:00',
+  start_time: '2021-07-18 14:00',
+  end_time: '2021-07-18 15:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -345,8 +415,8 @@ Lesson.create!(
 Lesson.create!(
   student_id: student_one.id ,
   teacher_id: teacher_one.id,
-  start_time: '2021-06-17 21:00',
-  end_time: '2021-06-17 22:00',
+  start_time: '2021-07-17 10:00',
+  end_time: '2021-07-17 11:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -355,12 +425,12 @@ Lesson.create!(
 
 
 assignment_one = Assignment.create!(
-    details: "play G major scale double-tongued, quarter note=120",
-    title: "Major Scales",
-    due_date: '2021-07-01',
-    completed: false,
-    feedback: " ",
-    lesson: lesson_one
+    details: "Play through Jolivet Concerto in the concert hall with your pianit",
+    title: "Run Through",
+    due_date: '2021-06-27',
+    completed: true,
+    feedback: "The second movement needs to be more exciting, not just technical",
+    lesson: demo_lesson_notes
     )
 
 file_1 = URI.open('https://images.unsplash.com/photo-1520446266423-6daca23fe8c7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80')
@@ -371,16 +441,16 @@ puts "created!"
 
 
 assignment_two = Assignment.create!(
-    details: "daphnis solo bar 173-175 at a slower tempo",
-    title: "Audition prep",
+    details: "scales",
+    title: "Play through scale all slurred with tempo quarternote = 100",
     due_date: '2021-06-24',
     completed: false,
-    feedback: " ",
+    feedback: "Make sure you blow evenly through all the notes for that legato line!",
     lesson: lesson_two
     )
 file_2 = URI.open('https://cdn.shopify.com/s/files/1/0815/5455/products/sheet_grande.jpg?v=1462572134')
 assignment_two.photo.attach(io: file_2, filename: 'temp.png', content_type: 'image/png')
-assignment_two.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_2.mov')), filename: 'video_2.mov', content_type: 'video/mov')
+assignment_two.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_3.mov')), filename: 'video_3.mov', content_type: 'video/mov')
 assignment_two.save!
 puts "created!"
 

@@ -11,6 +11,8 @@
   background-color: #17105A;
   border-radius: 25px;
   color: #fff;
+  transition-timing-function: linear;
+  transition: 0.3s;
 
   a {
     color: #fff;
@@ -18,7 +20,7 @@
 }
 
 .menu-active {
-  background-color: #fff;
+  background-color: #F0F4FB;
   border-radius: 25px;
   color: #fff;
 
@@ -29,6 +31,7 @@
 
 .app-nav img {
   margin: 30px;
+  width: 150px;
 }
 
 .app-nav ul {
@@ -38,8 +41,9 @@
 }
 
 .app-nav li {
+  font-family: 'Roboto', sans-serif;
   color: #18C890;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: normal;
   list-style: none;
   line-height: 2.3;

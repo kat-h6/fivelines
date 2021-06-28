@@ -1,4 +1,8 @@
 <div class="inner-dashboard-container">
+  <div class="back-cta">
+    <span class="material-icons">arrow_back_ios_new</span>
+    <%= link_to "Back to students", students_path, class: 'button-back' %>
+  </div>
   <div>
     <div class="card">
       <div class="student-details">
@@ -15,6 +19,7 @@
             <p>
               <%= @student.email %>
             </p>
+            <p><%= @student.instrument %></p>
           </div>
         </div>
 
@@ -30,12 +35,15 @@
     </div>
 
     <div class="d-flex">
+      <div class="lesson-history">
       <div class="card lesson">
         <div class="section-header">
-          <h4>Lesson history</h4>
+          <h4>Upcoming lessons</h4>
         </div>
         <div>
+
           <% @lessons.each do |lesson| %>
+          <% if lesson.start_time.localtime > Time.now %>
           <div class="student-lesson">
             <div class="lesson-info">
               <h5>
@@ -57,8 +65,35 @@
             </div>
           </div>
           <% end %>
+          <% end %>
         </div>
       </div>
+
+      <div class="card lesson">
+        <div class="section-header">
+          <h4>Previous lessons</h4>
+        </div>
+        <div>
+
+
+        <% @lessons.each do |lesson| %>
+          <% if lesson.start_time.localtime < Time.now %>
+          <div class="student-lesson">
+            <div class="lesson-info">
+              <h5>
+                <%= lesson.start_time.localtime.strftime("%a, %e %b %Y") %>
+              </h5>
+            </div>
+              <p>
+                <%= lesson.start_time.localtime.to_s(:time) %> -
+                <%= lesson.end_time.localtime.to_s(:time) %>
+              </p>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
 
       <div class="card schedule-list">
         <div class="assignments-container mb-5">
@@ -69,18 +104,18 @@
         </div>
 
         <div class="lesson-notes-container">
-          <h5>Lesson Notes</h5>
+          <div class="section-header">
+            <h4>Lesson notes</h4>
+          </div>
           <% @lessons.each do |lesson| %>
             <div class="lesson-info">
-            <%= lesson.teacher_notes %>
+              <% if lesson.teacher_notes.present? %>
+                <span><%= lesson.start_time.strftime("%e %b %Y") %></span>
+                <%= lesson.teacher_notes %>
+              <% end %>
             </div>
           <% end %>
-          <%#= link_to "See all notes", teacher_notes_path(lesson) %>
       </div>
     </div>
   </div>
-</div>
-
-<div class="back-cta">
-  <%= link_to "Back", students_path, class: 'button-grey' %>
 </div>
