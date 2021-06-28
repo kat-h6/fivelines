@@ -2,9 +2,6 @@
   table {
     min-height: 80vh;
   }
-  .today {
-    background-color: #FAF3DD;
-  }
 }
 
 .meeting {
@@ -15,9 +12,11 @@
   transition: background 0.3s ease;
 }
 
+
 .meeting p {
   margin-bottom: none;
 }
+
 
 .meeting:hover {
   background: #11996d;
@@ -45,6 +44,7 @@
 .simple-calendar .today {
   background-color: rgba(24, 200, 144, 0.2) !important;
 }
+
 
 .calendar-title {
   background-color: transparent;

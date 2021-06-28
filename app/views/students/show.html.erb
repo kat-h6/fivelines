@@ -110,7 +110,7 @@
           <% @lessons.each do |lesson| %>
             <div class="lesson-info">
               <% if lesson.teacher_notes.present? %>
-                <span><%= lesson.created_at.strftime("%e %b %Y") %></span>
+                <span><%= lesson.start_time.strftime("%e %b %Y") %></span>
                 <%= lesson.teacher_notes %>
               <% end %>
             </div>
