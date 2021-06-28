@@ -12,6 +12,12 @@
   transition: background 0.3s ease;
 }
 
+
+.meeting:hover {
+  background: #11996d;
+  color: white;
+}
+
 .calendar-heading {
   display: flex;
   justify-content: space-between;

@@ -1,5 +1,6 @@
 body {
   background-color: #F0F4FB;
+  font-family: 'Roboto', sans-serif;
 }
 
 .student-details {
@@ -31,8 +32,17 @@ body {
   min-width: 500px;
 }
 
+.student-lesson p {
+  margin: 0 15px;
+  opacity: 0.6;
+}
+.student-lesson .lesson-info h5 {
+  color: #18C890;
+}
+
 .student-lesson .lesson-info p {
   margin: 0;
+  opacity: 0.6;
 }
 
 .student-lesson .lesson-info {
@@ -45,6 +55,7 @@ body {
 
 .student-lesson .lesson-start p {
   margin: 0 15px;
+  opacity: 0.6;
 }
 
 .assignments-container {
@@ -53,5 +64,19 @@ body {
 }
 
 .back-cta {
+  color: grey;
   margin-top: 30px;
+  align-items: center;
+  display: flex;
+}
+
+.back-cta:hover {
+  color: #42515a;
+
+    a {
+      text-decoration: underline;
+    }
+    span {
+      color: #42515a;
+    }
 }

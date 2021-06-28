@@ -1,27 +1,45 @@
-<div class="my-container">
-  <%= link_to "Back", student_path(@student), class: "btn btn-outline-secondary link-right" %>
-  <div class="student-details">
-    <h2 class="bold-headers">Assignments</h2>
-        <h5><%= @student.full_name %></h5>
-
-  </div>
-    <div class="assignments-card">
-      <% @assignments.each do |assignment| %>
-        <ul class="list-group card card-small mt-4">
-          <li class="list-group-item"><h4><%= link_to assignment.title.capitalize, assignment_path(assignment), class: "bold-headers underlined-link" %></h4></li>
-          <li class="list-group-item"><p>Due: <%= assignment.due_date.strftime("%a, %e %b %Y") %></p></li>
-          <li class="list-group-item"><p>Details: <%= assignment.details %></p></li>
-          <li class="list-group-item">Assignment completed: <input type="checkbox" checked readonly="readonly" /></li>
-          <li class="list-group-item">
-            <% if assignment.photo.attached? %>
-              <%= link_to cl_image_path(assignment.photo.key) do %>
-                <%= cl_image_tag assignment.photo.key, height: 180, width: 240, crop: :fill, style: "vertical-align:top;" %>
-              <% end %>
-            <% end %>
-            <% if assignment.video.attached? %>
-              <%= cl_video_tag assignment.video.key, height: 180, width: 240, crop: :fill, controls: true %>
-            <% end %></li>
-        </ul>
-      <% end %>
+<div class="inner-dashboard-container">
+  <div class="card">
+    <div class="student-details">
+      <div class="inner-details">
+        <% if @student.photo.attached? %>
+          <%= cl_image_tag @student.photo.key, style: 'border-radius: 50%; height: 150px; width: 150px' %>
+        <% else %>
+          <%= cl_image_tag 'https://res.cloudinary.com/tdavid/image/upload/v1623955031/ssaunier_p1bauy.jpg', style: 'border-radius: 50%; height: 100px; width: 100px'%>
+        <% end %>
+        <div class="personal-info">
+          <h2>
+            <%= @student.full_name %>
+          </h2>
+          <p>
+            <%= @student.email %>
+          </p>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <h2 class="bold-headers">Assignments</h2>
+  <h5><%= @student.full_name %></h5>
+
+  <div class="assignments-card">
+    <% @assignments.each do |assignment| %>
+      <ul class="list-group card card-small mt-4">
+        <li class="list-group-item"><h4><%= link_to assignment.title.capitalize, assignment_path(assignment), class: "bold-headers underlined-link" %></h4></li>
+        <li class="list-group-item"><p>Due: <%= assignment.due_date.strftime("%a, %e %b %Y") %></p></li>
+        <li class="list-group-item"><p>Details: <%= assignment.details %></p></li>
+        <li class="list-group-item">Assignment completed: <input type="checkbox" checked readonly="readonly" /></li>
+        <li class="list-group-item">
+          <% if assignment.photo.attached? %>
+            <%= link_to cl_image_path(assignment.photo.key) do %>
+              <%= cl_image_tag assignment.photo.key, height: 180, width: 240, crop: :fill, style: "vertical-align:top;" %>
+            <% end %>
+          <% end %>
+          <% if assignment.video.attached? %>
+            <%= cl_video_tag assignment.video.key, height: 180, width: 240, crop: :fill, controls: true %>
+          <% end %></li>
+      </ul>
+    <% end %>
+  </div>
+  <%= link_to "Back", student_path(@student), class: "btn btn-outline-secondary" %>
 </div>
