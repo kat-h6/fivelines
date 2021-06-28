@@ -88,9 +88,12 @@
   background: transparent;
 }
 
+.simple-calendar .meeting p {
+  margin-bottom: 0;
+}
 
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-   background-color: rgba(63, 19, 126, 0.2);
+   background-color: rgba(63, 19, 126, 0.1);
 }
 
 .simple-calendar td:hover {
@@ -98,3 +101,5 @@
   cursor: pointer;
   transition: background 0.3s ease;
 }
+
+.simple-calendar .calendar-heading my-2 a { border: none; }
