@@ -444,7 +444,7 @@ assignment_two = Assignment.create!(
     details: "scales",
     title: "Play through scale all slurred with tempo quarternote = 100",
     due_date: '2021-06-24',
-    completed: false,
+    completed: true,
     feedback: "Make sure you blow evenly through all the notes for that legato line!",
     lesson: lesson_two
     )
