@@ -29,9 +29,10 @@
             <% else %>
               <%= cl_image_tag 'https://res.cloudinary.com/tdavid/image/upload/v1623955031/ssaunier_p1bauy.jpg', style: 'border-radius: 50%; height: 100px; width: 100px'%>
             <% end %>
-
+              <div style="display: flex; flex-direction: column">
               <h5><%= student.first_name %> <%= student.last_name %></h5>
               <p><%= student.instrument %></p>
+              </div>
           </div>
             <div class="studentlist-info">
                             <% student.lessons.order(:start_time).each do |lesson| %>
