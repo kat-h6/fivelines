@@ -7,15 +7,15 @@
   </div>
     <div class="inner-card-assignment">
     <div class="inner-card-details">
-      <p style="border-bottom: 1px solid white; color: #808080"> Assignment Details:</p>
-      <p> <%= @assignment.details %> </p>
+      <p style="border-bottom: 1px solid white; color: black"> Assignment Details:</p>
+      <p style="color: #808080"> <%= @assignment.details %> </p>
     </div>
     <div class="inner-card-feedback">
-    <p style="border-bottom: 1px solid white; color: #808080">Assignment Feedback:</p>
-    <% if @assignment.feedback == " " %>
-    <p><i>No feedback</i></p>
+    <p style="border-bottom: 1px solid white; color: black">Assignment Feedback:</p>
+    <% if @assignment.feedback == " " || @assignment.feedback == "" %>
+    <p style="color: #808080"><i>No feedback</i></p>
     <% else %>
-    <p> <%= @assignment.feedback %> </p>
+    <p style="color: #808080"> <%= @assignment.feedback %> </p>
     <% end %>
     </div>
     </div>
@@ -38,7 +38,7 @@
     </p>
     </div>  
     </div>
-      <%= link_to "Back", students_path, class: 'btn btn-outline-secondary' %>
+      <%= link_to "Back", student_path(@student), class: 'btn btn-outline-secondary' %>
 
   </div>
 
