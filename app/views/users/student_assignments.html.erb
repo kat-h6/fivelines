@@ -19,20 +19,17 @@
     </div>
   </div>
 
-  <h2 class="bold-headers assignments-header">Assignments</h2>
-  <h5><%= @student.full_name %></h5>
+  <h2 class="bold-headers" style="margin-top: 50px">Assignments</h2>
 
   <div class="assignments-card">
     <% @assignments.each do |assignment| %>
-      <ul class="list-group card card-small mt-4">
-        <li class="list-group-item"><h4><%= link_to assignment.title.capitalize, assignment_path(assignment), class: "bold-headers underlined-link" %></h4></li>
-        <li class="list-group-item"><p>Due: <%= assignment.due_date.strftime("%a, %e %b %Y") %></p></li>
-        <li class="list-group-item"><p>Details: <%= assignment.details %></p></li>
-        <li class="list-group-item">Assignment completed: 
-          <% if assignment.completed == true %>
-          <input type="checkbox" checked readonly="readonly" />
-          <% end %>
-        </li>
+      <ul class="list-group card card-small mt-4" style="width: 100%">
+        <li class="list-group-item"><h4 style="margin-left: 10px; margin-bottom: 10px"><%= link_to assignment.title.capitalize, assignment_path(assignment), class: "bold-headers underlined-link" %></h4></li>
+        <li class="list-group-item inner-card-list"><p style="border-bottom: 1px solid white">Due Date:</p>
+        <p style="color: #808080"> <%= assignment.due_date.strftime("%a, %e %b %Y") %></p></li>
+        <li class="list-group-item inner-card-list"><p style="border-bottom: 1px solid white">Assignment Details: </p>
+        <p style="color: #808080"><%= assignment.details %></p></li>
+        <li class="list-group-item">Assignment completed: <input type="checkbox" checked readonly="readonly" /></li>
         <li class="list-group-item">
           <% if assignment.photo.attached? %>
             <%= link_to cl_image_path(assignment.photo.key) do %>

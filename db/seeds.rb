@@ -279,7 +279,7 @@ demo_lesson_notes_three = Lesson.create!(
   start_time: '2021-06-08 15:00',
   end_time: '2021-06-08 16:00',
   rate: 25,
-  teacher_notes: "Kathy ran through the first movement of Jolivet Concerto and JS Bach B minor Sonata."
+  teacher_notes: "Kathy ran through the first movement of Jolivet Concerto and JS Bach Sonata."
 )
 
 
@@ -486,7 +486,7 @@ Lesson.create!(
 
 
 assignment_one = Assignment.create!(
-    details: "Play through Jolivet Concerto in the concert hall with your pianit",
+    details: "Play through Jolivet Concerto in the concert hall with your pianist",
     title: "Run Through",
     due_date: '2021-06-27',
     completed: true,
