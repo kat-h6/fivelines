@@ -78,6 +78,13 @@
 
 }
 
+.resource-index-header:hover {
+	color: #18C890;
+    text-decoration: none;
+    background-color: transparent;
+
+}
+
 .beginner1-folder {
 	padding-top: 18px;
   margin-top: 1px;
@@ -87,7 +94,8 @@
 	margin-left: 2rem;
 	margin-bottom: 0rem;
 	padding-bottom: 0px;
-}
+	color: #42515A;
+	}
 
 .show-attachments {
 	display: grid;
