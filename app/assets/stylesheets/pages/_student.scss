@@ -1,5 +1,6 @@
 body {
   background-color: #F0F4FB;
+  font-family: 'Roboto', sans-serif;
 }
 
 .student-list-card {
@@ -20,7 +21,7 @@ body {
 }
 
 .studentlist-info {
-  font-size: small;
+  font-size: 16px;
   color: rgb(144,144,144);
   text-align: right;
 }
@@ -30,18 +31,20 @@ a:hover {
 }
 
 a:hover .student-list-card {
-  background-color: #40137e9e;
+  background-color: #40137e29;
   transition-timing-function: linear;
   transition: 0.6s;
 }
 
 a:hover .student-list-card p {
+  font-family: 'Roboto', sans-serif;
   color: white;
   transition: 0.3s;
 }
 
 .student-list-card h5 {
-  color: black;
+  font-family: 'Roboto', sans-serif;
+  color: #42515a;
 }
 
 a:hover .student-list-card h5 {
@@ -50,7 +53,7 @@ a:hover .student-list-card h5 {
 }
 
 .student-list-card .student-name {
-  color: black;
+  color: #42515a;
   display: flex;
   align-items: center;
 }

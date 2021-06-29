@@ -8,7 +8,7 @@ body {
 }
 
 .section-header {
-  color: grey;
+  color: #42515a;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,6 +35,8 @@ body {
 }
 
 .student-lesson h5 {
+  font-family: 'Roboto', sans-serif;
+  color: #42515a;
   font-weight: bold;
 }
 
@@ -42,7 +44,11 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  color: grey;
+  color: #42515a;
+
+  span {
+    opacity: 0.6;
+  }
 }
 
 .schedule li {
@@ -51,11 +57,13 @@ body {
 
 .start-time {
   display: flex;
-  color: grey;
+  color: #42515a;
   justify-content: center;
+  opacity: 0.6;
 }
 
 .start-time span {
+  font-family: 'Roboto', sans-serif;
   padding-right: 5px;
 }
 
@@ -71,22 +79,30 @@ body {
 }
 
 .schedule-list .meeting p {
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   font-weight: 600;
 }
 
 .schedule-list .calendar-heading {
+  font-family: 'Roboto', sans-serif;
   justify-content: space-between;
 }
 
 .no-lessons {
+  font-family: 'Roboto', sans-serif;
   font-size: 18px;
   text-align: center;
   justify-content: center;
   margin: 200px auto;
 }
+.no-lessons p {
+  color: #42515a;
+  opacity: 0.6;
+}
 
 .no-lessons a {
+  font-family: 'Roboto', sans-serif;
   color: #18C890;
 }
 
@@ -98,10 +114,37 @@ body {
   display: block;
 }
 
-.inner-header h4 {
+.lesson .section-header .inner-header h4 {
+  color: #42515a;
+  font-family: 'Roboto', sans-serif;
   margin-bottom: 0.5rem;
 }
 
 .inner-header p {
-  color: #000;
+  font-family: 'Roboto', sans-serif;
+  color: #42515a;
+  opacity: 0.6;
+}
+
+.lesson-notes-container {
+  color: #42515a;
+  font-family: 'Roboto', sans-serif;
+  justify-content: space-between;
+}
+
+.lesson-notes-container p {
+  opacity: 0.6;
+}
+
+.lesson-notes-container .section-header h4 {
+  margin-bottom: 0;
+}
+
+.lesson-notes-container span {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #42515a;
+  font-weight: bold;
+  padding-right: 2rem;
+  opacity: 0.6;
 }

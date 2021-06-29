@@ -9,6 +9,7 @@
 .nav-link {
 	height: 70px;
 	color: $black;
+	padding-bottom: 65px;
 }
 
 .nav-link.active {
@@ -16,7 +17,7 @@
 }
 
 .nav-link.active .card-small {
-	background-color: $green;
+	background-color: #18C890;
 }
 
 .nav-link:hover {
