@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.folder-name {
+	color: #42515A;
+	opacity: 0.9;
+}
 
 .card-container-new-resources {
 	width: 45rem; 
@@ -16,12 +20,6 @@
 	padding: 30px;
 }
 
-.resource-header {
-	text-align: left;
-	margin-bottom: 0;
-	padding-bottom: 20px;
-	padding-left: 2px;
-}
 
 .form-container {
 	margin: 20px;
@@ -52,12 +50,16 @@
 	margin-left: 25rem;
 	color: #18C890;
 	font-size: 20px;
+	font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
 }
 
 .button-link:hover {
-    color: #5B16BD;
+    color: #11996d;
     text-decoration: none;
-    background-color: transparent;
+    transition-timing-function: linear;
+    transition: 0.3s;
 }
 
 .resource-show-header {
@@ -73,14 +75,17 @@
 .resource-index-header {
 	text-align: left;
 	font-size: 25px;
-	color: #5B16BD;
-	padding-bottom: 10px;
+	padding-bottom: 15px;
+	text-align: left;
+	margin-bottom: 0;
+	padding-left: 2px;
+	color: #18C890;
 
 }
 
 .resource-index-header:hover {
 	color: #18C890;
-    text-decoration: none;
+    text-decoration: underline;
     background-color: transparent;
 
 }
