@@ -37,7 +37,7 @@
           <div class="col-12 col-lg-6">
           </div>
 
-          <div class="col-12 col-lg-6">
+          <div class="col-12 col-lg-6 animate__animated animate__fadeInUp">
             <h2>Where music education happens</h2>
             <p>FiveLines makes teaching music easy, whenever or wherever you are. Inspire your students to learn and keep them motivated to practice music. Teach music theory, set regular assignments and empower students to learn rapidly through a practical syllabus.</p>
           </div>
@@ -49,7 +49,7 @@
 
 <div class="how-to">
   <div class="container">
-    <h2>Why FiveLines</h2>
+    <h2 class="animate__animated animate__fadeInUp">Why FiveLines</h2>
     <div class="d-flex">
       <div class="col-12 col-lg-3">
         <div class="purple-card">
@@ -104,13 +104,13 @@
 </div>
 
 <div class="testimonial-sec">
-  <h2>What our customers say</h2>
+  <h2 class="animate__animated animate__fadeInUp">What our customers say</h2>
   <div class="container d-flex">
     <div class="card">
       <%= cl_image_tag 'sheila_v8fvrm.jpg', style: 'border-radius: 50%; height: 100px; width: 100px' %>
       <div class="quote-wrapper">
         <p class="customer-quote">"A fantastic way to incorporate a huge range of music into your teaching in an interactive and engaging way. Very helpful in keeping my students on track with their music."</p>
-        <p class="customer-name">Sheila</p>
+        <p class="customer-name">- Sheila</p>
       </div>
     </div>
 
@@ -118,7 +118,7 @@
       <%= cl_image_tag 'anders_cenj9o.png', style: 'border-radius: 50%; height: 100px; width: 100px' %>
       <div class="quote-wrapper">
         <p class="customer-quote">"A game-changer for music teachers. It's so easy to use and my students just love it! Highly recommended to anyone looking to teach remotely."</p>
-        <p class="customer-name">Sy</p>
+        <p class="customer-name">- Sy</p>
       </div>
     </div>
 
@@ -126,7 +126,7 @@
       <%= cl_image_tag 'Joanna_mnlqre.jpg', style: 'border-radius: 50%; height: 100px; width: 100px' %>
       <div class="quote-wrapper">
         <p class="customer-quote">"AMAZING! Such an excellent resource that I can really see helping a huge number of people with progressing their music and developing their skills."</p>
-        <p class="customer-name">Joanna</p>
+        <p class="customer-name">- Joanna</p>
       </div>
     </div>
   </div>
@@ -134,8 +134,8 @@
 
 <div class="bottom-sec" style="background-image: url('<%= cl_image_path 'green-wave_t5g1cu.svg', height: 400, crop: :fill %>'); background-repeat: no-repeat; background-position: bottom;"; >
   <div class="container">
-    <h2>Ready to start teaching music?</h2>
-    <h3>Create your account and get started. It's free!</h3>
+    <h2 class="animate__animated animate__fadeInUp">Ready to start teaching music?</h2>
+    <h3 class="animate__animated animate__fadeInUp">Create your account and get started. It's free!</h3>
     <div class="cta-group">
       <div class="button-green">
         <%= link_to "Sign in", new_user_session_path %>
