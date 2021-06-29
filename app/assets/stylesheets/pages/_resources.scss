@@ -20,12 +20,6 @@
 	padding: 30px;
 }
 
-.resource-header {
-	text-align: left;
-	margin-bottom: 0;
-	padding-bottom: 20px;
-	padding-left: 2px;
-}
 
 .form-container {
 	margin: 20px;
@@ -77,14 +71,17 @@
 .resource-index-header {
 	text-align: left;
 	font-size: 25px;
-	color: #5B16BD;
-	padding-bottom: 10px;
+	padding-bottom: 15px;
+	text-align: left;
+	margin-bottom: 0;
+	padding-left: 2px;
+	color: #18C890;
 
 }
 
 .resource-index-header:hover {
 	color: #18C890;
-    text-decoration: none;
+    text-decoration: underline;
     background-color: transparent;
 
 }
