@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <h2 class="bold-headers">Assignments</h2>
+  <h2 class="bold-headers assignments-header">Assignments</h2>
   <h5><%= @student.full_name %></h5>
 
   <div class="assignments-card">
@@ -28,7 +28,11 @@
         <li class="list-group-item"><h4><%= link_to assignment.title.capitalize, assignment_path(assignment), class: "bold-headers underlined-link" %></h4></li>
         <li class="list-group-item"><p>Due: <%= assignment.due_date.strftime("%a, %e %b %Y") %></p></li>
         <li class="list-group-item"><p>Details: <%= assignment.details %></p></li>
-        <li class="list-group-item">Assignment completed: <input type="checkbox" checked readonly="readonly" /></li>
+        <li class="list-group-item">Assignment completed: 
+          <% if assignment.completed == true %>
+          <input type="checkbox" checked readonly="readonly" />
+          <% end %>
+        </li>
         <li class="list-group-item">
           <% if assignment.photo.attached? %>
             <%= link_to cl_image_path(assignment.photo.key) do %>

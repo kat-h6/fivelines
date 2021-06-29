@@ -162,6 +162,67 @@ student_five = User.new(
     )
 student_five.photo.attach(io: photo_four, filename: 'temp.png', content_type: 'image/png')
 
+tues_demo_lesson_one = Lesson.create!(
+  student: student_six,
+  teacher: teacher_one,
+  start_time: '2021-06-29 18:00',
+  end_time: '2021-06-29 19:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+tues_demo_lesson_two = Lesson.create!(
+  student: student_one,
+  teacher: teacher_one,
+  start_time: '2021-06-29 19:00',
+  end_time: '2021-06-29 20:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+tues_demo_lesson_three = Lesson.create!(
+  student: student_seven,
+  teacher: teacher_one,
+  start_time: '2021-06-29 20:00',
+  end_time: '2021-06-29 21:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+
+thurs_demo_lesson_one = Lesson.create!(
+  student: student_six,
+  teacher: teacher_one,
+  start_time: '2021-07-01 18:00',
+  end_time: '2021-07-01 19:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+thurs_demo_lesson_two = Lesson.create!(
+  student: student_one,
+  teacher: teacher_one,
+  start_time: '2021-07-01 19:00',
+  end_time: '2021-07-01 20:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
+thurs_demo_lesson_three = Lesson.create!(
+  student: student_seven,
+  teacher: teacher_one,
+  start_time: '2021-07-01 20:00',
+  end_time: '2021-07-01 21:00',
+  rate: 25,
+  teacher_notes: " ",
+  student_notes: " "
+  )
+
 
 demo_lesson_one = Lesson.create!(
   student: student_six,
@@ -444,7 +505,7 @@ assignment_two = Assignment.create!(
     details: "scales",
     title: "Play through scale all slurred with tempo quarternote = 100",
     due_date: '2021-06-24',
-    completed: false,
+    completed: true,
     feedback: "Make sure you blow evenly through all the notes for that legato line!",
     lesson: lesson_two
     )
