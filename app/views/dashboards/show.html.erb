@@ -22,9 +22,9 @@
               <%= cl_image_tag 'https://res.cloudinary.com/tdavid/image/upload/v1623955031/ssaunier_p1bauy.jpg', style: 'border-radius: 50%; height: 100px; width: 100px'%>
             <% end %>
             <div class="lesson-info">
-              <h5><%= lesson.student.full_name %></h5>
+              <h5><%= link_to "#{lesson.student.full_name}", student_path(lesson.student), class: "meeting-link" %></h5>
           
-              <p><%= lesson.start_time.localtime.to_s(:time) %> - <%= lesson.end_time.localtime.to_s(:time) %></p>
+              <p><%= lesson.student.instrument.capitalize %></p>
             </div>
           </div>
           <div class="lesson-time">
@@ -62,7 +62,7 @@
             <% @lessons.today.each do |meeting| %>
               <div class="meeting d-flex">
                 <p><%= meeting.start_time.localtime.strftime("%I:%M%p") %></p>
-                <p><%= meeting.student.first_name %></p>
+                <p><%= link_to "#{meeting.student.first_name}", student_path(meeting.student), class: "meeting-link" %></p>
               </div>
             <% end %>
           <% end %>
