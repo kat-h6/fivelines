@@ -42,7 +42,7 @@
   <div class="col-7">
     <div class="tab-content" id="v-pills-tabContent">
       <div class="tab-pane fade show active" id="v-pills-beginners_1" role="tabpanel" aria-labelledby="v-pills-home-tab">
-        <p><%= link_to "Add resource", new_chapter_resource_path(Chapter.find_by(name: "Beginners 1")), class: "button-link" %></p>
+        <p><%= link_to "+ Add resource", new_chapter_resource_path(Chapter.find_by(name: "Beginners 1")), class: "button-link" %></p>
          <% @resources.each do |resource| %>
           <% if resource.chapter.name == 'Beginners 1' %>
             <div class="container-fluid ms-0 ps-0 mt-3">

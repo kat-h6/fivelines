@@ -50,12 +50,16 @@
 	margin-left: 25rem;
 	color: #18C890;
 	font-size: 20px;
+	font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
 }
 
 .button-link:hover {
-    color: #5B16BD;
+    color: #11996d;
     text-decoration: none;
-    background-color: transparent;
+    transition-timing-function: linear;
+    transition: 0.3s;
 }
 
 .resource-show-header {
