@@ -12,6 +12,13 @@
   transition: background 0.3s ease;
 }
 
+.meeting-link {
+  color: white;
+}
+
+.meeting-link:hover {
+  color: white;
+}
 
 .meeting p {
   margin-bottom: none;
@@ -99,7 +106,7 @@
 .simple-calendar td:hover {
   background-color: rgba(63, 19, 126, 0.5) !important;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.2s ease;
 }
 
 .simple-calendar .calendar-heading my-2 a { border: none; }

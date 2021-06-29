@@ -4,7 +4,7 @@
 
     <% meetings.each do |meeting| %>
       <div class="meeting">
-        <p><%= meeting.student.first_name %></p>
+        <p><%= link_to "#{meeting.student.first_name}", student_path(meeting.student), class: "meeting-link" %></p>
         <small><%= meeting.start_time.localtime.strftime('%H:%M') %> - <%= meeting.end_time.localtime.strftime('%H:%M') %></small>
       </div>
     <% end %>
