@@ -1,18 +1,15 @@
-<div class="card-container-new-resources">
-  <div class="container-resources">
-    <h2 class="bold-headers" style="padding-bottom: 15px;">New resource to add to <%= @chapter.name %></h2>
+<div class="notes-container mb-4 mt-4">
+    <h2 class="bold-headers">New resource to add to <%= @chapter.name %></h2>
     <div>
     <%= simple_form_for [@chapter, @resource] do |f| %>
-          <%= f.input :title, placeholder: 'Resource title' %>
+          <%= f.input :title, placeholder: 'Resource title',
+          input_html: { class: "form-input-field "} %>
           <%= f.input :photo, as: :file %>
           <%= f.input :video, as: :file %>
-          <div class="resource-show-button">
-          <%= f.submit class: "button-green" %>
+          <div class="resource-show-button d-flex">
+          <%= f.submit class: "form-button-green" %>
           </div> 
           
     <% end %> 
   </div>
-</div>
-<div class="new-back-button">
-<%= link_to "Back to Resources", resources_path, class: "btn btn-outline-secondary" %>
-</div>
+
