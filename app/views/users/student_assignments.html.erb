@@ -1,4 +1,9 @@
 <div class="inner-dashboard-container">
+  <div class="back-cta" style="margin-bottom: 1rem;">
+  <span class="material-icons">arrow_back_ios_new</span>
+  <%= link_to "Back to #{@student.first_name.capitalize}'s profile", student_path(@student), class: 'button-back' %>
+</div>
+
   <div class="card">
     <div class="student-details">
       <div class="inner-details">
@@ -8,12 +13,9 @@
           <%= cl_image_tag 'https://res.cloudinary.com/tdavid/image/upload/v1623955031/ssaunier_p1bauy.jpg', style: 'border-radius: 50%; height: 100px; width: 100px'%>
         <% end %>
         <div class="personal-info">
-          <h2>
-            <%= @student.full_name %>
-          </h2>
-          <p>
-            <%= @student.email %>
-          </p>
+          <h2><%= @student.full_name %></h2>
+          <p><%= @student.email %></p>
+          <p><%= @student.instrument.capitalize %></p>
         </div>
       </div>
     </div>
@@ -25,9 +27,9 @@
     <% @assignments.each do |assignment| %>
       <ul class="list-group card card-small mt-4" style="width: 100%">
         <li class="list-group-item"><h4 style="margin-left: 10px; margin-bottom: 10px"><%= link_to assignment.title.capitalize, assignment_path(assignment), class: "bold-headers underlined-link" %></h4></li>
-        <li class="list-group-item inner-card-list"><p style="border-bottom: 1px solid white">Due Date:</p>
+        <li class="list-group-item inner-card-list"><p style="border-bottom: 1px solid white">Due date:</p>
         <p style="color: #808080"> <%= assignment.due_date.strftime("%a, %e %b %Y") %></p></li>
-        <li class="list-group-item inner-card-list"><p style="border-bottom: 1px solid white">Assignment Details: </p>
+        <li class="list-group-item inner-card-list"><p style="border-bottom: 1px solid white">Assignment details: </p>
         <p style="color: #808080"><%= assignment.details %></p></li>
         <li class="list-group-item">Assignment completed: <input type="checkbox" checked readonly="readonly" /></li>
         <li class="list-group-item">
@@ -42,5 +44,4 @@
       </ul>
     <% end %>
   </div>
-  <%= link_to "Back", student_path(@student), class: "btn btn-outline-secondary" %>
 </div>

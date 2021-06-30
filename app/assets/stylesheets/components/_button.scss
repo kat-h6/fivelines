@@ -14,11 +14,16 @@
 
 .button-green:hover {
   background-color: #11996d;
-  color: #fff;
+  color: #fff!important;
   text-decoration: none;
   border: 2px solid #11996d;
   transition-timing-function: linear;
   transition: 0.3s;
+
+  a {
+    color: #fff;
+  }
+
 }
 
 .button-grey {
