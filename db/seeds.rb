@@ -60,7 +60,7 @@ student_one = User.new(
     username: "Chris1",
     teacher: false,
     date_of_birth: '1980-11-25',
-    instrument: 'violin'
+    instrument: 'clarinet'
     )
 
 student_one.photo.attach(io: photo_two, filename: 'temp.png', content_type: 'image/png')
@@ -77,7 +77,7 @@ teacher_one = User.new(
     username: "Tavis1",
     teacher: true,
     date_of_birth: '1980-11-25',
-    instrument: 'violin'
+    instrument: 'flute'
     )
 teacher_one.photo.attach(io: photo_one, filename: 'temp.png', content_type: 'image/png')
 teacher_one.save!
@@ -158,19 +158,9 @@ student_five = User.new(
     username: "Matthaious",
     teacher: false,
     date_of_birth: '1980-11-25',
-    instrument: 'violin'
+    instrument: 'flute'
     )
 student_five.photo.attach(io: photo_four, filename: 'temp.png', content_type: 'image/png')
-
-tues_demo_lesson_one = Lesson.create!(
-  student: student_six,
-  teacher: teacher_one,
-  start_time: '2021-06-29 18:00',
-  end_time: '2021-06-29 19:00',
-  rate: 25,
-  teacher_notes: " ",
-  student_notes: " "
-  )
 
 tues_demo_lesson_two = Lesson.create!(
   student: student_one,
@@ -182,22 +172,11 @@ tues_demo_lesson_two = Lesson.create!(
   student_notes: " "
   )
 
-tues_demo_lesson_three = Lesson.create!(
-  student: student_seven,
-  teacher: teacher_one,
-  start_time: '2021-06-29 20:00',
-  end_time: '2021-06-29 21:00',
-  rate: 25,
-  teacher_notes: " ",
-  student_notes: " "
-  )
-
-
 thurs_demo_lesson_one = Lesson.create!(
   student: student_six,
   teacher: teacher_one,
-  start_time: '2021-07-01 18:00',
-  end_time: '2021-07-01 19:00',
+  start_time: '2021-07-01 21:00',
+  end_time: '2021-07-01 22:00',
   rate: 25,
   teacher_notes: " ",
   student_notes: " "
@@ -282,6 +261,13 @@ demo_lesson_notes_three = Lesson.create!(
   teacher_notes: "Kathy ran through the first movement of Jolivet Concerto and JS Bach Sonata."
 )
 
+lesson_one = Lesson.create!(
+  student_id: student_six.id ,
+  teacher_id: teacher_one.id,
+  start_time: '2021-06-30 10:00',
+  end_time: '2021-06-30 11:00',
+  rate: 25
+)
 
 
 lesson_one = Lesson.create!(

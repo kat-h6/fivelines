@@ -16,30 +16,29 @@
             <h2>
               <%= @student.full_name %>
             </h2>
-            <p>
+            <p class="light-gray-information">
               <%= @student.email %>
             </p>
-            <p><%= @student.instrument %></p>
+            <p class="light-gray-information"><%= @student.instrument %></p>
           </div>
         </div>
-
-        <div class="cta">
-          <% if @lesson %>
-            <%= link_to "Join lesson", lesson_path(@lesson), class: "button-green" %>
-          <% end %>
-        </div>
-      </div>
-      <div>
-        <%#= link_to "Message @student.first_name", message_path(student), class: "btn btn-success" %>
+<!--         <div class="assignments-container"> -->
+          <%= link_to "See assignments", student_assignments_user_path, class: "button-grey position-top" %>
+<!--         </div> -->
       </div>
     </div>
 
     <div class="d-flex">
       <div class="lesson-history">
-      <div class="card lesson">
-        <div class="section-header">
-          <h4>Upcoming lessons</h4>
-        </div>
+        <div class="card lesson">
+          <div class="section-header">
+            <h4>Upcoming lessons</h4>
+            <div class="cta">
+              <% if @lesson %>
+                <%= link_to "Join lesson", lesson_path(@lesson), class: "button-green" %>
+              <% end %>
+            </div>
+          </div>
         <div>
 
           <% @lessons.each do |lesson| %>
@@ -96,9 +95,6 @@
     </div>
 
       <div class="card schedule-list">
-        <div class="assignments-container mb-5">
-          <%= link_to "See assignments", student_assignments_user_path, class: "button-grey" %>
-        </div>
         <div>
           <%#= link_to "Add assignment", new_lesson_assignment_path(@lesson), class: "btn btn-success" %>
         </div>
@@ -107,15 +103,19 @@
           <div class="section-header">
             <h4>Lesson notes</h4>
           </div>
-          <% @lessons.each do |lesson| %>
-            <div class="lesson-info">
-              <% if lesson.teacher_notes.present? %>
-                <span><%= lesson.start_time.strftime("%e %b %Y") %></span>
-                <%= lesson.teacher_notes %>
-              <% end %>
-            </div>
-          <% end %>
+          <div class="lesson-info-container">
+            <% @lessons_descending.each do |lesson| %>
+              <div class="lesson-info mb-3">
+                <% if lesson.teacher_notes.present? %>
+                  <span><%= lesson.start_time.strftime("%e %b %Y") %></span>
+                  <div class="mt-2">
+                  <%= lesson.teacher_notes %>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 </div>
