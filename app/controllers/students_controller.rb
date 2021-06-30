@@ -13,6 +13,7 @@ class StudentsController < ApplicationController
   def show
     @student = User.find(params[:id])
     @lessons = @student.lessons
+    @lessons_descending = User.find(params[:id]).lessons.order("start_time DESC")
     @lesson = @lessons.today.first
     #@assignment = Assignment.find(params[:id])
     #@assignments = @student.assignments
