@@ -29,7 +29,7 @@ class Lesson < ApplicationRecord
     else
       hours = (total_seconds / 3600).floor
       minutes = ((total_seconds / 60) % 60).floor
-      "starting in #{hours} hours and #{minutes} minutes"
+      "starting in #{hours} hrs and #{minutes} mins"
     end
   end
 
