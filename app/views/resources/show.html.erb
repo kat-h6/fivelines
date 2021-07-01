@@ -1,8 +1,6 @@
-<h2 class="resource-header-show">Resources for my students</h2>
-
 <div class="show-card-container">
 
-<h3 class="resource-show-header"> <%= @resource.title.capitalize %> </h3>
+  <h3 class="resource-show-header"> <%= @resource.title.capitalize %> </h3>
      <div class="show-attachments">
         <% if @resource.photo.attached? %>
           <%= link_to cl_image_path(@resource.photo.key) do %>
