@@ -1,17 +1,21 @@
-<h3 style="margin-left: 2rem;"><%= @assignment.title.capitalize %>  </h3>
+<div class="back-cta" style="margin-left: 2rem; margin-bottom: 1rem;">
+  <span class="material-icons">arrow_back_ios_new</span>
+  <%= link_to "Back to #{@student.first_name.capitalize}'s assignments", student_assignments_user_path(@student), class: 'button-back' %>
+</div>
 
-<div class="show-card-container" style="margin-left: 2rem; border-radius: 25px">
+<div class="show-card-container" style="margin-left: 2rem; border-radius: 10px">
   <div class="inner-card">
-  <div style="border-bottom: 1px solid #e8e8e8; margin-bottom:15px">
-    <p> <strong><%= @assignment.due_date.strftime("%a, %e %b %Y") %></strong> </p>
+  <div class="d-flex justify-content-between" style="border-bottom: 1px solid #e8e8e8; margin-bottom:15px">
+    <h3><%= @assignment.title.capitalize %></h3>
+    <p><strong>Due date:</strong> <%= @assignment.due_date.strftime("%a, %e %b %Y") %></p>
   </div>
     <div class="inner-card-assignment">
     <div class="inner-card-details">
-      <p style="border-bottom: 1px solid white; color: black"> Assignment Details:</p>
+      <p style="border-bottom: 1px solid white; color: black">Assignment details:</p>
       <p style="color: #808080"> <%= @assignment.details %> </p>
     </div>
     <div class="inner-card-feedback">
-    <p style="border-bottom: 1px solid white; color: black">Assignment Feedback:</p>
+    <p style="border-bottom: 1px solid white; color: black">Assignment feedback:</p>
     <% if @assignment.feedback == " " || @assignment.feedback == "" %>
     <p style="color: #808080"><i>No feedback</i></p>
     <% else %>
@@ -38,7 +42,6 @@
     </p>
     </div>  
     </div>
-      <%= link_to "Back", student_path(@student), class: 'btn btn-outline-secondary' %>
 
   </div>
 
