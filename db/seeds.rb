@@ -601,7 +601,7 @@ resource_3 = Resource.create!(
     )
 file_three = URI.open('https://i.stack.imgur.com/ASLCE.png')
 resource_3.photo.attach(io: file_three, filename: 'temp.png', content_type: 'image/png')
-resource_3.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_6.mov')), filename: 'video_6.mov', content_type: 'video/mov')
+resource_3.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_1.mp4')), filename: 'video_1.mp4', content_type: 'video/mp4')
 resource_3.save!
 puts "created!"
 
