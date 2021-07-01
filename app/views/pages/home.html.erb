@@ -1,4 +1,4 @@
-<div class="home-sec" style="background-image: url('<%= cl_image_path 'purple-wave_lf0gye.svg', height: 400, crop: :fill %>'); background-repeat: no-repeat;";>
+<div class="home-sec" style="background-image: url('<%= cl_image_path 'purple-wave_lf0gye.svg', width: 1920, height: 400, crop: :fill %>'); background-repeat: no-repeat;";>
   <div class="logo">
     <%= cl_image_tag 'FiveLines-logo_s65a7k.svg', width: 200, crop: :fill %>
   </div>
@@ -13,7 +13,7 @@
 
           <div class="cta-group">
             <div class="button-green">
-              <%= link_to "Sign in", new_user_session_path %>
+              <%= link_to "Dashboard", new_user_session_path %>
             </div>
             <div class="button-text">
               <%= link_to "Create an account", new_user_registration_path %>
@@ -35,11 +35,12 @@
       <div class="content-wrapper">
         <div class="row">
           <div class="col-12 col-lg-6">
+            <%= cl_image_tag 'https://res.cloudinary.com/tdavid/image/upload/r_15/v1625084442/fivelines-music_rnuogl.jpg', width: 500, crop: :fill %>
           </div>
 
           <div class="col-12 col-lg-6 animate__animated animate__fadeInUp">
             <h2>Where music education happens</h2>
-            <p>FiveLines makes teaching music easy, whenever or wherever you are. Inspire your students to learn and keep them motivated to practice music. Teach music theory, set regular assignments and empower students to learn rapidly through a practical syllabus.</p>
+            <p>FiveLines makes teaching music easy, whenever or wherever you are. Inspire your students to learn and keep them motivated to practice music.<br><br>Teach music theory, set regular assignments and empower students to learn rapidly through a practical syllabus.</p>
           </div>
         </div>
       </div>
@@ -56,9 +57,9 @@
           <span class="dot"></span>
           <span class="dot"></span>
           <span class="dot"></span>
-          <%= cl_image_tag 'dashboard-screen_llj30d.png', width: 225, crop: :fit %>
+          <%= cl_image_tag 'Fivelines_-_dashboard_bvqfky.png', width: 225, crop: :fit %>
         </div>
-        <h3>Never miss a beat.</h3>
+        <h3>Never miss a beat</h3>
         <p>Organize your day and stay on schedule with a personalised dashboard for you and your students.</p>
       </div>
       <div class="col-12 col-lg-3">
@@ -66,9 +67,9 @@
           <span class="dot"></span>
           <span class="dot"></span>
           <span class="dot"></span>
-          <%= cl_image_tag 'video-call-screen_b5wsxu.png', width: 225, crop: :fit %>
+          <%= cl_image_tag 'Fivelines_-_lesson_gxewfy.png', width: 225, crop: :fit %>
         </div>
-        <h3>Teach on the go.</h3>
+        <h3>Teach on the go</h3>
         <p>Invited students can join a video lesson from their computer using any modern web browser — no software to install.</p>
       </div>
       <div class="col-12 col-lg-3">
@@ -76,9 +77,9 @@
           <span class="dot"></span>
           <span class="dot"></span>
           <span class="dot"></span>
-          <%= cl_image_tag 'Assignments_v0qkr7.png', width: 225, crop: :fit %>
+          <%= cl_image_tag 'Fivelines_-_assignments_wmrmdp.png', width: 225, crop: :fit %>
         </div>
-        <h3>Assignments.</h3>
+        <h3>Assignments</h3>
         <p>Keep your students accountable and support their music progression with regular assignment tasks.</p>
       </div>
       <div class="col-12 col-lg-3">
@@ -88,9 +89,9 @@
             <span class="dot"></span>
             <span class="dot"></span>
           </div>
-          <%= cl_image_tag 'Resources_ucs41r.png', width: 225, crop: :fit %>
+          <%= cl_image_tag 'Fivelines_-_resources_clt5y8.png', width: 225, crop: :fit %>
         </div>
-        <h3>Resource library.</h3>
+        <h3>Resource library</h3>
         <p>Inspire students and keep them motivated with easy access to a collection of videos, texts, images and audio files.</p>
       </div>
     </div>
@@ -132,16 +133,16 @@
   </div>
 </div>
 
-<div class="bottom-sec" style="background-image: url('<%= cl_image_path 'green-wave_t5g1cu.svg', height: 400, crop: :fill %>'); background-repeat: no-repeat; background-position: bottom;"; >
+<div class="bottom-sec" style="background-image: url('<%= cl_image_path 'guitar-footer-bg_z3gw52.jpg', opacity: 15, width: 1920, crop: :fill %>'); background-repeat: no-repeat; background-position: bottom;"; >
   <div class="container">
     <h2 class="animate__animated animate__fadeInUp">Ready to start teaching music?</h2>
     <h3 class="animate__animated animate__fadeInUp">Create your account and get started. It's free!</h3>
     <div class="cta-group">
       <div class="button-green">
-        <%= link_to "Sign in", new_user_session_path %>
+        <%= link_to "Dashboard", new_user_session_path %>
       </div>
       <div class="button-outline">
-        <%= link_to "Get started", new_user_registration_path %>
+        <%= link_to "Let's jam!", new_user_registration_path %>
       </div>
     </div>
   </div>

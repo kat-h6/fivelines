@@ -96,6 +96,15 @@ body {
   color: #fff;
 }
 
+.student-lesson .lesson-info a {
+  font-family: 'Roboto', sans-serif;
+  color: #18C890;
+}
+
+.student-lesson .lesson-info a:hover {
+  color: #11996d;
+}
+
 .schedule-list .calendar-heading {
   font-family: 'Roboto', sans-serif;
   justify-content: space-between;
