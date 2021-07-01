@@ -493,7 +493,7 @@ assignment_two = Assignment.create!(
     due_date: '2021-06-24',
     completed: true,
     feedback: "Make sure you blow evenly through all the notes for that legato line!",
-    lesson: lesson_two
+    lesson: demo_lesson_notes_two
     )
 file_2 = URI.open('https://cdn.shopify.com/s/files/1/0815/5455/products/sheet_grande.jpg?v=1462572134')
 assignment_two.photo.attach(io: file_2, filename: 'temp.png', content_type: 'image/png')
@@ -501,14 +501,14 @@ assignment_two.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_
 assignment_two.save!
 puts "created!"
 
-=begin
+
 assignment_three = Assignment.create!(
     details: "Prelude to the afternoon of a faune first line in one breath",
     title: "Audition prep",
     due_date: '2021-05-01',
     completed: false,
     feedback: " ",
-    lesson: lesson_three
+    lesson: demo_lesson_notes_three
     )
 file_3 = URI.open('https://sheetmusic-free.com/wp-content/uploads/2016/06/Air-Sheet-Music-pdf-Bach-Air-Piano-Sheet-Music.png')
 assignment_three.photo.attach(io: file_3, filename: 'temp.png', content_type: 'image/png')
@@ -516,34 +516,34 @@ assignment_three.video.attach(io: File.open(File.join(Rails.root,'db/videos/vide
 assignment_three.save!
 puts "created!"
 
-assignment_four = Assignment.create!(
-    details: "Gavotte in D Major, remember to practice the harmonies ",
-    title: "Audition prep",
-    due_date: '2021-05-01',
-    completed: false,
-    feedback: " ",
-    lesson: lesson_four
-    )
-file_4 = URI.open('https://html.scribdassets.com/3dkn8g6u2o1nhejw/images/1-6270435575.jpg')
-assignment_four.photo.attach(io: file_4, filename: 'temp.png', content_type: 'image/png')
-assignment_four.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_4.mp4')), filename: 'video_4.mp4', content_type: 'video/mp4')
-assignment_four.save!
-puts "created!"
+# assignment_four = Assignment.create!(
+#     details: "Gavotte in D Major, remember to practice the harmonies ",
+#     title: "Audition prep",
+#     due_date: '2021-05-01',
+#     completed: false,
+#     feedback: " ",
+#     lesson: lesson_four
+#     )
+# file_4 = URI.open('https://html.scribdassets.com/3dkn8g6u2o1nhejw/images/1-6270435575.jpg')
+# assignment_four.photo.attach(io: file_4, filename: 'temp.png', content_type: 'image/png')
+# assignment_four.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_4.mp4')), filename: 'video_4.mp4', content_type: 'video/mp4')
+# assignment_four.save!
+# puts "created!"
 
-assignment_five = Assignment.create!(
-    details: "Prelude to Bourree, listen to the Suzuki version before you practice",
-    title: "Audition prep",
-    due_date: '2021-05-01',
-    completed: false,
-    feedback: " ",
-    lesson: lesson_five
-    )
-file_5 = URI.open('https://www.musicforballetclass.com/wp-content/uploads/2018/09/my-favorite-things-sheet-music-arrangement-for-ballet-class-pdf.png')
-assignment_five.photo.attach(io: file_5, filename: 'temp.png', content_type: 'image/png')
-assignment_five.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_5.mov')), filename: 'video_5.mov', content_type: 'video/mov')
-assignment_five.save!
-puts "created!"
-=end
+# assignment_five = Assignment.create!(
+#     details: "Prelude to Bourree, listen to the Suzuki version before you practice",
+#     title: "Audition prep",
+#     due_date: '2021-05-01',
+#     completed: false,
+#     feedback: " ",
+#     lesson: lesson_five
+#     )
+# file_5 = URI.open('https://www.musicforballetclass.com/wp-content/uploads/2018/09/my-favorite-things-sheet-music-arrangement-for-ballet-class-pdf.png')
+# assignment_five.photo.attach(io: file_5, filename: 'temp.png', content_type: 'image/png')
+# assignment_five.video.attach(io: File.open(File.join(Rails.root,'db/videos/video_5.mov')), filename: 'video_5.mov', content_type: 'video/mov')
+# assignment_five.save!
+# puts "created!"
+
 
 
 
