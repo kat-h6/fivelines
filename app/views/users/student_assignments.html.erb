@@ -24,7 +24,7 @@
   <h2 class="bold-headers" style="margin-top: 50px">Assignments</h2>
 
   <div class="assignments-card">
-    <% @assignments.each do |assignment| %>
+    <% @assignments.reverse.each do |assignment| %>
       <ul class="list-group card card-small mt-4" style="width: 100%">
         <li class="list-group-item"><h4 style="margin-left: 10px; margin-bottom: 10px"><%= link_to assignment.title.capitalize, assignment_path(assignment), class: "bold-headers underlined-link" %></h4></li>
         <li class="list-group-item inner-card-list"><p style="border-bottom: 1px solid white">Due date:</p>

@@ -65,7 +65,7 @@ export default class extends Controller {
       insertMode:'append',
       width: '100%',
       height: '100%',
-      subscribeToAudio:true,
+      subscribeToAudio:false,
       subscribeToVideo:true,
     }, this.handleError.bind(this))
     console.log(this.subscriber)
